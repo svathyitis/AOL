@@ -9,10 +9,10 @@
     :root {
       --bg: #f4f6f9;
       --text: #1c1c1e;
-      --muted: #7d7d7d;
-      --border: #d8dee9;
-      --accent: #7a9cc6; /* soft calming lavender-blue */
-      --accent-hover: #698db6;
+      --muted: #777;
+      --border: #d9e1ec;
+      --accent: #9a8cdb; /* Softer visible lavender */
+      --accent-hover: #8473c6;
       --box-bg: #ffffff;
     }
 
@@ -141,6 +141,24 @@
       text-align: center;
       margin-top: 2rem;
     }
+
+    .link-group {
+      margin-top: 1.25rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.6rem;
+    }
+
+    .plain-link {
+      font-size: 0.85rem;
+      color: var(--accent);
+      text-decoration: underline;
+      word-break: break-word;
+    }
+
+    .plain-link:hover {
+      color: var(--accent-hover);
+    }
   </style>
 </head>
 <body>
@@ -170,6 +188,11 @@
     <div class="copy-box">
       <input class="copy-input" type="text" value="Happiness Program | 25–27 July 2025" id="copyText" readonly>
       <button class="copy-btn" onclick="copyToClipboard()">Copy</button>
+    </div>
+
+    <div class="link-group">
+      <a class="plain-link" href="https://programs.vvmvp.org/events/553/" target="_blank">🔗 Registration Link</a>
+      <a class="plain-link" href="https://www.artofliving.org/in-en" target="_blank">🌐 Website: Art of Living</a>
     </div>
 
     <div class="footer">🧘‍♂️ Starts on 25 July 2025 | Bangalore Ashram</div>
