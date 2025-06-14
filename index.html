@@ -2,14 +2,22 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Happiness Program</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Happiness Program</title>
   <style>
+    :root {
+      --primary-color: #8b4c00;
+      --bg-color: #fefaf5;
+      --card-bg: #ffffff;
+      --text-color: #2d2d2d;
+      --accent: #eee;
+    }
+
     body {
       margin: 0;
       padding: 0;
-      background: #fefaf5;
-      font-family: 'Segoe UI', Tahoma, sans-serif;
+      font-family: 'Inter', sans-serif;
+      background-color: var(--bg-color);
       display: flex;
       justify-content: center;
       align-items: center;
@@ -17,141 +25,123 @@
     }
 
     .container {
-      max-width: 520px;
-      background: #ffffff;
-      padding: 24px;
-      border-radius: 14px;
-      box-shadow: 0 4px 16px rgba(0,0,0,0.08);
-      text-align: center;
+      background: var(--card-bg);
+      border-radius: 12px;
+      padding: 2rem;
+      max-width: 480px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
     }
 
     h1 {
-      margin-top: 0;
-      color: #4b2e0f;
-      font-size: 1.6rem;
+      font-size: 1.5rem;
+      color: var(--primary-color);
+      margin-bottom: 0.25rem;
+    }
+
+    .subtext {
+      font-size: 0.95rem;
+      color: #555;
+      margin-bottom: 1rem;
     }
 
     .info {
-      font-size: 0.95rem;
-      color: #333;
-      line-height: 1.5;
+      font-size: 0.9rem;
       margin: 0.5rem 0;
+      line-height: 1.4;
+    }
+
+    .map-link, .register-link {
+      display: inline-block;
+      text-decoration: none;
+      margin: 0.5rem auto;
+      padding: 0.6rem 1rem;
+      background: var(--primary-color);
+      color: #fff;
+      border-radius: 8px;
+      font-size: 0.85rem;
+      font-weight: 500;
     }
 
     .timeline {
-      text-align: left;
-      margin-top: 1rem;
-      font-size: 0.9rem;
-      border-left: 3px solid #8b4c00;
+      margin: 1.25rem 0;
       padding-left: 1rem;
-    }
-
-    .timeline div {
-      margin-bottom: 0.75rem;
-    }
-
-    a.register {
-      display: inline-block;
-      margin: 1rem 0;
-      padding: 10px 20px;
-      background: #8b4c00;
-      color: white;
-      text-decoration: none;
-      border-radius: 20px;
-      font-weight: bold;
-      font-size: 0.95rem;
-    }
-
-    a.register:hover {
-      background: #6e3c00;
-    }
-
-    .map {
-      margin: 0.5rem 0 1rem;
+      border-left: 3px solid var(--primary-color);
       font-size: 0.85rem;
     }
 
-    .share-row {
+    .timeline div {
+      margin-bottom: 0.6rem;
+    }
+
+    .row-share {
       display: flex;
-      justify-content: center;
-      gap: 1rem;
-      margin-top: 1rem;
-      font-size: 1.2rem;
-    }
-
-    .share-row a {
-      text-decoration: none;
-      color: #8b4c00;
-    }
-
-    .copy-block {
-      margin-top: 1rem;
+      justify-content: space-around;
+      margin: 1rem 0 0.25rem;
+      font-size: 1.1rem;
     }
 
     .copy-block textarea {
       width: 100%;
-      padding: 8px;
-      font-size: 0.85rem;
-      border: 1px solid #ddd;
+      font-size: 0.75rem;
+      padding: 0.5rem;
+      border: 1px solid var(--accent);
       border-radius: 6px;
-      resize: none;
+      margin-top: 0.5rem;
     }
 
     .copy-btn {
-      margin-top: 6px;
-      padding: 6px 12px;
-      font-size: 0.85rem;
+      margin-top: 0.5rem;
+      padding: 0.4rem 0.8rem;
+      font-size: 0.75rem;
+      background: var(--accent);
       border: none;
-      background: #eee;
+      border-radius: 4px;
       cursor: pointer;
-      border-radius: 5px;
     }
 
     .countdown {
-      font-size: 0.85rem;
       margin-top: 1rem;
-      color: #555;
+      font-size: 0.75rem;
+      color: #888;
+      text-align: center;
     }
   </style>
 </head>
 <body>
   <div class="container">
     <h1>Happiness Program</h1>
-    <p class="info"><strong>With Vishal Ji & Vikram Ji</strong><br>25th to 27th July, 2025</p>
+    <p class="subtext">with Vishal Ji & Vikram Ji</p>
 
-    <p class="info"><strong>Art of Living International Center</strong><br>21st KM, Udayapura Post, Kanakapura Main Rd,<br>Bengaluru, Karnataka 560082</p>
+    <p class="info"><strong>📍 Location:</strong><br>Art of Living International Center<br>Bengaluru, Karnataka</p>
 
-    <div class="map">
-      <a href="https://www.google.com/search?q=Art+of+Living+International+Center&kgmid=/g/11g6nvzp2f" target="_blank">📍 Google Maps</a>
-    </div>
+    <a class="map-link" href="https://www.google.com/search?q=Art+of+Living+International+Center&kgmid=/g/11g6nvzp2f" target="_blank">Google Maps</a>
 
     <div class="timeline">
-      <div><strong>🟤 24 Jul, 2:00 PM</strong> – Check-in Opens</div>
-      <div><strong>🟠 25 Jul, 9:30 AM</strong> – Program Starts</div>
-      <div><strong>🟡 27 Jul, 5:00 PM</strong> – Program Ends</div>
-      <div><strong>🟢 28 Jul, 9:30 AM</strong> – Checkout Deadline</div>
+      <div><strong>24 Jul</strong> – Check-in from 2:00 PM</div>
+      <div><strong>25 Jul</strong> – Program starts at 9:30 AM</div>
+      <div><strong>27 Jul</strong> – Program ends at 5:00 PM</div>
+      <div><strong>28 Jul</strong> – Checkout by 9:30 AM</div>
     </div>
 
-    <a class="register" href="https://programs.vvmvp.org/events/553/" target="_blank">Register Today</a>
+    <a class="register-link" href="https://programs.vvmvp.org/events/553/" target="_blank">Register Today</a>
 
-    <div class="share-row">
-      <a href="https://api.whatsapp.com/send?text=Join%20me%20for%20Happiness%20Program%20with%20Vishal%20Ji%20%26%20Vikram%20Ji!%20https%3A%2F%2Fprograms.vvmvp.org%2Fevents%2F553%2F" target="_blank">📱 WhatsApp</a>
+    <div class="row-share">
+      <a href="https://api.whatsapp.com/send?text=Join%20me%20for%20the%20Happiness%20Program!%20https%3A%2F%2Fprograms.vvmvp.org%2Fevents%2F553%2F" target="_blank">📱 WhatsApp</a>
       <a href="https://www.instagram.com/" target="_blank">📸 Instagram</a>
-      <a href="#" onclick="copyLink()">📋 Copy Link</a>
+      <a href="#" onclick="copyLink()">📋 Copy</a>
     </div>
 
     <div class="copy-block">
-      <textarea id="details" rows="6" readonly>
-Happiness Program
-With Vishal Ji & Vikram Ji
-25–27 July 2025
-Bangalore Ashram (Art of Living)
-Register: https://programs.vvmvp.org/events/553/
+      <textarea id="details" rows="4" readonly>
+Happiness Program | 25–27 July 2025
+Vishal Ji & Vikram Ji
+Bangalore Ashram
+https://programs.vvmvp.org/events/553/
       </textarea>
-      <button class="copy-btn" onclick="copyDetails()">Copy Program Details</button>
+      <button class="copy-btn" onclick="copyDetails()">Copy Details</button>
     </div>
 
-    <div class="countdown" id="countdown">⏳ Counting down to the event...</div>
+    <div class="countdown" id="countdown"></div>
   </div>
 
   <script>
@@ -167,25 +157,19 @@ Register: https://programs.vvmvp.org/events/553/
       alert("Program details copied!");
     }
 
-    // Countdown Timer
-    const targetDate = new Date("2025-07-25T09:30:00").getTime();
+    // Countdown
+    const target = new Date("2025-07-25T09:30:00").getTime();
     const countdownEl = document.getElementById("countdown");
 
     function updateCountdown() {
       const now = new Date().getTime();
-      const distance = targetDate - now;
-
-      if (distance < 0) {
-        countdownEl.innerText = "🎉 Program has started!";
-        return;
-      }
-
-      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-      const hrs = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-      const mins = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-      countdownEl.innerText = `⏳ ${days}d ${hrs}h ${mins}m remaining`;
+      const gap = target - now;
+      if (gap < 0) return countdownEl.innerText = "🎉 Program Started!";
+      const d = Math.floor(gap / (1000 * 60 * 60 * 24));
+      const h = Math.floor((gap / (1000 * 60 * 60)) % 24);
+      const m = Math.floor((gap / (1000 * 60)) % 60);
+      countdownEl.innerText = `⏳ Starts in ${d}d ${h}h ${m}m`;
     }
-
     updateCountdown();
     setInterval(updateCountdown, 60000);
   </script>
