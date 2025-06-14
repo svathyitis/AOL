@@ -1,30 +1,152 @@
-.container {
+/* style.css */
+body {
+  font-family: 'Inter', sans-serif;
+  margin: 0;
+  background: #f5f5f5;
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
   min-height: 100vh;
-  background: #fdfaf6;
 }
 
-.phone-frame {
+.iphone-container {
   width: 390px;
-  height: auto;
-  background: #fff;
-  border: 14px solid #000;
+  height: 844px;
   border-radius: 40px;
-  box-shadow: 0 0 30px rgba(0,0,0,0.1);
+  box-shadow: 0 0 40px rgba(0, 0, 0, 0.1);
+  border: 10px solid #111;
+  background: #ffffff;
+  position: relative;
   overflow: hidden;
 }
 
-.phone-frame::before {
-  content: "";
-  display: block;
+.notch {
+  width: 200px;
+  height: 30px;
+  background: #111;
+  border-radius: 0 0 20px 20px;
   position: absolute;
-  top: 18px;
+  top: 0;
   left: 50%;
   transform: translateX(-50%);
-  width: 120px;
-  height: 4px;
-  background: #333;
-  border-radius: 10px;
+  z-index: 10;
+}
+
+.card {
+  padding: 24px;
+  padding-top: 60px;
+  color: #333;
+}
+
+h1 {
+  font-size: 1.8rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.subtitle {
+  font-size: 1rem;
+  color: #555;
+  margin-bottom: 1rem;
+}
+
+.section {
+  margin-bottom: 1.5rem;
+}
+
+.location {
+  color: #666;
+  line-height: 1.4;
+  margin-bottom: 0.5rem;
+}
+
+.pin {
+  font-size: 1.2rem;
+  margin-right: 4px;
+}
+
+.btn {
+  display: inline-block;
+  padding: 8px 14px;
+  border-radius: 8px;
+  background-color: #6200ee;
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 0.95rem;
+  margin-top: 0.4rem;
+}
+
+.btn:hover {
+  background-color: #4b00c2;
+}
+
+.timeline {
+  list-style-type: disc;
+  padding-left: 1.2rem;
+  color: #444;
+  margin-bottom: 1.2rem;
+}
+
+.timeline li {
+  margin-bottom: 0.4rem;
+}
+
+.btn-register {
+  background-color: #03dac6;
+  color: #000;
+  margin-bottom: 1rem;
+}
+
+.btn-register:hover {
+  background-color: #00bfa5;
+}
+
+.copy-section {
+  margin-bottom: 1.2rem;
+}
+
+.copy-text {
+  width: 100%;
+  height: 80px;
+  font-family: monospace;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  resize: none;
+  margin-bottom: 0.5rem;
+  font-size: 0.85rem;
+  background-color: #f9f9f9;
+}
+
+.btn-copy {
+  width: 100%;
+  padding: 10px;
+  font-size: 0.9rem;
+  background-color: #6200ee;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.btn-copy:hover {
+  background-color: #4b00c2;
+}
+
+.social {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 1rem;
+}
+
+.social a {
+  display: inline-flex;
+  align-items: center;
+}
+
+.countdown {
+  font-size: 0.95rem;
+  color: #555;
+  text-align: center;
 }
