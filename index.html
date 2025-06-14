@@ -7,11 +7,11 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
   <style>
     :root {
-      --bg: #fffdfa;
+      --primary: #8b4c00;
+      --bg: #fdfbf7;
       --text: #2b2b2b;
-      --accent: #8b4c00;
       --card: #ffffff;
-      --shadow: rgba(0, 0, 0, 0.06);
+      --shadow: rgba(0, 0, 0, 0.05);
     }
 
     * {
@@ -31,45 +31,35 @@
     }
 
     .container {
+      max-width: 460px;
+      width: 90%;
       background: var(--card);
-      padding: 28px;
-      border-radius: 16px;
-      max-width: 520px;
-      box-shadow: 0 6px 20px var(--shadow);
+      padding: 24px;
+      border-radius: 14px;
+      box-shadow: 0 8px 24px var(--shadow);
       text-align: center;
     }
 
     h1 {
-      font-size: 1.5rem;
-      color: var(--accent);
-      margin-bottom: 0.4rem;
+      font-size: 1.4rem;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+      color: var(--primary);
     }
 
     p {
-      font-size: 0.95rem;
+      font-size: 0.92rem;
+      margin: 6px 0;
       line-height: 1.45;
-      margin: 0.4rem 0;
     }
 
-    a.button {
-      display: inline-block;
-      margin-top: 1rem;
-      padding: 10px 20px;
-      background-color: var(--accent);
-      color: white;
-      text-decoration: none;
-      border-radius: 6px;
-      font-size: 0.9rem;
-      font-weight: 600;
-    }
-
-    a.button:hover {
-      background-color: #6e3c00;
+    .section {
+      margin-top: 1.2rem;
     }
 
     .map-link {
-      display: inline-block;
-      margin-top: 0.5rem;
+      display: block;
+      margin-top: 6px;
       font-size: 0.85rem;
       color: #0073cc;
       text-decoration: none;
@@ -79,59 +69,99 @@
       text-decoration: underline;
     }
 
-    .qr {
-      margin-top: 1.5rem;
+    .button {
+      background: var(--primary);
+      color: #fff;
+      padding: 10px 20px;
+      border-radius: 6px;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 0.9rem;
+      font-weight: 600;
+      margin: 14px 0;
+      transition: background 0.2s ease;
+    }
+
+    .button:hover {
+      background: #6e3c00;
     }
 
     .qr img {
-      width: 140px;
-      height: 140px;
+      margin-top: 10px;
+      width: 120px;
+      height: 120px;
     }
 
-    .social-share {
-      margin-top: 1rem;
+    .copy-box {
+      background: #f8f4ee;
+      border-radius: 8px;
+      padding: 12px;
+      text-align: left;
       font-size: 0.85rem;
+      white-space: pre-line;
+      margin-top: 1rem;
+      position: relative;
     }
 
-    .social-share a,
+    .copy-actions {
+      display: flex;
+      justify-content: flex-end;
+      margin-top: 4px;
+    }
+
     .copy-btn {
-      margin: 0 6px;
-      text-decoration: none;
-      color: var(--accent);
-      font-weight: 500;
+      font-size: 0.8rem;
+      color: var(--primary);
       cursor: pointer;
+      border: none;
+      background: none;
+      padding: 0;
+      font-weight: 500;
     }
 
-    .copy-btn:hover,
-    .social-share a:hover {
+    .copy-btn:hover {
       text-decoration: underline;
     }
 
     .copied {
       font-size: 0.75rem;
       color: green;
-      margin-top: 0.3rem;
+      margin-top: 6px;
       display: none;
     }
 
-    .details {
-      text-align: left;
+    .social {
+      font-size: 0.85rem;
       margin-top: 1rem;
-      background: #fdf7f0;
-      border-radius: 8px;
-      padding: 1rem;
-      font-size: 0.88rem;
-      white-space: pre-line;
     }
 
-    .copy-wrapper {
-      text-align: right;
-      margin-top: 0.3rem;
+    .social a {
+      margin: 0 6px;
+      text-decoration: none;
+      color: var(--primary);
+      font-weight: 500;
     }
 
-    @media(max-width: 600px) {
+    .social a:hover {
+      text-decoration: underline;
+    }
+
+    @media (max-width: 500px) {
       .container {
-        margin: 1rem;
+        padding: 18px;
+      }
+
+      h1 {
+        font-size: 1.2rem;
+      }
+
+      .button {
+        font-size: 0.85rem;
+        padding: 9px 16px;
+      }
+
+      .copy-box {
+        font-size: 0.8rem;
       }
     }
   </style>
@@ -139,60 +169,62 @@
 <body>
   <div class="container">
     <h1>Happiness Program</h1>
-    <p><strong>With Vishal Ji & Vikram Ji</strong><br>25th to 27th Jul, 2025</p>
+    <p><strong>With Vishal Ji & Vikram Ji</strong><br>25–27 July 2025</p>
 
-    <p><strong>Venue:</strong><br>
-      Art of Living International Center<br>
-      Kanakapura Main Rd, Bengaluru
-    </p>
-    <a class="map-link" href="https://www.google.com/search?q=Art+of+Living+International+Center+Bengaluru" target="_blank">📍 View on Google Maps</a>
-
-    <div class="details" id="programDetails">
-      Program Timeline:
-      • Check-in From: 24th Jul 2025, 2:00 pm
-      • Starts: 25th Jul @ 9:30 am
-      • Ends: 27th Jul @ 5:00 pm
-      • Checkout By: 28th Jul, 9:30 am
-      Register: https://programs.vvmvp.org/events/553/
+    <div class="section">
+      <p><strong>Venue:</strong><br>
+        Art of Living International Center<br>
+        Kanakapura Main Road, Bengaluru
+      </p>
+      <a class="map-link" href="https://goo.gl/maps/K7A1Yhtz1yN2" target="_blank">📍 View on Google Maps</a>
     </div>
-    <div class="copy-wrapper">
-      <span class="copy-btn" onclick="copyText('programDetails', 'copied1')">📋 Copy Details</span>
-      <div id="copied1" class="copied">Copied!</div>
+
+    <div class="section">
+      <div class="copy-box" id="detailsText">
+        Program Timeline:
+        • Check-in: 24 Jul 2025, 2:00 pm
+        • Starts: 25 Jul @ 9:30 am
+        • Ends: 27 Jul @ 5:00 pm
+        • Checkout: 28 Jul, 9:30 am
+        Registration: https://programs.vvmvp.org/events/553/
+      </div>
+      <div class="copy-actions">
+        <button class="copy-btn" onclick="copyText('detailsText', 'copiedDetails')">📋 Copy Details</button>
+      </div>
+      <div class="copied" id="copiedDetails">Copied to clipboard!</div>
     </div>
 
     <a class="button" href="https://programs.vvmvp.org/events/553/" target="_blank">Register Now</a>
 
     <div class="qr">
-      <img src="https://api.qrserver.com/v1/create-qr-code/?data=https://programs.vvmvp.org/events/553/&size=150x150" alt="QR Code" />
+      <img src="https://api.qrserver.com/v1/create-qr-code/?data=https://programs.vvmvp.org/events/553/&size=120x120" alt="QR Code">
     </div>
 
-    <div class="social-share">
+    <div class="section social">
       <p><strong>Share:</strong></p>
-      <a href="https://api.whatsapp.com/send?text=Join%20me%20for%20Happiness%20Program%20with%20Vishal%20Ji%20%26%20Vikram%20Ji%2C%2025–27%20Jul%2C%20Bengaluru!%20https%3A%2F%2Fprograms.vvmvp.org%2Fevents%2F553%2F" target="_blank">WhatsApp</a>
+      <a href="https://api.whatsapp.com/send?text=Join%20me%20for%20the%20Happiness%20Program%20(25–27%20Jul%202025)%20with%20Vishal%20Ji%20%26%20Vikram%20Ji%20in%20Bengaluru!%20https%3A%2F%2Fprograms.vvmvp.org%2Fevents%2F553%2F" target="_blank">WhatsApp</a>
       <a href="https://www.instagram.com/" target="_blank">Instagram</a>
       |
-      <span class="copy-btn" onclick="copyLink('https://programs.vvmvp.org/events/553/', 'copied2')">🔗 Copy Link</span>
-      <div id="copied2" class="copied">Link copied!</div>
+      <span class="copy-btn" onclick="copyLink('https://programs.vvmvp.org/events/553/', 'copiedLink')">🔗 Copy Link</span>
+      <div class="copied" id="copiedLink">Link copied!</div>
     </div>
   </div>
 
   <script>
-    function copyText(id, confirmId) {
+    function copyText(id, feedbackId) {
       const el = document.getElementById(id);
       navigator.clipboard.writeText(el.innerText).then(() => {
-        document.getElementById(confirmId).style.display = 'block';
-        setTimeout(() => {
-          document.getElementById(confirmId).style.display = 'none';
-        }, 2000);
+        const feedback = document.getElementById(feedbackId);
+        feedback.style.display = 'block';
+        setTimeout(() => feedback.style.display = 'none', 2000);
       });
     }
 
-    function copyLink(link, confirmId) {
+    function copyLink(link, feedbackId) {
       navigator.clipboard.writeText(link).then(() => {
-        document.getElementById(confirmId).style.display = 'block';
-        setTimeout(() => {
-          document.getElementById(confirmId).style.display = 'none';
-        }, 2000);
+        const feedback = document.getElementById(feedbackId);
+        feedback.style.display = 'block';
+        setTimeout(() => feedback.style.display = 'none', 2000);
       });
     }
   </script>
