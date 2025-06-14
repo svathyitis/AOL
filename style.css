@@ -119,20 +119,22 @@ h1 {
   background-color: #f9f9f9;
 }
 
-.btn-copy {
-  width: 100%;
-  padding: 10px;
-  font-size: 0.9rem;
-  background-color: #6200ee;
+.copy-btn {
+  padding: 8px 12px;
+  background-color: #E6E6FA; /* Just hardcoded lavender */
   color: white;
+  font-size: 0.8rem;
+  font-weight: 600;
   border: none;
-  border-radius: 6px;
+  border-radius: 10px;
   cursor: pointer;
 }
 
-.btn-copy:hover {
-  background-color: #4b00c2;
+.copy-btn:hover {
+  background-color: #E6E6AA; /* Darker mint on hover */
 }
+
+
 
 .social {
   display: flex;
