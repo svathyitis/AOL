@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <title>Happiness Program</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
   <style>
     :root {
@@ -12,15 +12,16 @@
       --text: #2b2b2b;
       --card: #ffffff;
       --shadow: rgba(0, 0, 0, 0.05);
+      --gray: #e5e5e5;
     }
 
     * {
       box-sizing: border-box;
+      margin: 0;
+      padding: 0;
     }
 
     body {
-      margin: 0;
-      padding: 0;
       font-family: 'Inter', sans-serif;
       background-color: var(--bg);
       color: var(--text);
@@ -28,170 +29,134 @@
       justify-content: center;
       align-items: center;
       min-height: 100vh;
+      padding: 1rem;
     }
 
     .container {
-      max-width: 460px;
-      width: 90%;
       background: var(--card);
-      padding: 24px;
-      border-radius: 14px;
+      padding: 2rem;
+      border-radius: 12px;
       box-shadow: 0 8px 24px var(--shadow);
-      text-align: center;
+      max-width: 480px;
+      width: 100%;
     }
 
     h1 {
-      font-size: 1.4rem;
-      font-weight: 600;
-      margin-bottom: 0.5rem;
+      font-size: 1.5rem;
       color: var(--primary);
-    }
-
-    p {
-      font-size: 0.92rem;
-      margin: 6px 0;
-      line-height: 1.45;
+      margin-bottom: 0.5rem;
     }
 
     .section {
-      margin-top: 1.2rem;
+      margin: 1.25rem 0;
     }
 
-    .map-link {
-      display: block;
-      margin-top: 6px;
-      font-size: 0.85rem;
-      color: #0073cc;
+    p {
+      font-size: 0.9rem;
+      line-height: 1.5;
+      margin: 0.4rem 0;
+    }
+
+    a {
+      color: var(--primary);
       text-decoration: none;
     }
 
-    .map-link:hover {
+    a:hover {
       text-decoration: underline;
     }
 
     .button {
+      display: inline-block;
       background: var(--primary);
       color: #fff;
-      padding: 10px 20px;
-      border-radius: 6px;
-      text-decoration: none;
-      display: inline-block;
-      font-size: 0.9rem;
+      padding: 0.7rem 1.4rem;
+      border-radius: 8px;
       font-weight: 600;
-      margin: 14px 0;
-      transition: background 0.2s ease;
-    }
-
-    .button:hover {
-      background: #6e3c00;
+      font-size: 0.9rem;
+      margin-top: 1rem;
+      text-align: center;
     }
 
     .qr img {
-      margin-top: 10px;
-      width: 120px;
-      height: 120px;
+      width: 100px;
+      margin-top: 1rem;
     }
 
     .copy-box {
-      background: #f8f4ee;
+      background: var(--gray);
+      padding: 1rem;
       border-radius: 8px;
-      padding: 12px;
-      text-align: left;
-      font-size: 0.85rem;
+      font-size: 0.8rem;
       white-space: pre-line;
-      margin-top: 1rem;
       position: relative;
     }
 
-    .copy-actions {
+    .copy-controls {
+      margin-top: 0.5rem;
       display: flex;
       justify-content: flex-end;
-      margin-top: 4px;
+      align-items: center;
+      gap: 0.5rem;
     }
 
-    .copy-btn {
-      font-size: 0.8rem;
-      color: var(--primary);
-      cursor: pointer;
-      border: none;
+    .icon-btn {
       background: none;
-      padding: 0;
-      font-weight: 500;
+      border: none;
+      cursor: pointer;
+      font-size: 0.85rem;
+      display: flex;
+      align-items: center;
+      color: var(--primary);
     }
 
-    .copy-btn:hover {
-      text-decoration: underline;
+    .icon-btn svg {
+      margin-right: 4px;
     }
 
-    .copied {
+    .feedback {
       font-size: 0.75rem;
       color: green;
-      margin-top: 6px;
       display: none;
+      margin-left: auto;
     }
 
     .social {
-      font-size: 0.85rem;
-      margin-top: 1rem;
-    }
-
-    .social a {
-      margin: 0 6px;
-      text-decoration: none;
-      color: var(--primary);
-      font-weight: 500;
-    }
-
-    .social a:hover {
-      text-decoration: underline;
-    }
-
-    @media (max-width: 500px) {
-      .container {
-        padding: 18px;
-      }
-
-      h1 {
-        font-size: 1.2rem;
-      }
-
-      .button {
-        font-size: 0.85rem;
-        padding: 9px 16px;
-      }
-
-      .copy-box {
-        font-size: 0.8rem;
-      }
+      display: flex;
+      gap: 1rem;
+      margin-top: 1.2rem;
+      justify-content: center;
     }
   </style>
 </head>
 <body>
   <div class="container">
     <h1>Happiness Program</h1>
-    <p><strong>With Vishal Ji & Vikram Ji</strong><br>25–27 July 2025</p>
+    <p><strong>With Vishal Ji & Vikram Ji</strong></p>
+    <p>25–27 July 2025</p>
 
     <div class="section">
-      <p><strong>Venue:</strong><br>
-        Art of Living International Center<br>
-        Kanakapura Main Road, Bengaluru
-      </p>
-      <a class="map-link" href="https://goo.gl/maps/K7A1Yhtz1yN2" target="_blank">📍 View on Google Maps</a>
+      <p><strong>Venue:</strong></p>
+      <p>Art of Living International Center<br>Kanakapura Main Road, Bengaluru</p>
+      <a href="https://goo.gl/maps/K7A1Yhtz1yN2" target="_blank">📍 Google Maps</a>
     </div>
 
     <div class="section">
       <div class="copy-box" id="detailsText">
-        Program Timeline:
-        • Check-in: 24 Jul 2025, 2:00 pm
-        • Starts: 25 Jul @ 9:30 am
-        • Ends: 27 Jul @ 5:00 pm
-        • Checkout: 28 Jul, 9:30 am
-        Registration: https://programs.vvmvp.org/events/553/
+Program Timeline:
+• Check-in: 24 Jul 2025, 2:00 pm
+• Starts: 25 Jul @ 9:30 am
+• Ends: 27 Jul @ 5:00 pm
+• Checkout: 28 Jul, 9:30 am
+Register: https://programs.vvmvp.org/events/553/
       </div>
-      <div class="copy-actions">
-        <button class="copy-btn" onclick="copyText('detailsText', 'copiedDetails')">📋 Copy Details</button>
+      <div class="copy-controls">
+        <button class="icon-btn" onclick="copyText('detailsText', 'feedback1')">
+          <svg width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path d="M10 1.5a.5.5 0 0 1 .5.5v1h-1v-1h-7v11h7v-1h1v1a.5.5 0 0 1-.5.5h-7A1.5 1.5 0 0 1 2 13V2.5A1.5 1.5 0 0 1 3.5 1h7z"/><path d="M13.5 3a.5.5 0 0 1 .5.5v8.793l-2.146-2.147-.708.708L14.293 13l-3.147 3.146.708.708L15 13.707V3.5a.5.5 0 0 1 .5-.5z"/></svg>
+          Copy
+        </button>
+        <span class="feedback" id="feedback1">Copied!</span>
       </div>
-      <div class="copied" id="copiedDetails">Copied to clipboard!</div>
     </div>
 
     <a class="button" href="https://programs.vvmvp.org/events/553/" target="_blank">Register Now</a>
@@ -200,32 +165,35 @@
       <img src="https://api.qrserver.com/v1/create-qr-code/?data=https://programs.vvmvp.org/events/553/&size=120x120" alt="QR Code">
     </div>
 
-    <div class="section social">
-      <p><strong>Share:</strong></p>
-      <a href="https://api.whatsapp.com/send?text=Join%20me%20for%20the%20Happiness%20Program%20(25–27%20Jul%202025)%20with%20Vishal%20Ji%20%26%20Vikram%20Ji%20in%20Bengaluru!%20https%3A%2F%2Fprograms.vvmvp.org%2Fevents%2F553%2F" target="_blank">WhatsApp</a>
-      <a href="https://www.instagram.com/" target="_blank">Instagram</a>
-      |
-      <span class="copy-btn" onclick="copyLink('https://programs.vvmvp.org/events/553/', 'copiedLink')">🔗 Copy Link</span>
-      <div class="copied" id="copiedLink">Link copied!</div>
+    <div class="social">
+      <a href="https://api.whatsapp.com/send?text=Join%20the%20Happiness%20Program%20(25–27%20Jul%202025)%20with%20Vishal%20Ji%20%26%20Vikram%20Ji%20in%20Bengaluru!%20https%3A%2F%2Fprograms.vvmvp.org%2Fevents%2F553%2F" target="_blank">
+        📤 WhatsApp
+      </a>
+      <a href="https://www.instagram.com/" target="_blank">
+        📸 Instagram
+      </a>
+      <button class="icon-btn" onclick="copyTextDirect('https://programs.vvmvp.org/events/553/', 'feedback2')">
+        <svg width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path d="M10 1.5a.5.5 0 0 1 .5.5v1h-1v-1h-7v11h7v-1h1v1a.5.5 0 0 1-.5.5h-7A1.5 1.5 0 0 1 2 13V2.5A1.5 1.5 0 0 1 3.5 1h7z"/><path d="M13.5 3a.5.5 0 0 1 .5.5v8.793l-2.146-2.147-.708.708L14.293 13l-3.147 3.146.708.708L15 13.707V3.5a.5.5 0 0 1 .5-.5z"/></svg>
+        Copy Link
+      </button>
+      <span class="feedback" id="feedback2">Copied!</span>
     </div>
   </div>
 
   <script>
     function copyText(id, feedbackId) {
-      const el = document.getElementById(id);
-      navigator.clipboard.writeText(el.innerText).then(() => {
-        const feedback = document.getElementById(feedbackId);
-        feedback.style.display = 'block';
-        setTimeout(() => feedback.style.display = 'none', 2000);
-      });
+      const text = document.getElementById(id).innerText;
+      navigator.clipboard.writeText(text);
+      showFeedback(feedbackId);
     }
-
-    function copyLink(link, feedbackId) {
-      navigator.clipboard.writeText(link).then(() => {
-        const feedback = document.getElementById(feedbackId);
-        feedback.style.display = 'block';
-        setTimeout(() => feedback.style.display = 'none', 2000);
-      });
+    function copyTextDirect(text, feedbackId) {
+      navigator.clipboard.writeText(text);
+      showFeedback(feedbackId);
+    }
+    function showFeedback(id) {
+      const el = document.getElementById(id);
+      el.style.display = 'inline';
+      setTimeout(() => { el.style.display = 'none'; }, 2000);
     }
   </script>
 </body>
