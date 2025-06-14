@@ -1,102 +1,110 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
   <title>Happiness Program</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
     body {
-      background-color: #fef9f2;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #fefaf5;
+      font-family: sans-serif;
       display: flex;
       justify-content: center;
       align-items: center;
       min-height: 100vh;
-      margin: 0;
-      padding: 1rem;
-      color: #432818;
-      text-align: center;
     }
+
     .container {
       max-width: 600px;
-      background-color: #fff8ef;
-      padding: 2rem;
-      border-radius: 1rem;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+      background: #fff;
+      padding: 30px;
+      border-radius: 16px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+      text-align: center;
     }
+
     h1 {
-      font-size: 2rem;
-      margin-bottom: 0.5rem;
+      color: #4b2e0f;
+      margin-bottom: 8px;
     }
-    h2 {
-      font-size: 1.25rem;
-      font-weight: normal;
-      margin-bottom: 1rem;
-    }
+
     p {
-      margin: 0.5rem 0;
-      line-height: 1.5;
+      color: #444;
+      line-height: 1.6;
     }
-    a.button, .share-btn {
+
+    a.register {
       display: inline-block;
-      margin-top: 1rem;
-      background-color: #8b4513;
+      margin-top: 20px;
+      padding: 12px 24px;
+      background: #8b4c00;
       color: white;
-      padding: 0.75rem 1.25rem;
-      border-radius: 0.5rem;
       text-decoration: none;
+      border-radius: 24px;
       font-weight: bold;
     }
-    .qr {
-      margin-top: 1.5rem;
+
+    a.register:hover {
+      background: #6e3c00;
     }
-    .social-share {
-      margin-top: 1rem;
-    }
-    .social-share a {
-      margin: 0 0.5rem;
-      font-size: 1.2rem;
-      color: #8b4513;
-      text-decoration: none;
-    }
+
     .map-link {
       display: block;
-      margin-top: 1rem;
+      margin: 12px 0;
       font-size: 0.95rem;
+      color: #0077cc;
+      text-decoration: none;
+    }
+
+    .qr {
+      margin-top: 20px;
+    }
+
+    .social-share {
+      margin-top: 20px;
+    }
+
+    .social-share a {
+      margin: 0 8px;
+      text-decoration: none;
+      color: #8b4c00;
+      font-weight: bold;
     }
   </style>
 </head>
 <body>
   <div class="container">
     <h1>Happiness Program</h1>
-    <h2>With Vishal Ji & Vikram Ji</h2>
-    <p><strong>25th to 27th Jul, 2025</strong></p>
+    <p><strong>With Vishal Ji & Vikram Ji</strong><br>
+    25th to 27th Jul, 2025</p>
 
-    <p><strong>Location:</strong><br>
-      Art of Living International Center<br>
-      21st KM, Udayapura Post, Kanakapura Main Rd,<br>
-      Bengaluru, Karnataka 560082
-    </p>
-    <a class="map-link" href="https://www.google.com/search?sca_esv=d22a87f29702b322&hl=en&gl=in&output=search&kgmid=/g/11g6nvzp2f&q=Art+of+Living+International+Center&shndl=30&shem=lcuae,uaasie&source=sh/x/loc/uni/m1/1&kgs=6dc7468a51607c41" target="_blank">
-      📍 View on Google Maps
+    <p><strong>Art of Living International Center</strong><br>
+    21st KM, Udayapura Post,<br>
+    Kanakapura Main Rd,<br>
+    Bengaluru, Karnataka 560082</p>
+
+    <a class="map-link" href="https://www.google.com/search?q=Art+of+Living+International+Center+Bengaluru" target="_blank">📍 View on Google Maps</a>
+
+    <p><strong>Program Timeline</strong><br><br>
+    <strong>Check-in From:</strong> 24th Jul 2025, 2:00 pm<br>
+    <strong>Program Starts:</strong> 25th Jul 2025 @ 9:30 am<br>
+    <strong>Program Ends:</strong> 27th Jul 2025 @ 5:00 pm<br>
+    <strong>Checkout By:</strong> 28th Jul 2025, 9:30 am</p>
+
+    <a class="register" href="https://programs.vvmvp.org/events/553/" target="_blank">
+      Register Today
     </a>
 
-    <p><strong>Program Timeline</strong></p>
-    <p>Check-in From → 24th Jul 2025, 2:00 pm</p>
-    <p>Program Starts → 25th Jul 2025 @ 9:30 am</p>
-    <p>Program Ends → 27th Jul 2025 @ 5:00 pm</p>
-    <p>Checkout By → 28th Jul 2025, 9:30 am</p>
-
-    <a class="button" href="https://programs.vvmvp.org/events/553/" target="_blank">Register Today</a>
-
     <div class="qr">
-      <img src="https://api.qrserver.com/v1/create-qr-code/?data=https://programs.vvmvp.org/events/553/&size=200x200" alt="QR code for registration" />
+      <img src="https://api.qrserver.com/v1/create-qr-code/?data=https://programs.vvmvp.org/events/553/&size=200x200" alt="QR Code">
     </div>
 
     <div class="social-share">
-      <p><strong>Share this program:</strong></p>
-      <a href="https://api.whatsapp.com/send?text=Join%20me%20for%20the%20Happiness%20Program%20with%20Vishal%20Ji%20%26%20Vikram%20Ji%20from%2025th%20to%2027th%20July%202025!%20Register%20here%3A%20https%3A%2F%2Fprograms.vvmvp.org%2Fevents%2F553%2F" target="_blank">📱 WhatsApp</a>
-      <a href="https://www.instagram.com/" target="_blank">📸 Instagram</a>
+      <p><strong>Share:</strong></p>
+      <a href="https://api.whatsapp.com/send?text=Join%20me%20for%20the%20Happiness%20Program%20with%20Vishal%20Ji%20%26%20Vikram%20Ji%20from%2025th%20to%2027th%20July%202025!%20Register%20here:%20https://programs.vvmvp.org/events/553/" target="_blank">📱 WhatsApp</a>
+      <a href="https://www.instagram.com" target="_blank">📸 Instagram</a>
     </div>
   </div>
 </body>
