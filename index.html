@@ -1,139 +1,157 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
+  <meta charset="UTF-8">
   <title>Happiness Program</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
     body {
       margin: 0;
       padding: 0;
-      background: #fdfbf9;
-      font-family: system-ui, -apple-system, sans-serif;
+      background: #fefaf5;
+      font-family: 'Segoe UI', Tahoma, sans-serif;
       display: flex;
       justify-content: center;
       align-items: center;
       min-height: 100vh;
-      color: #333;
     }
 
     .container {
-      width: 390px; /* iPhone 12 width */
-      padding: 20px;
-      background: #fff;
-      border-radius: 12px;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+      max-width: 520px;
+      background: #ffffff;
+      padding: 24px;
+      border-radius: 14px;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.08);
       text-align: center;
     }
 
     h1 {
-      font-size: 1.4rem;
-      margin: 0.5rem 0;
+      margin-top: 0;
+      color: #4b2e0f;
+      font-size: 1.6rem;
     }
 
-    .subhead {
-      font-size: 1rem;
-      margin-bottom: 1rem;
-      color: #666;
-    }
-
-    .section {
-      font-size: 0.92rem;
+    .info {
+      font-size: 0.95rem;
+      color: #333;
       line-height: 1.5;
-      margin-bottom: 1rem;
+      margin: 0.5rem 0;
     }
 
     .timeline {
       text-align: left;
+      margin-top: 1rem;
       font-size: 0.9rem;
-      background: #f8f6f3;
-      padding: 0.8rem;
-      border-radius: 8px;
-      margin-bottom: 1rem;
+      border-left: 3px solid #8b4c00;
+      padding-left: 1rem;
     }
 
     .timeline div {
-      margin: 0.4rem 0;
+      margin-bottom: 0.75rem;
     }
 
-    .map-link {
+    a.register {
       display: inline-block;
-      margin-top: 0.5rem;
-      font-size: 0.9rem;
-      color: #333;
-      text-decoration: underline;
-    }
-
-    .btn {
-      display: inline-block;
-      margin-top: 1rem;
-      background: #222;
-      color: #fff;
-      padding: 0.6rem 1.2rem;
-      border-radius: 6px;
+      margin: 1rem 0;
+      padding: 10px 20px;
+      background: #8b4c00;
+      color: white;
       text-decoration: none;
-      font-size: 0.9rem;
+      border-radius: 20px;
+      font-weight: bold;
+      font-size: 0.95rem;
+    }
+
+    a.register:hover {
+      background: #6e3c00;
+    }
+
+    .map {
+      margin: 0.5rem 0 1rem;
+      font-size: 0.85rem;
     }
 
     .share-row {
       display: flex;
-      justify-content: space-around;
+      justify-content: center;
+      gap: 1rem;
       margin-top: 1rem;
       font-size: 1.2rem;
     }
 
-    .copy {
-      cursor: pointer;
-      font-size: 0.9rem;
-      margin-top: 1rem;
-      color: #444;
+    .share-row a {
+      text-decoration: none;
+      color: #8b4c00;
     }
 
-    #countdown {
-      font-size: 0.95rem;
-      margin-top: 0.5rem;
-      color: #a33;
+    .copy-block {
+      margin-top: 1rem;
+    }
+
+    .copy-block textarea {
+      width: 100%;
+      padding: 8px;
+      font-size: 0.85rem;
+      border: 1px solid #ddd;
+      border-radius: 6px;
+      resize: none;
+    }
+
+    .copy-btn {
+      margin-top: 6px;
+      padding: 6px 12px;
+      font-size: 0.85rem;
+      border: none;
+      background: #eee;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+
+    .countdown {
+      font-size: 0.85rem;
+      margin-top: 1rem;
+      color: #555;
     }
   </style>
 </head>
 <body>
   <div class="container">
     <h1>Happiness Program</h1>
-    <div class="subhead">with Vishal Ji & Vikram Ji</div>
+    <p class="info"><strong>With Vishal Ji & Vikram Ji</strong><br>25th to 27th July, 2025</p>
 
-    <div class="section">
-      📍 <strong>Art of Living International Center</strong><br>
-      Kanakapura Main Rd, Bengaluru
-      <br>
-      <a class="map-link" href="https://www.google.com/search?q=Art+of+Living+International+Center" target="_blank">
-        Google Maps
-      </a>
-    </div>
+    <p class="info"><strong>Art of Living International Center</strong><br>21st KM, Udayapura Post, Kanakapura Main Rd,<br>Bengaluru, Karnataka 560082</p>
 
-    <div class="section">
-      📆 <strong>25–27 Jul 2025</strong>
+    <div class="map">
+      <a href="https://www.google.com/search?q=Art+of+Living+International+Center&kgmid=/g/11g6nvzp2f" target="_blank">📍 Google Maps</a>
     </div>
 
     <div class="timeline">
-      <div>🕑 <strong>Check-in:</strong> 24 Jul, 2:00 pm</div>
-      <div>✨ <strong>Start:</strong> 25 Jul, 9:30 am</div>
-      <div>🌇 <strong>End:</strong> 27 Jul, 5:00 pm</div>
-      <div>🚪 <strong>Checkout:</strong> 28 Jul, 9:30 am</div>
+      <div><strong>🟤 24 Jul, 2:00 PM</strong> – Check-in Opens</div>
+      <div><strong>🟠 25 Jul, 9:30 AM</strong> – Program Starts</div>
+      <div><strong>🟡 27 Jul, 5:00 PM</strong> – Program Ends</div>
+      <div><strong>🟢 28 Jul, 9:30 AM</strong> – Checkout Deadline</div>
     </div>
 
-    <div id="countdown">⏳ Loading countdown…</div>
-
-    <a class="btn" href="https://programs.vvmvp.org/events/553/" target="_blank">
-      Register Now
-    </a>
+    <a class="register" href="https://programs.vvmvp.org/events/553/" target="_blank">Register Today</a>
 
     <div class="share-row">
-      <a href="https://api.whatsapp.com/send?text=Join%20me%20for%20the%20Happiness%20Program%20with%20Vishal%20Ji%20%26%20Vikram%20Ji%20%7C%2025–27%20July%202025%20at%20Art%20of%20Living%20Intl%20Center%20%7C%20https%3A%2F%2Fprograms.vvmvp.org%2Fevents%2F553%2F" target="_blank">💬</a>
-      <a href="https://www.instagram.com/" target="_blank">📸</a>
-      <a href="#" onclick="copyLink()">🔗</a>
+      <a href="https://api.whatsapp.com/send?text=Join%20me%20for%20Happiness%20Program%20with%20Vishal%20Ji%20%26%20Vikram%20Ji!%20https%3A%2F%2Fprograms.vvmvp.org%2Fevents%2F553%2F" target="_blank">📱 WhatsApp</a>
+      <a href="https://www.instagram.com/" target="_blank">📸 Instagram</a>
+      <a href="#" onclick="copyLink()">📋 Copy Link</a>
     </div>
 
-    <div class="copy" onclick="copyDetails()">📋 Copy Program Details</div>
+    <div class="copy-block">
+      <textarea id="details" rows="6" readonly>
+Happiness Program
+With Vishal Ji & Vikram Ji
+25–27 July 2025
+Bangalore Ashram (Art of Living)
+Register: https://programs.vvmvp.org/events/553/
+      </textarea>
+      <button class="copy-btn" onclick="copyDetails()">Copy Program Details</button>
+    </div>
+
+    <div class="countdown" id="countdown">⏳ Counting down to the event...</div>
   </div>
 
   <script>
@@ -143,32 +161,33 @@
     }
 
     function copyDetails() {
-      const text = `Happiness Program\nWith Vishal Ji & Vikram Ji\n25–27 Jul 2025\nArt of Living International Center\nKanakapura Main Rd, Bengaluru\n\nCheck-in: 24 Jul 2025, 2:00 pm\nStart: 25 Jul, 9:30 am\nEnd: 27 Jul, 5:00 pm\nCheckout: 28 Jul, 9:30 am\n\nRegister: https://programs.vvmvp.org/events/553/`;
-      navigator.clipboard.writeText(text);
+      const text = document.getElementById("details");
+      text.select();
+      document.execCommand("copy");
       alert("Program details copied!");
     }
 
     // Countdown Timer
-    function updateCountdown() {
-      const target = new Date("2025-07-25T09:30:00");
-      const now = new Date();
-      const diff = target - now;
+    const targetDate = new Date("2025-07-25T09:30:00").getTime();
+    const countdownEl = document.getElementById("countdown");
 
-      if (diff <= 0) {
-        document.getElementById("countdown").innerText = "🎉 Program Started!";
+    function updateCountdown() {
+      const now = new Date().getTime();
+      const distance = targetDate - now;
+
+      if (distance < 0) {
+        countdownEl.innerText = "🎉 Program has started!";
         return;
       }
 
-      const days = Math.floor(diff / (1000 * 60 * 60 * 24));
-      const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
-      const minutes = Math.floor((diff / (1000 * 60)) % 60);
-
-      document.getElementById("countdown").innerText =
-        `⏳ ${days}d ${hours}h ${minutes}m to start`;
+      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      const hrs = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const mins = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      countdownEl.innerText = `⏳ ${days}d ${hrs}h ${mins}m remaining`;
     }
 
     updateCountdown();
-    setInterval(updateCountdown, 60000); // update every minute
+    setInterval(updateCountdown, 60000);
   </script>
 </body>
 </html>
