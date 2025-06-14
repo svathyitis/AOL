@@ -6,64 +6,65 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
   <style>
+    :root {
+      --bg: #fffdfa;
+      --text: #2b2b2b;
+      --accent: #8b4c00;
+      --card: #ffffff;
+      --shadow: rgba(0, 0, 0, 0.06);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
     body {
       margin: 0;
       padding: 0;
-      background: #fcf9f4;
       font-family: 'Inter', sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
       display: flex;
       justify-content: center;
       align-items: center;
       min-height: 100vh;
-      color: #333;
     }
 
     .container {
-      max-width: 500px;
-      background: #ffffff;
-      padding: 24px;
-      border-radius: 12px;
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+      background: var(--card);
+      padding: 28px;
+      border-radius: 16px;
+      max-width: 520px;
+      box-shadow: 0 6px 20px var(--shadow);
       text-align: center;
     }
 
     h1 {
-      font-size: 1.4rem;
-      font-weight: 600;
-      margin-bottom: 0.5rem;
-      color: #4b2e0f;
+      font-size: 1.5rem;
+      color: var(--accent);
+      margin-bottom: 0.4rem;
     }
 
     p {
-      font-size: 0.92rem;
-      line-height: 1.4;
+      font-size: 0.95rem;
+      line-height: 1.45;
       margin: 0.4rem 0;
     }
 
     a.button {
       display: inline-block;
-      margin-top: 1.2rem;
+      margin-top: 1rem;
       padding: 10px 20px;
-      background-color: #8b4c00;
+      background-color: var(--accent);
       color: white;
       text-decoration: none;
       border-radius: 6px;
       font-size: 0.9rem;
       font-weight: 600;
-      transition: background 0.2s ease;
     }
 
     a.button:hover {
       background-color: #6e3c00;
-    }
-
-    .qr {
-      margin-top: 1.5rem;
-    }
-
-    .qr img {
-      width: 150px;
-      height: 150px;
     }
 
     .map-link {
@@ -78,20 +79,60 @@
       text-decoration: underline;
     }
 
+    .qr {
+      margin-top: 1.5rem;
+    }
+
+    .qr img {
+      width: 140px;
+      height: 140px;
+    }
+
     .social-share {
-      margin-top: 1.2rem;
+      margin-top: 1rem;
       font-size: 0.85rem;
     }
 
-    .social-share a {
+    .social-share a,
+    .copy-btn {
       margin: 0 6px;
       text-decoration: none;
-      color: #8b4c00;
+      color: var(--accent);
       font-weight: 500;
+      cursor: pointer;
     }
 
+    .copy-btn:hover,
     .social-share a:hover {
       text-decoration: underline;
+    }
+
+    .copied {
+      font-size: 0.75rem;
+      color: green;
+      margin-top: 0.3rem;
+      display: none;
+    }
+
+    .details {
+      text-align: left;
+      margin-top: 1rem;
+      background: #fdf7f0;
+      border-radius: 8px;
+      padding: 1rem;
+      font-size: 0.88rem;
+      white-space: pre-line;
+    }
+
+    .copy-wrapper {
+      text-align: right;
+      margin-top: 0.3rem;
+    }
+
+    @media(max-width: 600px) {
+      .container {
+        margin: 1rem;
+      }
     }
   </style>
 </head>
@@ -102,16 +143,22 @@
 
     <p><strong>Venue:</strong><br>
       Art of Living International Center<br>
-      Kanakapura Road, Bengaluru
+      Kanakapura Main Rd, Bengaluru
     </p>
     <a class="map-link" href="https://www.google.com/search?q=Art+of+Living+International+Center+Bengaluru" target="_blank">📍 View on Google Maps</a>
 
-    <p><strong>Timeline:</strong><br>
-      Check-in: 24 Jul 2025, 2:00 pm<br>
-      Starts: 25 Jul @ 9:30 am<br>
-      Ends: 27 Jul @ 5:00 pm<br>
-      Checkout: 28 Jul, 9:30 am
-    </p>
+    <div class="details" id="programDetails">
+      Program Timeline:
+      • Check-in From: 24th Jul 2025, 2:00 pm
+      • Starts: 25th Jul @ 9:30 am
+      • Ends: 27th Jul @ 5:00 pm
+      • Checkout By: 28th Jul, 9:30 am
+      Register: https://programs.vvmvp.org/events/553/
+    </div>
+    <div class="copy-wrapper">
+      <span class="copy-btn" onclick="copyText('programDetails', 'copied1')">📋 Copy Details</span>
+      <div id="copied1" class="copied">Copied!</div>
+    </div>
 
     <a class="button" href="https://programs.vvmvp.org/events/553/" target="_blank">Register Now</a>
 
@@ -123,7 +170,31 @@
       <p><strong>Share:</strong></p>
       <a href="https://api.whatsapp.com/send?text=Join%20me%20for%20Happiness%20Program%20with%20Vishal%20Ji%20%26%20Vikram%20Ji%2C%2025–27%20Jul%2C%20Bengaluru!%20https%3A%2F%2Fprograms.vvmvp.org%2Fevents%2F553%2F" target="_blank">WhatsApp</a>
       <a href="https://www.instagram.com/" target="_blank">Instagram</a>
+      |
+      <span class="copy-btn" onclick="copyLink('https://programs.vvmvp.org/events/553/', 'copied2')">🔗 Copy Link</span>
+      <div id="copied2" class="copied">Link copied!</div>
     </div>
   </div>
+
+  <script>
+    function copyText(id, confirmId) {
+      const el = document.getElementById(id);
+      navigator.clipboard.writeText(el.innerText).then(() => {
+        document.getElementById(confirmId).style.display = 'block';
+        setTimeout(() => {
+          document.getElementById(confirmId).style.display = 'none';
+        }, 2000);
+      });
+    }
+
+    function copyLink(link, confirmId) {
+      navigator.clipboard.writeText(link).then(() => {
+        document.getElementById(confirmId).style.display = 'block';
+        setTimeout(() => {
+          document.getElementById(confirmId).style.display = 'none';
+        }, 2000);
+      });
+    }
+  </script>
 </body>
 </html>
