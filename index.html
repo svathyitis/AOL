@@ -2,163 +2,199 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Happiness Program</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
   <style>
-    body {
+    :root {
+      --primary: #8b4c00;
+      --bg: #fdfbf7;
+      --text: #2b2b2b;
+      --card: #ffffff;
+      --shadow: rgba(0, 0, 0, 0.05);
+      --gray: #e5e5e5;
+    }
+
+    * {
+      box-sizing: border-box;
       margin: 0;
       padding: 0;
+    }
+
+    body {
       font-family: 'Inter', sans-serif;
-      background: #fdf8f2;
+      background-color: var(--bg);
+      color: var(--text);
       display: flex;
       justify-content: center;
       align-items: center;
       min-height: 100vh;
+      padding: 1rem;
     }
 
     .container {
-      max-width: 375px;
+      background: var(--card);
+      padding: 2rem;
+      border-radius: 12px;
+      box-shadow: 0 8px 24px var(--shadow);
+      max-width: 480px;
       width: 100%;
-      background: #fff;
-      padding: 1.5rem;
-      border-radius: 1rem;
-      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.05);
-      text-align: left;
-      color: #3c240a;
     }
 
     h1 {
       font-size: 1.5rem;
-      font-weight: 700;
-      margin-bottom: 0.25rem;
+      color: var(--primary);
+      margin-bottom: 0.5rem;
     }
 
-    h2 {
-      font-size: 1rem;
-      font-weight: 400;
-      color: #888;
-      margin: 0.25rem 0 1rem;
+    .section {
+      margin: 1.25rem 0;
     }
 
-    .location, .timeline, .register, .share-row, .copy-box, .countdown {
-      margin-bottom: 1rem;
-    }
-
-    .location p {
-      margin: 0.25rem 0;
-    }
-
-    .google-maps {
-      background-color: #925108;
-      color: white;
-      text-align: center;
-      padding: 0.6rem 1rem;
-      border-radius: 0.5rem;
-      text-decoration: none;
-      display: inline-block;
-      margin-top: 0.5rem;
+    p {
       font-size: 0.9rem;
+      line-height: 1.5;
+      margin: 0.4rem 0;
     }
 
-    .timeline-entry {
-      margin: 0.2rem 0;
-      padding-left: 0.5rem;
-      border-left: 3px solid #925108;
+    a {
+      color: var(--primary);
+      text-decoration: none;
     }
 
-    .timeline-entry strong {
-      color: #3c240a;
+    a:hover {
+      text-decoration: underline;
     }
 
-    .register a {
-      background-color: #925108;
-      color: white;
-      padding: 0.7rem 1.5rem;
-      border-radius: 0.5rem;
+    .button {
+      display: inline-block;
+      background: var(--primary);
+      color: #fff;
+      padding: 0.7rem 1.4rem;
+      border-radius: 8px;
       font-weight: 600;
-      text-decoration: none;
-      display: inline-block;
-    }
-
-    .share-row {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    .share-row a {
-      color: #925108;
-      font-size: 1.25rem;
-      text-decoration: none;
-    }
-
-    .copy-box textarea {
-      width: 100%;
-      padding: 0.5rem;
-      border: 1px solid #eee;
-      border-radius: 0.5rem;
       font-size: 0.9rem;
-      font-family: monospace;
-      resize: none;
+      margin-top: 1rem;
+      text-align: center;
     }
 
-    .copy-box button {
+    .qr img {
+      width: 100px;
+      margin-top: 1rem;
+    }
+
+    .copy-box {
+      background: var(--gray);
+      padding: 1rem;
+      border-radius: 8px;
+      font-size: 0.8rem;
+      white-space: pre-line;
+      position: relative;
+    }
+
+    .copy-controls {
       margin-top: 0.5rem;
-      background: #eee;
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .icon-btn {
+      background: none;
       border: none;
-      padding: 0.5rem 1rem;
-      border-radius: 0.5rem;
       cursor: pointer;
       font-size: 0.85rem;
+      display: flex;
+      align-items: center;
+      color: var(--primary);
     }
 
-    .countdown {
-      text-align: center;
-      color: #888;
-      font-size: 0.85rem;
+    .icon-btn svg {
+      margin-right: 4px;
+    }
+
+    .feedback {
+      font-size: 0.75rem;
+      color: green;
+      display: none;
+      margin-left: auto;
+    }
+
+    .social {
+      display: flex;
+      gap: 1rem;
+      margin-top: 1.2rem;
+      justify-content: center;
     }
   </style>
 </head>
 <body>
   <div class="container">
     <h1>Happiness Program</h1>
-    <h2>with Vishal Ji & Vikram Ji</h2>
+    <p><strong>With Vishal Ji & Vikram Ji</strong></p>
+    <p>25–27 July 2025</p>
 
-    <div class="location">
-      <p><strong>📍 Location:</strong></p>
-      <p>Art of Living International Center<br>Bengaluru, Karnataka</p>
-      <a class="google-maps" href="https://www.google.com/search?sca_esv=d22a87f29702b322&hl=en&gl=in&output=search&kgmid=/g/11g6nvzp2f&q=Art+of+Living+International+Center" target="_blank">Google Maps</a>
+    <div class="section">
+      <p><strong>Venue:</strong></p>
+      <p>Art of Living International Center<br>Kanakapura Main Road, Bengaluru</p>
+      <a href="https://goo.gl/maps/K7A1Yhtz1yN2" target="_blank">📍 Google Maps</a>
     </div>
 
-    <div class="timeline">
-      <div class="timeline-entry"><strong>24 Jul</strong> – Check-in from 2:00 PM</div>
-      <div class="timeline-entry"><strong>25 Jul</strong> – Program starts at 9:30 AM</div>
-      <div class="timeline-entry"><strong>27 Jul</strong> – Program ends at 5:00 PM</div>
-      <div class="timeline-entry"><strong>28 Jul</strong> – Checkout by 9:30 AM</div>
+    <div class="section">
+      <div class="copy-box" id="detailsText">
+Program Timeline:
+• Check-in: 24 Jul 2025, 2:00 pm
+• Starts: 25 Jul @ 9:30 am
+• Ends: 27 Jul @ 5:00 pm
+• Checkout: 28 Jul, 9:30 am
+Register: https://programs.vvmvp.org/events/553/
+      </div>
+      <div class="copy-controls">
+        <button class="icon-btn" onclick="copyText('detailsText', 'feedback1')">
+          <svg width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path d="M10 1.5a.5.5 0 0 1 .5.5v1h-1v-1h-7v11h7v-1h1v1a.5.5 0 0 1-.5.5h-7A1.5 1.5 0 0 1 2 13V2.5A1.5 1.5 0 0 1 3.5 1h7z"/><path d="M13.5 3a.5.5 0 0 1 .5.5v8.793l-2.146-2.147-.708.708L14.293 13l-3.147 3.146.708.708L15 13.707V3.5a.5.5 0 0 1 .5-.5z"/></svg>
+          Copy
+        </button>
+        <span class="feedback" id="feedback1">Copied!</span>
+      </div>
     </div>
 
-    <div class="register">
-      <a href="https://programs.vvmvp.org/events/553/" target="_blank">Register Today</a>
+    <a class="button" href="https://programs.vvmvp.org/events/553/" target="_blank">Register Now</a>
+
+    <div class="qr">
+      <img src="https://api.qrserver.com/v1/create-qr-code/?data=https://programs.vvmvp.org/events/553/&size=120x120" alt="QR Code">
     </div>
 
-    <div class="share-row">
-      <a href="https://api.whatsapp.com/send?text=Join%20me%20for%20the%20Happiness%20Program%20with%20Vishal%20Ji%20%26%20Vikram%20Ji%20from%2025th%20to%2027th%20July%202025!%20Register%20here%3A%20https%3A%2F%2Fprograms.vvmvp.org%2Fevents%2F553%2F" target="_blank">🟤</a>
-      <a href="https://www.instagram.com/" target="_blank">🟤</a>
-      <a href="#" onclick="navigator.clipboard.writeText(document.getElementById('copyText').value)">🟤</a>
-    </div>
-
-    <div class="copy-box">
-      <textarea id="copyText" rows="3">Happiness Program | 25–27 July 2025
-Vishal Ji & Vikram Ji
-Bangalore Ashram
-https://programs.vvmvp.org/events/553/</textarea>
-      <button onclick="navigator.clipboard.writeText(document.getElementById('copyText').value)">Copy Details</button>
-    </div>
-
-    <div class="countdown">
-      ⏳ Starts in 40d 6h 49m
+    <div class="social">
+      <a href="https://api.whatsapp.com/send?text=Join%20the%20Happiness%20Program%20(25–27%20Jul%202025)%20with%20Vishal%20Ji%20%26%20Vikram%20Ji%20in%20Bengaluru!%20https%3A%2F%2Fprograms.vvmvp.org%2Fevents%2F553%2F" target="_blank">
+        📤 WhatsApp
+      </a>
+      <a href="https://www.instagram.com/" target="_blank">
+        📸 Instagram
+      </a>
+      <button class="icon-btn" onclick="copyTextDirect('https://programs.vvmvp.org/events/553/', 'feedback2')">
+        <svg width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path d="M10 1.5a.5.5 0 0 1 .5.5v1h-1v-1h-7v11h7v-1h1v1a.5.5 0 0 1-.5.5h-7A1.5 1.5 0 0 1 2 13V2.5A1.5 1.5 0 0 1 3.5 1h7z"/><path d="M13.5 3a.5.5 0 0 1 .5.5v8.793l-2.146-2.147-.708.708L14.293 13l-3.147 3.146.708.708L15 13.707V3.5a.5.5 0 0 1 .5-.5z"/></svg>
+        Copy Link
+      </button>
+      <span class="feedback" id="feedback2">Copied!</span>
     </div>
   </div>
+
+  <script>
+    function copyText(id, feedbackId) {
+      const text = document.getElementById(id).innerText;
+      navigator.clipboard.writeText(text);
+      showFeedback(feedbackId);
+    }
+    function copyTextDirect(text, feedbackId) {
+      navigator.clipboard.writeText(text);
+      showFeedback(feedbackId);
+    }
+    function showFeedback(id) {
+      const el = document.getElementById(id);
+      el.style.display = 'inline';
+      setTimeout(() => { el.style.display = 'none'; }, 2000);
+    }
+  </script>
 </body>
 </html>
