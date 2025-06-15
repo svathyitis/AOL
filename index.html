@@ -5,6 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Vishal Merani Programs</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
   <style>
     :root {
       --bg: #f4f6f9;
@@ -63,7 +65,7 @@
       font-size: 0.65rem;
       font-weight: 300;
       margin-bottom: 0.2rem;
-      --text: #E4BFFA;
+      color: #E4BFFA;
     }
 
     h5 {
@@ -104,33 +106,38 @@
       background-color: var(--accent-hover);
     }
 
-    ul.timeline, ul.features {
+    ul.timeline {
       list-style: none;
       padding-left: 0;
-      margin-bottom: 1rem;
+      margin-bottom: 1.5rem;
     }
 
-    ul.features li, ul.timeline li {
+    .timeline li {
       font-size: 0.75rem;
       padding: 5px 0;
-      color: #555;
     }
 
     ul.features {
       list-style: disc;
       padding-left: 1.2rem;
+      margin: 0.5rem 0 1rem;
+    }
+
+    ul.features li {
+      font-size: 0.75rem;
+      color: #888;
+      margin-bottom: 4px;
     }
 
     .copy-box {
       display: flex;
-      flex-wrap: wrap;
+      align-items: center;
       gap: 10px;
       margin-top: 1rem;
-      align-items: center;
     }
 
     .copy-input {
-      flex: 1 1 60%;
+      flex: 1;
       padding: 8px 12px;
       font-size: 0.8rem;
       border: 1px solid var(--border);
@@ -146,11 +153,11 @@
       border: none;
       border-radius: 10px;
       cursor: pointer;
-      color: white;
     }
 
     .copy-btn {
       background-color: #E6E6FA;
+      color: white;
     }
 
     .copy-btn:hover {
@@ -158,7 +165,11 @@
     }
 
     .whatsapp-btn {
-      background-color: #25d366;
+      background-color: #25D366;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
 
     .whatsapp-btn:hover {
@@ -171,17 +182,6 @@
       text-align: center;
       margin-top: 2rem;
     }
-
-    .plain-link {
-      font-size: 0.75rem;
-      color: var(--accent);
-      text-decoration: underline;
-      word-break: break-word;
-    }
-
-    .plain-link:hover {
-      color: var(--accent-hover);
-    }
   </style>
 </head>
 <body>
@@ -193,7 +193,7 @@
     <p class="subtitle">with Vishal Merani</p>
     <div class="info-block">
       <h3>Stress, Sleep, Anxiety</h3>
-      <p class="subtitle">Stop struggling! Decode and Conquer</p>
+      <p class="subtitle"><br>Stop struggling! Decode and Conquer</p>
     </div>
     <div class="info-block">
       <a href="https://aolt.in/883226" class="button" target="_blank">23–25, Register now</a>
@@ -204,14 +204,16 @@
       </ul>
       <ul class="timeline">
         <li>Time: 7:30 PM – 10:00 PM</li>
-        <li><strong>📍 Zoom | Online</strong></li>
+        <p><strong>📍 Zoom | Online</strong></p>
       </ul>
-      <h4> queries & help @ 9818503888 </h4>
+      <h4>queries & help @ 9818503888</h4>
     </div>
     <div class="copy-box">
-      <input class="copy-input" id="copyText1" type="text" value="Deep Sleep & Anxiety Relief | 23–25 June 2025 | Online | Register: https://aolt.in/883226 | Help: 9818503888" readonly>
+      <input class="copy-input" type="text" value="Deep Sleep & Anxiety Relief | 23–25 June 2025\nRegister: https://aolt.in/883226\nHelp: 9818503888" id="copyText1" readonly>
       <button class="copy-btn" onclick="copyToClipboard('copyText1', this)">Copy</button>
-      <a class="whatsapp-btn" target="_blank" href="https://wa.me/?text=Deep%20Sleep%20%26%20Anxiety%20Relief%20%7C%2023–25%20June%202025%20%7C%20Online%20%7C%20Register:%20https://aolt.in/883226%20%7C%20Help:%209818503888">Share</a>
+      <button class="whatsapp-btn" onclick="shareOnWhatsApp(document.getElementById('copyText1').value)">
+        <i class="fab fa-whatsapp"></i>
+      </button>
     </div>
     <div class="footer">💤 23–25 June 2025 | Evening ♡ Online Sessions</div>
   </div>
@@ -229,7 +231,7 @@
     <ul class="timeline">
       <li>24 Jul – Check-in after noon</li>
       <li><strong>25 Jul</strong> – Program starts at 9:30 AM</li>
-      <li><strong>27 Jul</strong> – Ends at 5:30 PM</li>
+      <li><strong>27 Jul</strong> – Program ends at 5:30 PM</li>
       <li>28 Jul – Check-out by Noon</li>
     </ul>
     <h5>Complimentary at Ashram</h5>
@@ -241,15 +243,17 @@
     </ul>
     <div class="info-block">
       <ul class="timeline">
-        <li><strong>📍 Art of Living International Center</strong><br>Bengaluru, Karnataka</li>
+        <li><strong>📍 Art of Living International Center</strong> Bengaluru, Karnataka</li>
       </ul>
       <a href="https://maps.google.com/?q=Art+of+Living+International+Center+Bengaluru" class="button" target="_blank">On Maps</a>
-      <h4> queries & help @ 9818503888 </h4>
+      <h4>queries & help @ 9818503888</h4>
     </div>
     <div class="copy-box">
-      <input class="copy-input" id="copyText2" type="text" value="Happiness Program | 25–27 July 2025 | Bangalore Ashram | Register: https://programs.vvmvp.org/events/553/ | Help: 9818503888" readonly>
+      <input class="copy-input" type="text" value="Happiness Program | 25–27 July 2025\nRegister: https://programs.vvmvp.org/events/553/\nHelp: 9818503888" id="copyText2" readonly>
       <button class="copy-btn" onclick="copyToClipboard('copyText2', this)">Copy</button>
-      <a class="whatsapp-btn" target="_blank" href="https://wa.me/?text=Happiness%20Program%20%7C%2025–27%20July%202025%20%7C%20Bangalore%20Ashram%20%7C%20Register:%20https://programs.vvmvp.org/events/553/%20%7C%20Help:%209818503888">Share</a>
+      <button class="whatsapp-btn" onclick="shareOnWhatsApp(document.getElementById('copyText2').value)">
+        <i class="fab fa-whatsapp"></i>
+      </button>
     </div>
     <div class="footer">🦦🤌🏻 Starts on 25 July 2025 | Bangalore ♡ Ashram</div>
   </div>
@@ -261,38 +265,48 @@
     <p class="subtitle">with Vishal Merani</p>
     <div class="info-block">
       <h3>Lapse into meditation in minutes</h3>
-      <p class="subtitle">Feel Good 😌 Live Light 🪶</p>
+      <p class="subtitle"><br>Feel Good 😌 Live Light 🪶</p>
     </div>
-    <ul class="features">
-      <li>Personal</li>
-      <li>Customized</li>
-      <li>Yours</li>
-    </ul>
-    <ul class="timeline">
-      <li>Happening every week</li>
-      <li><strong>📍 Zoom | Online</strong></li>
-    </ul>
-    <h4> queries & help @ 9818503888 </h4>
+    <div class="info-block">
+      <ul class="features">
+        <li>Personal</li>
+        <li>Customized</li>
+        <li>Yours</li>
+      </ul>
+      <ul class="timeline">
+        <li>Happening every week</li>
+        <p><strong>📍 Zoom | Online</strong></p>
+      </ul>
+      <h4>queries & help @ 9818503888</h4>
+    </div>
     <div class="copy-box">
-      <input class="copy-input" id="copyText3" type="text" value="Sahaj Samadhi Meditation | Weekly 2025 | Online | Help: 9818503888" readonly>
+      <input class="copy-input" type="text" value="Sahaj Samadhi Meditation | Weekly in 2025\nHelp: 9818503888" id="copyText3" readonly>
       <button class="copy-btn" onclick="copyToClipboard('copyText3', this)">Copy</button>
-      <a class="whatsapp-btn" target="_blank" href="https://wa.me/?text=Sahaj%20Samadhi%20Meditation%20%7C%20Weekly%202025%20%7C%20Online%20%7C%20Help:%209818503888">Share</a>
+      <button class="whatsapp-btn" onclick="shareOnWhatsApp(document.getElementById('copyText3').value)">
+        <i class="fab fa-whatsapp"></i>
+      </button>
     </div>
     <div class="footer">🧘🏻‍♂️ 3 days only | Pick a Week | ♡ Online Sessions</div>
   </div>
 
   <script>
-    function copyToClipboard(id, button) {
-      const copyText = document.getElementById(id);
+    function copyToClipboard(id, btn) {
+      var copyText = document.getElementById(id);
       copyText.select();
       copyText.setSelectionRange(0, 99999);
-      navigator.clipboard.writeText(copyText.value).then(() => {
-        const original = button.textContent;
-        button.textContent = "Copied!";
-        setTimeout(() => button.textContent = original, 2000);
-      });
+      navigator.clipboard.writeText(copyText.value);
+
+      const originalText = btn.innerText;
+      btn.innerText = "Copied!";
+      setTimeout(() => {
+        btn.innerText = originalText;
+      }, 1500);
+    }
+
+    function shareOnWhatsApp(text) {
+      const url = `https://wa.me/?text=${encodeURIComponent(text)}`;
+      window.open(url, '_blank');
     }
   </script>
-
 </body>
 </html>
