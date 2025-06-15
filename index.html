@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title> Vishal Merani </title>
+  <title>Vishal Merani</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
   <style>
     :root {
@@ -11,7 +11,7 @@
       --text: #1c1c1e;
       --muted: #777;
       --border: #d9e1ec;
-      --accent: #9089f5; /* Softer visible lavender */
+      --accent: #9089f5;
       --accent-hover: #8473c6;
       --box-bg: #ffffff;
     }
@@ -28,15 +28,32 @@
       color: var(--text);
       display: flex;
       justify-content: center;
-      align-items: center;
+      align-items: flex-start;
       padding: 40px 16px;
       min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    .slide-container {
+      display: flex;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      gap: 16px;
+      padding-bottom: 32px;
+      -webkit-overflow-scrolling: touch;
+      width: 100%;
+    }
+
+    .slide {
+      scroll-snap-align: center;
+      flex: 0 0 100%;
+      max-width: 390px;
+      margin: auto;
     }
 
     .iphone-frame {
       background: var(--box-bg);
       border-radius: 36px;
-      max-width: 390px;
       width: 100%;
       box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
       padding: 32px 24px;
@@ -49,7 +66,7 @@
       margin-bottom: 0.25rem;
       color: var(--text);
     }
-   
+
     h2 {
       font-size: 1.3rem;
       font-weight: 500;
@@ -127,20 +144,20 @@
       font-family: monospace;
     }
 
-.copy-btn {
-  padding: 8px 12px;
-  background-color: #E6E6FA; /* Just hardcoded lavender */
-  color: white;
-  font-size: 0.8rem;
-  font-weight: 600;
-  border: none;
-  border-radius: 10px;
-  cursor: pointer;
-}
+    .copy-btn {
+      padding: 8px 12px;
+      background-color: #E6E6FA;
+      color: white;
+      font-size: 0.8rem;
+      font-weight: 600;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+    }
 
-.copy-btn:hover {
-  background-color: #734f96; /* Darker lavender on hover */
-}
+    .copy-btn:hover {
+      background-color: #734f96;
+    }
 
     .footer {
       font-size: 0.75rem;
@@ -169,35 +186,58 @@
   </style>
 </head>
 <body>
-  <div class="iphone-frame">
-    <h1> This July, </h1>
-<h2>Happiness Program</h2>
-    <p class="subtitle">with Vishal Ji & Vikram Ji</p>
-  <p class="subtitle"> In person | English, Hindi </p> 
-<div class="info-block">
-      <a href="https://programs.vvmvp.org/events/553/" class="button" target="_blank">Register here</a>
-</div>
+  <div class="slide-container">
+    <!-- Slide 1 -->
+    <section class="iphone-frame slide">
+      <h1>This July,</h1>
+      <h2>Happiness Program</h2>
+      <p class="subtitle">with Vishal Ji & Vikram Ji</p>
+      <p class="subtitle">In person | English, Hindi</p>
+      <div class="info-block">
+        <a href="https://programs.vvmvp.org/events/553/" class="button" target="_blank">Register here</a>
+      </div>
+      <ul class="timeline">
+        <li><strong>24 Jul</strong> – Check-in from 2:00 PM</li>
+        <li><strong>25 Jul</strong> – Program starts at 9:30 AM</li>
+        <li><strong>27 Jul</strong> – Program ends at 5:00 PM</li>
+        <li><strong>28 Jul</strong> – Check-out by 9:30 AM</li>
+      </ul>
+      <div class="info-block">
+        <p><strong>📍 Location</strong>
+        Art of Living International Center<br>
+        Bengaluru, Karnataka</p>
+        <a href="https://maps.google.com/?q=Art+of+Living+International+Center+Bengaluru" class="button" target="_blank">View on Maps</a>
+      </div>
+      <div class="copy-box">
+        <input class="copy-input" type="text" value="Happiness Program | 25–27 July 2025" id="copyText" readonly>
+        <button class="copy-btn" onclick="copyToClipboard()">Copy</button>
+      </div>
+      <div class="footer">🧘‍♂️ Starts on 25 July 2025 | Bangalore ♡ Ashram</div>
+    </section>
 
-    <ul class="timeline">
-      <li><strong>24 Jul</strong> – Check-in from 2:00 PM</li>
-      <li><strong>25 Jul</strong> – Program starts at 9:30 AM</li>
-      <li><strong>27 Jul</strong> – Program ends at 5:00 PM</li>
-      <li><strong>28 Jul</strong> – Check-out by 9:30 AM</li>
-    </ul>
-
-    <div class="info-block">
-      <p><strong>📍 Location</strong>
-      Art of Living International Center<br>
-      Bengaluru, Karnataka</p>
-      <a href="https://maps.google.com/?q=Art+of+Living+International+Center+Bengaluru" class="button" target="_blank">View on Maps</a>
-    </div>
-
-    <div class="copy-box">
-      <input class="copy-input" type="text" value="Happiness Program | 25–27 July 2025" id="copyText" readonly>
-      <button class="copy-btn" onclick="copyToClipboard()">Copy</button>
-    </div>
-
-    <div class="footer"> 🧘‍♂️ Starts on 25 July 2025 | Bangalore ♡ Ashram</div>
+    <!-- Slide 2 -->
+    <section class="iphone-frame slide">
+      <h1>Deep Sleep & Anxiety Relief</h1>
+      <h2>New Techniques by Gurudev</h2>
+      <p class="subtitle">Curated by Gurudev for stress-free nights ✨</p>
+      <div class="info-block">
+        <p>🌊 Powerful breathwork to activate your vagus nerve</p>
+        <p>🌙 Sleep hygiene tips for deep, uninterrupted rest</p>
+        <p>⚡ Reset your nervous system & wake up refreshed</p>
+        <p><strong>Facilitator:</strong> Vishal Merani</p>
+      </div>
+      <ul class="timeline">
+        <li><strong>18–20 June 2025</strong></li>
+        <li><strong>Time:</strong> 7:30 PM – 10:00 PM</li>
+      </ul>
+      <div class="info-block">
+        <a href="https://aolt.in/883226" class="button" target="_blank">Register</a>
+      </div>
+      <div class="info-block">
+        <p><strong>Need help?</strong></p>
+        <p>Madhusmita Routray<br>📞 9818503888<br>📧 madhu.routray@gmail.com</p>
+      </div>
+    </section>
   </div>
 
   <script>
