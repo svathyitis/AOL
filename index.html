@@ -59,19 +59,17 @@
       background-color: #E6FFFA;
     }
 
-  h4 {
+    h4 {
       font-size: 0.65rem;
       font-weight: 300;
       margin-bottom: 0.2rem;
-    
       --text: #E4BFFA;
     }
 
-  h5 {
+    h5 {
       font-size: 0.75rem;
       font-weight: 600;
       margin-bottom: 0.4rem;
-
     }
 
     .subtitle {
@@ -87,12 +85,6 @@
     .info-block p {
       font-size: 0.92rem;
       line-height: 1.5;
-    }
-
-    .info-block strong {
-      display: block;
-      font-weight: 600;
-      margin-bottom: 4px;
     }
 
     .button {
@@ -112,42 +104,33 @@
       background-color: var(--accent-hover);
     }
 
-    ul.timeline {
+    ul.timeline, ul.features {
       list-style: none;
       padding-left: 0;
-      margin-bottom: 1.5rem;
+      margin-bottom: 1rem;
     }
 
-    .timeline li {
+    ul.features li, ul.timeline li {
       font-size: 0.75rem;
       padding: 5px 0;
-    }
-
-    .timeline li strong {
-      font-weight: 600;
+      color: #555;
     }
 
     ul.features {
       list-style: disc;
       padding-left: 1.2rem;
-      margin: 0.5rem 0 1rem;
-    }
-
-    ul.features li {
-      font-size: 0.75rem;
-      color: #888;
-      margin-bottom: 4px;
     }
 
     .copy-box {
       display: flex;
-      align-items: center;
+      flex-wrap: wrap;
       gap: 10px;
       margin-top: 1rem;
+      align-items: center;
     }
 
     .copy-input {
-      flex: 1;
+      flex: 1 1 60%;
       padding: 8px 12px;
       font-size: 0.8rem;
       border: 1px solid var(--border);
@@ -156,19 +139,30 @@
       font-family: monospace;
     }
 
-    .copy-btn {
+    .copy-btn, .whatsapp-btn {
       padding: 8px 12px;
-      background-color: #E6E6FA;
-      color: white;
       font-size: 0.75rem;
       font-weight: 600;
       border: none;
       border-radius: 10px;
       cursor: pointer;
+      color: white;
+    }
+
+    .copy-btn {
+      background-color: #E6E6FA;
     }
 
     .copy-btn:hover {
       background-color: #734f96;
+    }
+
+    .whatsapp-btn {
+      background-color: #25d366;
+    }
+
+    .whatsapp-btn:hover {
+      background-color: #1da851;
     }
 
     .footer {
@@ -192,118 +186,113 @@
 </head>
 <body>
 
-  <!-- Card 1: June Sleep & Anxiety Program -->
+  <!-- Card 1 -->
   <div class="iphone-frame">
     <h1>This June,</h1>
     <h2>Discover DSAR</h2>
     <p class="subtitle">with Vishal Merani</p>
     <div class="info-block">
       <h3>Stress, Sleep, Anxiety</h3>
-      <p class="subtitle"><br>Stop struggling! Decode and Conquer</p>
+      <p class="subtitle">Stop struggling! Decode and Conquer</p>
     </div>
     <div class="info-block">
       <a href="https://aolt.in/883226" class="button" target="_blank">23–25, Register now</a>
-
       <ul class="features">
-
-<br>        <li>To calm anxiety</li>
+        <li>To calm anxiety</li>
         <li>For better sleep</li>
         <li>Activate relaxation</li>
-<br>      </ul>
-
+      </ul>
       <ul class="timeline">
         <li>Time: 7:30 PM – 10:00 PM</li>
-        <p><strong>📍 Zoom | Online</strong></p>
+        <li><strong>📍 Zoom | Online</strong></li>
       </ul>
-  <h4> queries & help @ 9818503888 </h4>
+      <h4> queries & help @ 9818503888 </h4>
     </div>
-
     <div class="copy-box">
-      <input class="copy-input" type="text" value="Deep Sleep & Anxiety Relief | 23–25 June 2025" id="copyText2" readonly>
-      <button class="copy-btn" onclick="copyToClipboard('copyText2')">Copy</button>
+      <input class="copy-input" id="copyText1" type="text" value="Deep Sleep & Anxiety Relief | 23–25 June 2025 | Online | Register: https://aolt.in/883226 | Help: 9818503888" readonly>
+      <button class="copy-btn" onclick="copyToClipboard('copyText1', this)">Copy</button>
+      <a class="whatsapp-btn" target="_blank" href="https://wa.me/?text=Deep%20Sleep%20%26%20Anxiety%20Relief%20%7C%2023–25%20June%202025%20%7C%20Online%20%7C%20Register:%20https://aolt.in/883226%20%7C%20Help:%209818503888">Share</a>
     </div>
-
     <div class="footer">💤 23–25 June 2025 | Evening ♡ Online Sessions</div>
   </div>
 
-  <!-- Card 2: July Happiness Program -->
+  <!-- Card 2 -->
   <div class="iphone-frame">
     <h1>This July,</h1>
     <h2>Happiness Program</h2>
-    <p class="subtitle">with Vishal Merani </p>
-<h3>Hyper Detox with Sudarshan Kriya</h3>
+    <p class="subtitle">with Vishal Merani</p>
+    <h3>Hyper Detox with Sudarshan Kriya</h3>
     <p class="subtitle">In person | English, Hindi</p>
-
     <div class="info-block">
-      <a href="https://programs.vvmvp.org/events/553/" class="button" target="_blank"> 25-27, Register here</a>
+      <a href="https://programs.vvmvp.org/events/553/" class="button" target="_blank">25–27, Register here</a>
     </div>
-
     <ul class="timeline">
-      <li>24 Jul – Check-in after noon </li>
+      <li>24 Jul – Check-in after noon</li>
       <li><strong>25 Jul</strong> – Program starts at 9:30 AM</li>
-      <li><strong>27 Jul</strong> – Program ends at 5:30 PM </li>
-      <li>28 Jul – Check-out by Noon </li> 
-    </ul> 
-
-    <h5>Complimentary at Ashram </h5> 
- <ul class="features">
-     <li> Rudra pooja meditation on Mondays</li>
-      <li> Regular follow-ups</li>
-      <li> Sattvic food</li>
-    <h4> <li> Free Course repeats outside ashram </li> </h4>
+      <li><strong>27 Jul</strong> – Ends at 5:30 PM</li>
+      <li>28 Jul – Check-out by Noon</li>
+    </ul>
+    <h5>Complimentary at Ashram</h5>
+    <ul class="features">
+      <li>Rudra pooja meditation on Mondays</li>
+      <li>Regular follow-ups</li>
+      <li>Sattvic food</li>
+      <li>Free Course repeats outside ashram</li>
     </ul>
     <div class="info-block">
-  <ul class="timeline">
-        <li>
-    <strong> 📍  Art of Living International Center</strong>
-        Bengaluru, Karnataka
-</li>
+      <ul class="timeline">
+        <li><strong>📍 Art of Living International Center</strong><br>Bengaluru, Karnataka</li>
+      </ul>
       <a href="https://maps.google.com/?q=Art+of+Living+International+Center+Bengaluru" class="button" target="_blank">On Maps</a>
+      <h4> queries & help @ 9818503888 </h4>
     </div>
-  <h4> queries & help @ 9818503888 </h4>
     <div class="copy-box">
-      <input class="copy-input" type="text" value="Happiness Program | 25–27 July 2025" id="copyText1" readonly>
-      <button class="copy-btn" onclick="copyToClipboard('copyText1')">Copy</button>
+      <input class="copy-input" id="copyText2" type="text" value="Happiness Program | 25–27 July 2025 | Bangalore Ashram | Register: https://programs.vvmvp.org/events/553/ | Help: 9818503888" readonly>
+      <button class="copy-btn" onclick="copyToClipboard('copyText2', this)">Copy</button>
+      <a class="whatsapp-btn" target="_blank" href="https://wa.me/?text=Happiness%20Program%20%7C%2025–27%20July%202025%20%7C%20Bangalore%20Ashram%20%7C%20Register:%20https://programs.vvmvp.org/events/553/%20%7C%20Help:%209818503888">Share</a>
     </div>
-
     <div class="footer">🦦🤌🏻 Starts on 25 July 2025 | Bangalore ♡ Ashram</div>
   </div>
 
-  <script>
-    function copyToClipboard(id) {
-      var copyText = document.getElementById(id);
-      copyText.select();
-      copyText.setSelectionRange(0, 99999);
-      navigator.clipboard.writeText(copyText.value);
-    }
-  </script>
-
-  <!-- Card 3: Learn Sahaj, the Sahaj way -->
+  <!-- Card 3 -->
   <div class="iphone-frame">
-    <h1> Weekly,</h1>
-    <h2> Online </h2>
+    <h1>Weekly,</h1>
+    <h2>Online</h2>
     <p class="subtitle">with Vishal Merani</p>
     <div class="info-block">
       <h3>Lapse into meditation in minutes</h3>
-      <p class="subtitle"><br>Feel Good 😌 Live Light 🪶 </p>
+      <p class="subtitle">Feel Good 😌 Live Light 🪶</p>
     </div>
-    <div class="info-block">
-      <ul class="features">
-        <li>Personal</li>
-        <li>Customized</li>
-        <li>Yours</li>
-      </ul>
-      <ul class="timeline">
-        <li>Happening every week </li>
-        <p><strong>📍 Zoom | Online</strong></p>
-      </ul>
-  <h4> queries & help @ 9818503888 </h4> 
-    </div>
+    <ul class="features">
+      <li>Personal</li>
+      <li>Customized</li>
+      <li>Yours</li>
+    </ul>
+    <ul class="timeline">
+      <li>Happening every week</li>
+      <li><strong>📍 Zoom | Online</strong></li>
+    </ul>
+    <h4> queries & help @ 9818503888 </h4>
     <div class="copy-box">
-      <input class="copy-input" type="text" value="Sahaj Samadhi Meditation | Weekly in 2025" id="copyText2" readonly>
-      <button class="copy-btn" onclick="copyToClipboard('copyText2')">Copy</button>
+      <input class="copy-input" id="copyText3" type="text" value="Sahaj Samadhi Meditation | Weekly 2025 | Online | Help: 9818503888" readonly>
+      <button class="copy-btn" onclick="copyToClipboard('copyText3', this)">Copy</button>
+      <a class="whatsapp-btn" target="_blank" href="https://wa.me/?text=Sahaj%20Samadhi%20Meditation%20%7C%20Weekly%202025%20%7C%20Online%20%7C%20Help:%209818503888">Share</a>
     </div>
-    <div class="footer"> 🧘🏻‍♂️ 3 days only | Pick a Week | ♡ Online Sessions</div>
+    <div class="footer">🧘🏻‍♂️ 3 days only | Pick a Week | ♡ Online Sessions</div>
   </div>
+
+  <script>
+    function copyToClipboard(id, button) {
+      const copyText = document.getElementById(id);
+      copyText.select();
+      copyText.setSelectionRange(0, 99999);
+      navigator.clipboard.writeText(copyText.value).then(() => {
+        const original = button.textContent;
+        button.textContent = "Copied!";
+        setTimeout(() => button.textContent = original, 2000);
+      });
+    }
+  </script>
+
 </body>
 </html>
