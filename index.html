@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Vishal Merani </title>
+  <title>Vishal Merani</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
   <style>
     :root {
@@ -25,7 +25,7 @@
     body {
       font-family: 'Inter', sans-serif;
       background: var(--bg);
-      color: var(--text); 
+      color: var(--text);
       padding: 22px 14px;
     }
 
@@ -38,52 +38,45 @@
       box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
       padding: 30px 22px;
       border: 1px solid var(--border);
+      position: relative;
+      z-index: 1;
+      overflow: hidden;
+      box-shadow: 0 0 0.5px rgba(144, 137, 245, 0.5);
     }
 
-    h1 {
-      font-size: 1.4rem;
-      font-weight: 600;
-      margin-bottom: 0.25rem;
+    .iphone-frame::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      border-radius: 36px;
+      pointer-events: none;
+      z-index: -1;
+      border: 1.5px solid transparent;
+      background: linear-gradient(135deg, #9089f5, #f093fb, #9089f5) border-box;
+      mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
+      -webkit-mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
+      mask-composite: exclude;
+      -webkit-mask-composite: destination-out;
+      animation: subtlePulse 6s ease-in-out infinite;
     }
 
-    h2 {
-      font-size: 1.25rem;
-      font-weight: 500;
-      margin-bottom: 0.4rem;
+    @keyframes subtlePulse {
+      0%, 100% { opacity: 0.2; }
+      50% { opacity: 0.4; }
     }
 
-    h3 {
-      font-size: 1.1rem;
-      font-weight: 400;
-      margin: 1rem 0 0.3rem;
-    }
+    h1 { font-size: 1.4rem; font-weight: 600; margin-bottom: 0.25rem; }
+    h2 { font-size: 1.25rem; font-weight: 500; margin-bottom: 0.4rem; }
+    h3 { font-size: 1.1rem; font-weight: 400; margin: 1rem 0 0.3rem; }
+    h4 { font-size: 0.7rem; font-weight: 400; margin: 0.5rem 0; }
+    h5 { font-size: 0.8rem; font-weight: 600; margin: 0.8rem 0 0.3rem; }
 
-    h4 {
-      font-size: 0.7rem;
-      font-weight: 400;
-      margin: 0.5rem 0;
-    }
-
-    h5 {
-      font-size: 0.8rem;
-      font-weight: 600;
-      margin: 0.8rem 0 0.3rem;
-    }
-
-    .subtitle {
-      font-size: 0.875rem;
-      color: var(--muted);
-      margin-bottom: 1rem;
-    }
-
-    .info-block {
-      margin-bottom: 1.4rem;
-    }
-
-    .info-block p {
-      font-size: 0.92rem;
-      line-height: 1.5;
-    }
+    .subtitle { font-size: 0.875rem; color: var(--muted); margin-bottom: 1rem; }
+    .info-block { margin-bottom: 1.4rem; }
+    .info-block p { font-size: 0.92rem; line-height: 1.5; }
 
     .button {
       display: inline-block;
@@ -98,9 +91,7 @@
       transition: background 0.2s ease;
     }
 
-    .button:hover {
-      background-color: var(--accent-hover);
-    }
+    .button:hover { background-color: var(--accent-hover); }
 
     ul.timeline, ul.features {
       list-style: none;
@@ -113,9 +104,7 @@
       padding: 3px 0;
     }
 
-    .features li {
-      color: #555;
-    }
+    .features li { color: #555; }
 
     .copy-box {
       display: flex;
@@ -132,6 +121,7 @@
       border-radius: 10px;
       background: #f9fafc;
       font-family: monospace;
+      transition: background 0.3s, color 0.3s;
     }
 
     .copy-btn {
@@ -143,6 +133,7 @@
       border: none;
       border-radius: 10px;
       cursor: pointer;
+      transition: background 0.3s, color 0.3s;
     }
 
     .copy-btn:hover {
@@ -166,380 +157,74 @@
       margin-top: 1.8rem;
     }
 
-.iphone-frame {
-  position: relative;
-  z-index: 1;
-  border-radius: 36px;
-  overflow: hidden;
-  border: 1px solid var(--border); /* keep existing border */
-  box-shadow: 0 0 0.5px rgba(144, 137, 245, 0.5);
-}
+    .location-text, .queries-text { color: var(--location-color); }
 
-.iphone-frame::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  border-radius: 36px;
-  pointer-events: none;
-  z-index: -1;
-  border: 1.5px solid transparent;
-  background: linear-gradient(135deg, #9089f5, #f093fb, #9089f5) border-box;
-  mask: 
-    linear-gradient(#fff 0 0) padding-box, 
-    linear-gradient(#fff 0 0);
-  -webkit-mask: 
-    linear-gradient(#fff 0 0) padding-box, 
-    linear-gradient(#fff 0 0);
-  mask-composite: exclude;
-  -webkit-mask-composite: destination-out;
-  animation: subtlePulse 6s ease-in-out infinite;
-}
-
-@keyframes subtlePulse {
-  0%, 100% {
-    opacity: 0.2;
-  }
-  50% {
-    opacity: 0.4;
-  }
-}
-
-.copy-input, .copy-btn {
-  transition: background 0.3s, color 0.3s;
-}
-
-.location-text, .queries-text {
-  color: var(--location-color);
-}
-
-body.dark h1,
-body.dark h2,
-body.dark h3 {
-  color: #b69ad4;
-}
-
-
+    body.dark h1, body.dark h2, body.dark h3 {
+      color: #b69ad4;
+    }
   </style>
-
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-QL72FZ9YZ2"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-QL72FZ9YZ2');
-</script>
-
 </head>
-
 <body>
+  <!-- Moon Toggle Top -->
+  <div style="display:flex; justify-content:flex-end; max-width:390px; margin:0 auto; padding:16px 22px">
+    <svg class="moon-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="#6a5799" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="cursor:pointer; transition:transform 0.3s ease;">
+      <path d="M21 12.79A9 9 0 0112.21 3a7 7 0 100 14.58A9 9 0 0021 12.79z"/>
+    </svg>
+  </div>
 
-<!-- Moon Toggle (Vector style) -->
-<div id="mode-toggle" style="
-  position: relative;
-  width: 100%;
-  max-width: 390px;
-  margin: 0 auto;
-  display: flex;
-  justify-content: flex-end;
-  padding: 16px 22px;
-">
-  <svg id="moon-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="#6a5799" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-moon" style="cursor: pointer; transition: transform 0.3s ease;">
-    <path d="M21 12.79A9 9 0 0112.21 3a7 7 0 100 14.58A9 9 0 0021 12.79z"/>
-  </svg>
-</div>
-
-
-  <!-- Card 1 -->
+  <!-- Example Frame -->
   <div class="iphone-frame">
     <h1>This June,</h1>
     <h2>Discover DSAR</h2>
     <p class="subtitle">with Vishal Merani</p>
     <h3>Stress, Sleep, Anxiety</h3>
     <p class="subtitle">Stop struggling! Decode and conquer</p>
-
-    <a href="https://www.artofliving.online/registration.php?event_id=883226" class="button" target="_blank"> Booked, see you soon </a>
-
-    <ul class="features">
-      <li>To calm anxiety</li>
-      <li>For better sleep</li>
-      <li>Activate relaxation</li>
-    </ul>
-
-    <ul class="timeline">
-      <li>Time: 7:00 PM – 9:30 PM</li>
-     <li class="location-text"><strong>📍 Zoom | Online</strong></li>
-
-    </ul>
-
-    <h4 class="queries-text">Queries & help @ 9818503888</h4>
-
-    <div class="copy-box">
-      <input class="copy-input" type="text" value="Deep Sleep & Anxiety Relief | 25–27 June 2025 | https://aolt.in/883226 | Help: 9818503888" id="copyText1" readonly>
-      <button class="copy-btn" onclick="copyToClipboard('copyText1', this)">Copy</button>
-      <a class="wa-icon" target="_blank" id="waLink1" title="Share on WhatsApp"></a>
-    </div>
-
     <div class="footer">💤 25–27 June 2025 | Evening ♡ Online Sessions <br>
-ॐ  Jai Guru Dev ॐ
-</div>
+      ॐ  Jai Guru Dev ॐ</div>
   </div>
 
-<!-- Card 2.1 -->
-  <div class="iphone-frame">
-    <h1>This July,</h1>
-    <h2>Happiness Program</h2>
-    <p class="subtitle">with Vishal Merani & Anurag Kukreja</p>
-    <h3>Hyper Detox with Sudarshan Kriya</h3>
-    <p class="subtitle"> In person | English, Hindi</p>
-
-    <a href="https://www.artofliving.org/in-en/program/882303" class="button" target="_blank"> July 04–06, Register here </a>
-
-    <ul class="timeline">
-      <li><strong> 04, 05, 06 Jul</strong> – 6:00 AM to 9:00 AM</li>
-    </ul>
-
-    <h5> Free repeats anywhere in India </h5>
-
-    <ul class="timeline">
-      <li> 📍 Aerobics Room, Galaxy Club, Brigade Gateway, Rajajinagar, Bangalore North, 560055</li>
-    </ul>
-
-  <h4 class="queries-text">Queries & help @ 9818503888</h4>
-
-    <div class="copy-box">
-      <input class="copy-input" type="text" value="Happiness Program | 04–06 July 2025 | https://programs.vvmvp.org/events/882303 | Help: 9818503888" id="copyText2" readonly>
-      <button class="copy-btn" onclick="copyToClipboard('copyText2', this)">Copy</button>
-      <a class="wa-icon" target="_blank" id="waLink2" title="Share on WhatsApp"></a>
-    </div>
-
-    <div class="footer">🦦🤌🏻 Starts 04 July 2025 | Bangalore ♡ <br>
-ॐ  Jai Guru Dev ॐ
-</div>
+  <!-- Moon Toggle Bottom -->
+  <div style="display:flex; justify-content:flex-end; max-width:390px; margin:0 auto; padding:16px 22px">
+    <svg class="moon-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="#6a5799" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="cursor:pointer; transition:transform 0.3s ease;">
+      <path d="M21 12.79A9 9 0 0112.21 3a7 7 0 100 14.58A9 9 0 0021 12.79z"/>
+    </svg>
   </div>
-  <!-- Card 2.2 -->
-  <div class="iphone-frame">
-    <h1>This July,</h1>
-    <h2>Happiness Program</h2>
-    <p class="subtitle">with Vishal Merani</p>
-    <h3>Hyper Detox with Sudarshan Kriya</h3>
-    <p class="subtitle">In person | English, Hindi</p>
-
-    <a href="https://programs.vvmvp.org/events/553/" class="button" target="_blank"> July 25–27, Register here</a>
-
-    <ul class="timeline">
-      <li>24 Jul – Check-in after noon</li>
-      <li><strong>25 Jul</strong> – Starts 9:30 AM</li>
-      <li><strong>27 Jul</strong> – Ends 5:30 PM</li>
-      <li>28 Jul – Check-out by Noon</li>
-    </ul>
-
-    <h5>Complimentary at Ashram</h5>
-    <ul class="features">
-      <li>Rudra pooja meditation on Mondays</li>
-      <li>Regular follow-ups</li>
-      <li>Sattvic food</li>
-      <li>Free repeats outside ashram</li>
-    </ul>
-
-    <ul class="timeline">
-      <li><strong>📍 Art of Living International Center</strong><br>Bengaluru, Karnataka</li>
-    </ul>
-
-    <a href="https://maps.google.com/?q=Art+of+Living+International+Center+Bengaluru" class="button" target="_blank">On Maps</a>
-
-   <h4 class="queries-text">Queries & help @ 9818503888</h4>
-
-    <div class="copy-box">
-      <input class="copy-input" type="text" value="Happiness Program | 25–27 July 2025 | https://programs.vvmvp.org/events/553 | Help: 9818503888" id="copyText2" readonly>
-      <button class="copy-btn" onclick="copyToClipboard('copyText2', this)">Copy</button>
-      <a class="wa-icon" target="_blank" id="waLink2" title="Share on WhatsApp"></a>
-    </div>
-
-    <div class="footer">🦦🤌🏻 Starts 25 July 2025 | Bangalore ♡ Ashram <br>
-ॐ  Jai Guru Dev ॐ
-</div>
-  </div>
-
-  <!-- Card 3 -->
-  <div class="iphone-frame">
-    <h1>mostly Monthly,</h1>
-    <h2>Online</h2>
-    <p class="subtitle">with Vishal Merani</p>
-    <h3>Lapse into meditation in minutes</h3>
-    <p class="subtitle">Feel Good 😌 Live Light 🪶</p>
-    <li>⤷ Morning </li>
-    <a href="https://www.artofliving.online/registration.php?event_id=883701" class="button" target="_blank">July 01-03, 7a-9a IST, Register here</a>
-    <li>⤷ Evening </li>    
-   <a href="https://www.artofliving.org/in-en/program/876667" class="button" target="_blank">July 13-15, 7p-9p IST, Register here</a>
-
-    <ul class="features">
-      <li>⤷ Personal</li>
-      <li>⤷ Customized</li>
-      <li>⤷ Yours</li>
-    </ul>
-
-    <ul class="timeline">
-      <li>Happening monthly-ish, tops</li>
-      <li>We'll touch base regularly, join whatsapp 💬 </li> 
-      <li class="location-text"><strong>📍 Zoom | Online</strong></li>
-
-    </ul>
-
-   <h4 class="queries-text">Queries & help @ 9818503888</h4>
-
-    <div class="copy-box">
-      <input class="copy-input" type="text" value="Sahaj Samadhi Meditation | Weekly | Help: 9818503888" id="copyText3" readonly>
-      <button class="copy-btn" onclick="copyToClipboard('copyText3', this)">Copy</button>
-      <a class="wa-icon" target="_blank" id="waLink3" title="Share on WhatsApp"></a>
-    </div>
-
-    <div class="footer"> 😌 3 days, 2 hours a day | ♡ Online Sessions <br>
-ॐ  Jai Guru Dev ॐ
-</div>
-  </div>
-
-
-
-  <!-- Card 4 -->
-  <div class="iphone-frame">
-    <h1>Scanning,</h1>
-    <h2>KaalGyaan Sessions</h2>
-    <p class="subtitle">with Vishal Merani</p>
-    <h3>Get to know now, like never before</h3>
-    <p class="subtitle">  from different dimension for better decisions in life</p>
-
-    <ul class="features">
-      <li>⤷ Answers about you</li>
-      <li>⤷ Knowing about you</li>
-      <li>⤷ Guiding your next step</li>
-    </ul>
-
-    <ul class="timeline">
-      <li> Leave a note, few days in advance </li>
-      <li class="location-text"><strong>📍 Zoom | Online</strong></li>
-    </ul>
-
-    <a href="https://kaalgyan.artofliving.org/sessions" class="button" target="_blank">Immediate Scanning Sessions, check here</a>
-
-    <div class="copy-box">
-      <input class="copy-input" type="text" value="Scanning sessions at your convenience 9818503888" id="copyText3" readonly>
-      <button class="copy-btn" onclick="copyToClipboard('copyText3', this)">Copy</button>
-      <a class="wa-icon" target="_blank" id="waLink3" title="Share on WhatsApp"></a>
-    </div>
-
-    <div class="footer"> 🌀🔮🌌 ♡ Online & Offline Sessions <br>
-ॐ  Jai Guru Dev ॐ
-</div>
-  </div>
-
-
-  <!-- Card 5 -->
-  <div class="iphone-frame">
-    <h1>Pain Management,</h1>
-    <h2>L&B Sessions</h2>
-    <p class="subtitle">with Vishal Merani</p>
-    <h3>Get relief in an hour or so</h3>
-
-    <ul class="timeline">
-      <li> Leave a note, few days in advance </li>
-      <li><strong>📍 In-person, Bangalore Ashram </strong></li>
-    </ul>
-
-    <h4>For Bookings, reach out via team +91 9818503888 </h4>
-
-    <div class="copy-box">
-      <input class="copy-input" type="text" value=" L&B Session Scheduling, In person  Help: 9818503888" id="copyText3" readonly>
-      <button class="copy-btn" onclick="copyToClipboard('copyText3', this)">Copy</button>
-      <a class="wa-icon" target="_blank" id="waLink3" title="Share on WhatsApp"></a>
-    </div>
-
-    <div class="footer"> 🩹⚡ ♡  Offline Sessions Only <br>
-ॐ  Jai Guru Dev ॐ
-</div>
-  </div>
-
-<!-- Card 6 - Image Only -->
-<div class="iphone-frame" style="padding: 0; border: none; box-shadow: none;">
-  <img src="zenvm.png" alt="Meditation Image" style="width: 100%; border-radius: 20px;"/>
-    
-  </div>
-</div>
-
-<!-- Moon Toggle (Vector style) -->
-<div id="mode-toggle" style="
-  position: relative;
-  width: 100%;
-  max-width: 390px;
-  margin: 0 auto;
-  display: flex;
-  justify-content: flex-end;
-  padding: 16px 22px;
-">
-  <svg id="moon-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="#6a5799" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-moon" style="cursor: pointer; transition: transform 0.3s ease;">
-    <path d="M21 12.79A9 9 0 0112.21 3a7 7 0 100 14.58A9 9 0 0021 12.79z"/>
-  </svg>
-</div>
 
   <script>
-    function copyToClipboard(id, btn) {
-      const input = document.getElementById(id);
-      input.select();
-      input.setSelectionRange(0, 99999);
-      navigator.clipboard.writeText(input.value);
-      btn.innerText = "Copied!";
-      setTimeout(() => btn.innerText = "Copy", 1500);
+    const moonIcons = document.querySelectorAll(".moon-icon");
+    let darkMode = false;
 
-      // Update WhatsApp link
-      const waLink = document.querySelector(`#waLink${id.slice(-1)}`);
-      const msg = encodeURIComponent(input.value);
-      waLink.href = `https://wa.me/?text=${msg}`;
-    }
+    moonIcons.forEach(icon => {
+      icon.addEventListener("click", () => {
+        darkMode = !darkMode;
+        document.body.classList.toggle("dark", darkMode);
+        document.documentElement.style.setProperty('--bg', darkMode ? '#1c1c1e' : '#f4f6f9');
+        document.documentElement.style.setProperty('--text', darkMode ? '#e0e0e0' : '#1c1c1e');
+        document.documentElement.style.setProperty('--location-color', darkMode ? '#b69ad4' : '#555');
+        document.documentElement.style.setProperty('--muted', darkMode ? '#aaa' : '#777');
+        document.documentElement.style.setProperty('--border', darkMode ? '#444' : '#d9e1ec');
+        document.documentElement.style.setProperty('--box-bg', darkMode ? '#2c2c2e' : '#ffffff');
+
+        document.querySelectorAll('.button').forEach(btn => {
+          btn.style.backgroundColor = darkMode ? '#6a5795' : 'var(--accent)';
+          btn.style.color = darkMode ? '#1c1c1e' : 'white';
+        });
+
+        document.querySelectorAll('.copy-input').forEach(input => {
+          input.style.backgroundColor = darkMode ? '#3a3a3c' : '#f9fafc';
+          input.style.color = darkMode ? '#b69ad4' : '#1c1c1e';
+        });
+
+        document.querySelectorAll('.copy-btn').forEach(btn => {
+          btn.style.backgroundColor = darkMode ? '#3a2e57' : '#E6E6FA';
+          btn.style.color = darkMode ? '#b69ad4' : '#333';
+        });
+
+        moonIcons.forEach(icon => {
+          icon.style.transform = darkMode ? "rotate(180deg)" : "rotate(0deg)";
+        });
+      });
+    });
   </script>
-
-<script>
-  const moonIcon = document.getElementById("moon-icon");
-  let darkMode = false;
-
-  moonIcon.addEventListener("click", () => {
-    darkMode = !darkMode;
-    document.body.classList.toggle("dark", darkMode);
-    document.documentElement.style.setProperty('--bg', darkMode ? '#1c1c1e' : '#f4f6f9');
-    document.documentElement.style.setProperty('--text', darkMode ? '#e0e0e0' : '#1c1c1e');
-    document.documentElement.style.setProperty('--location-color', darkMode ? '#b69ad4' : '#555');
-    document.documentElement.style.setProperty('--muted', darkMode ? '#aaa' : '#777');
-    document.documentElement.style.setProperty('--border', darkMode ? '#444' : '#d9e1ec');
-    document.documentElement.style.setProperty('--box-bg', darkMode ? '#2c2c2e' : '#ffffff');
-
-    // Update accent and button contrast for dark
-    document.querySelectorAll('.button').forEach(btn => {
-      btn.style.backgroundColor = darkMode ? '#6a5795' : 'var(--accent)';
-      btn.style.color = darkMode ? '#1c1c1e' : 'white';
-      
-
-    });
-
-    // Update input backgrounds
-    document.querySelectorAll('.copy-input').forEach(input => {
-      input.style.backgroundColor = darkMode ? '#3a3a3c' : '#f9fafc';
-      input.style.color = darkMode ? '#b69ad4' : '#1c1c1e';
-    });
-
- document.querySelectorAll('.copy-btn').forEach(btn => {
-  btn.style.backgroundColor = darkMode ? '#3a2e57' : '#E6E6FA'; // Optional: deeper purple bg
-  btn.style.color = darkMode ? '#b69ad4' : '#333';
-
-
-    });
-
-    // Optional: rotate the moon icon on toggle
-    moonIcon.style.transform = darkMode ? "rotate(180deg)" : "rotate(0deg)";
-  });
-</script>
-
 </body>
 </html>
