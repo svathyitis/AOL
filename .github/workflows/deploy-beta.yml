@@ -1,0 +1,34 @@
+name: Deploy beta.vishalmerani.com
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'beta/**'
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Deploy beta folder to beta-site branch
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          mkdir beta-publish
+          cp -r beta/* beta-publish/
+          cd beta-publish
+          git init
+          git config user.name "GitHub Actions"
+          git config user.email "actions@github.com"
+          git checkout -b beta-site
+          echo 'beta.vishalmerani.com' > CNAME
+          git add .
+          git commit -m "Deploy beta"
+
+          # ✅ Push with token auth using GH_TOKEN
+          git remote add origin https://x-access-token:$GH_TOKEN@github.com/${{ github.repository }}
+          git push --force origin beta-site
