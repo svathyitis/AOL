@@ -529,9 +529,10 @@ body.dark h3 {
       input.style.color = darkMode ? '#352a40' : '#1c1c1e';
     });
 
-    document.querySelectorAll('.copy-btn').forEach(btn => {
-      btn.style.backgroundColor = darkMode ? '#555' : '#E6E6FA';
-      btn.style.color = darkMode ? '#1c1c1e' : '#333'; // ← FIXED LINE
+ document.querySelectorAll('.copy-btn').forEach(btn => {
+  btn.style.backgroundColor = darkMode ? '#3a2e57' : '#E6E6FA'; // Optional: deeper purple bg
+  btn.style.color = darkMode ? '#b69ad4' : '#333';
+
 
     });
 
