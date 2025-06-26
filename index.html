@@ -166,6 +166,47 @@
       margin-top: 1.8rem;
     }
 
+.iphone-frame {
+  position: relative;
+  z-index: 1;
+  border-radius: 36px;
+  overflow: hidden;
+  border: 1px solid var(--border); /* keep existing border */
+  box-shadow: 0 0 0.5px rgba(144, 137, 245, 0.5);
+}
+
+.iphone-frame::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 36px;
+  pointer-events: none;
+  z-index: -1;
+  border: 1.5px solid transparent;
+  background: linear-gradient(135deg, #9089f5, #f093fb, #9089f5) border-box;
+  mask: 
+    linear-gradient(#fff 0 0) padding-box, 
+    linear-gradient(#fff 0 0);
+  -webkit-mask: 
+    linear-gradient(#fff 0 0) padding-box, 
+    linear-gradient(#fff 0 0);
+  mask-composite: exclude;
+  -webkit-mask-composite: destination-out;
+  animation: subtlePulse 6s ease-in-out infinite;
+}
+
+@keyframes subtlePulse {
+  0%, 100% {
+    opacity: 0.2;
+  }
+  50% {
+    opacity: 0.4;
+  }
+}
+
   </style>
 
 <!-- Google tag (gtag.js) -->
