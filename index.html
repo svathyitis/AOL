@@ -3,18 +3,20 @@
 <head>
 
 <script>
-  const host = location.hostname;
-
-  if (host === "beta.vishalmerani.com") {
-    location.href = "/beta/";
-  } else if (host === "notes.vishalmerani.com") {
-    location.href = "/notes/";
-  } else if (host === "dsar.vishalmerani.com") {
-    location.href = "/dsar/";
-  } else if (host === "hp.vishalmerani.com") {
-    location.href = "/hp/";
+  const hostname = window.location.hostname;
+  if (hostname === 'www.meta.com') {
+    // Serve content from /www folder
+  } else if (hostname === 'beta.vishalmerani.com') {
+    // Serve content from /beta folder
+    window.location.href = '/beta/';
+  } else if (hostname === 'docs.vishalmerani.com') {
+    // Serve content from /docs folder
+    window.location.href = '/docs/';
+  } else if (hostname === 'hp.vishalmerani.com') {
+    // Serve content from /hp folder
+    window.location.href = '/hp/';
   } // etc...
-</script> 
+</script>
 
 
   <meta charset="UTF-8" />
