@@ -26,4 +26,4 @@ jobs:
           echo 'beta.vishalmerani.com' > CNAME
           git add .
           git commit -m "Deploy beta"
-          git push --force https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }} beta-site
+          git push --force "https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}" beta-site
