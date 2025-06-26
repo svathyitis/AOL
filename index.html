@@ -211,6 +211,10 @@
   transition: background 0.3s, color 0.3s;
 }
 
+    .location-text, .queries-text {
+  color: var(--location-color);
+}
+
 
   </style>
 
@@ -262,10 +266,11 @@
 
     <ul class="timeline">
       <li>Time: 7:00 PM – 9:30 PM</li>
-      <li><strong>📍 Zoom | Online</strong></li>
+     <li class="location-text"><strong>📍 Zoom | Online</strong></li>
+
     </ul>
 
-    <h4>Queries & help @ 9818503888</h4>
+    <h4 class="queries-text">Queries & help @ 9818503888</h4>
 
     <div class="copy-box">
       <input class="copy-input" type="text" value="Deep Sleep & Anxiety Relief | 25–27 June 2025 | https://aolt.in/883226 | Help: 9818503888" id="copyText1" readonly>
@@ -298,7 +303,7 @@
       <li> 📍 Aerobics Room, Galaxy Club, Brigade Gateway, Rajajinagar, Bangalore North, 560055</li>
     </ul>
 
-    <h4>Queries & help @ 9818503888</h4>
+  <h4 class="queries-text">Queries & help @ 9818503888</h4>
 
     <div class="copy-box">
       <input class="copy-input" type="text" value="Happiness Program | 04–06 July 2025 | https://programs.vvmvp.org/events/882303 | Help: 9818503888" id="copyText2" readonly>
@@ -341,7 +346,7 @@
 
     <a href="https://maps.google.com/?q=Art+of+Living+International+Center+Bengaluru" class="button" target="_blank">On Maps</a>
 
-    <h4>Queries & help @ 9818503888</h4>
+   <h4 class="queries-text">Queries & help @ 9818503888</h4>
 
     <div class="copy-box">
       <input class="copy-input" type="text" value="Happiness Program | 25–27 July 2025 | https://programs.vvmvp.org/events/553 | Help: 9818503888" id="copyText2" readonly>
@@ -375,10 +380,11 @@
     <ul class="timeline">
       <li>Happening monthly-ish, tops</li>
       <li>We'll touch base regularly, join whatsapp 💬 </li> 
-      <li><strong>📍 Zoom | Online</strong></li>
+      <li class="location-text"><strong>📍 Zoom | Online</strong></li>
+
     </ul>
 
-    <h4>Queries & help @ 9818503888</h4>
+   <h4 class="queries-text">Queries & help @ 9818503888</h4>
 
     <div class="copy-box">
       <input class="copy-input" type="text" value="Sahaj Samadhi Meditation | Weekly | Help: 9818503888" id="copyText3" readonly>
@@ -409,7 +415,7 @@
 
     <ul class="timeline">
       <li> Leave a note, few days in advance </li>
-      <li><strong>📍 Zoom | Online</strong></li>
+      <li class="location-text"><strong>📍 Zoom | Online</strong></li>
     </ul>
 
     <a href="https://kaalgyan.artofliving.org/sessions" class="button" target="_blank">Immediate Scanning Sessions, check here</a>
@@ -483,6 +489,7 @@
 
     document.documentElement.style.setProperty('--bg', darkMode ? '#1c1c1e' : '#f4f6f9');
     document.documentElement.style.setProperty('--text', darkMode ? '#e0e0e0' : '#1c1c1e');
+    document.documentElement.style.setProperty('--location-color', darkMode ? '#b69ad4' : '#555');
     document.documentElement.style.setProperty('--muted', darkMode ? '#aaa' : '#777');
     document.documentElement.style.setProperty('--border', darkMode ? '#444' : '#d9e1ec');
     document.documentElement.style.setProperty('--box-bg', darkMode ? '#2c2c2e' : '#ffffff');
