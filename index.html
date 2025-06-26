@@ -1,24 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
-<script>
-  const hostname = window.location.hostname;
-  if (hostname === 'www.meta.com') {
-    // Serve content from /www folder
-  } else if (hostname === 'beta.vishalmerani.com') {
-    // Serve content from /beta folder
-    window.location.href = '/beta/';
-  } else if (hostname === 'docs.vishalmerani.com') {
-    // Serve content from /docs folder
-    window.location.href = '/docs/';
-  } else if (hostname === 'hp.vishalmerani.com') {
-    // Serve content from /hp folder
-    window.location.href = '/hp/';
-  } // etc...
-</script>
-
-
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Vishal Merani </title>
@@ -29,7 +11,7 @@
       --text: #1c1c1e;
       --muted: #777;
       --border: #d9e1ec;
-      --accent: #9089f5;
+      --accent: #6a5799;
       --accent-hover: #8473c6;
       --box-bg: #ffffff;
     }
@@ -154,7 +136,7 @@
 
     .copy-btn {
       padding: 8px 12px;
-      background-color: #E6E6FA;
+      background-color: #6a5799;
       color: #333;
       font-size: 0.75rem;
       font-weight: 600;
@@ -164,7 +146,7 @@
     }
 
     .copy-btn:hover {
-      background-color: #8473c6;
+      background-color: #6a5795;
       color: white;
     }
 
@@ -223,7 +205,12 @@
   50% {
     opacity: 0.4;
   }
-} /* hi toks */ 
+}
+
+.copy-input, .copy-btn {
+  transition: background 0.3s, color 0.3s;
+}
+
 
   </style>
 
@@ -238,7 +225,24 @@
 </script>
 
 </head>
+
 <body>
+
+<!-- Moon Toggle (Vector style) -->
+<div id="mode-toggle" style="
+  position: relative;
+  width: 100%;
+  max-width: 390px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: flex-end;
+  padding: 16px 22px;
+">
+  <svg id="moon-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="#6a5799" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-moon" style="cursor: pointer; transition: transform 0.3s ease;">
+    <path d="M21 12.79A9 9 0 0112.21 3a7 7 0 100 14.58A9 9 0 0021 12.79z"/>
+  </svg>
+</div>
+
 
   <!-- Card 1 -->
   <div class="iphone-frame">
@@ -320,7 +324,7 @@
 
   <!-- Card 3 -->
   <div class="iphone-frame">
-    <h1>Monthly,</h1>
+    <h1>mostly Monthly,</h1>
     <h2>Online</h2>
     <p class="subtitle">with Vishal Merani</p>
     <h3>Lapse into meditation in minutes</h3>
@@ -410,7 +414,14 @@
 ॐ  Jai Guru Dev ॐ
 </div>
   </div>
-  
+
+<!-- Card 6 - Image Only -->
+<div class="iphone-frame" style="padding: 0; border: none; box-shadow: none;">
+  <img src="zenvm.png" alt="Meditation Image" style="width: 100%; border-radius: 20px;"/>
+    
+  </div>
+</div>
+
   <script>
     function copyToClipboard(id, btn) {
       const input = document.getElementById(id);
@@ -426,5 +437,44 @@
       waLink.href = `https://wa.me/?text=${msg}`;
     }
   </script>
+
+<script>
+  const moonIcon = document.getElementById("moon-icon");
+  let darkMode = false;
+
+  moonIcon.addEventListener("click", () => {
+    darkMode = !darkMode;
+
+    document.documentElement.style.setProperty('--bg', darkMode ? '#1c1c1e' : '#f4f6f9');
+    document.documentElement.style.setProperty('--text', darkMode ? '#b69ad4' : '#1c1c1e');
+    document.documentElement.style.setProperty('--muted', darkMode ? '#aaa' : '#777');
+    document.documentElement.style.setProperty('--border', darkMode ? '#444' : '#d9e1ec');
+    document.documentElement.style.setProperty('--box-bg', darkMode ? '#2c2c2e' : '#ffffff');
+
+    // Update accent and button contrast for dark
+    document.querySelectorAll('.button').forEach(btn => {
+      btn.style.backgroundColor = darkMode ? '#6a5795' : 'var(--accent)';
+      btn.style.color = darkMode ? '#1c1c1e' : 'white';
+      
+
+    });
+
+    // Update input backgrounds
+    document.querySelectorAll('.copy-input').forEach(input => {
+      input.style.backgroundColor = darkMode ? '#3a3a3c' : '#f9fafc';
+      input.style.color = darkMode ? '#b69ad4' : '#1c1c1e';
+    });
+
+    document.querySelectorAll('.copy-btn').forEach(btn => {
+      btn.style.backgroundColor = darkMode ? '#555' : '#E6E6FA';
+      btn.style.color = darkMode ? '#1c1c1e' : '#333'; // ← FIXED LINE
+
+    });
+
+    // Optional: rotate the moon icon on toggle
+    moonIcon.style.transform = darkMode ? "rotate(180deg)" : "rotate(0deg)";
+  });
+</script>
+
 </body>
 </html>
