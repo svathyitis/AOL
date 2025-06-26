@@ -1,11 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
 <script>
-  if (window.location.hostname === "beta.vishalmerani.com") {
-    window.location.href = "/beta/";
-  }
+  const host = location.hostname;
+
+  if (host === "beta.vishalmerani.com") {
+    location.href = "/beta/";
+  } else if (host === "notes.vishalmerani.com") {
+    location.href = "/notes/";
+  } else if (host === "dsar.vishalmerani.com") {
+    location.href = "/dsar/";
+  } else if (host === "hp.vishalmerani.com") {
+    location.href = "/hp/";
+  } // etc...
 </script>
+
+
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Vishal Merani </title>
