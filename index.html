@@ -454,9 +454,7 @@
     // Update accent and button contrast for dark
     document.querySelectorAll('.button').forEach(btn => {
       btn.style.backgroundColor = darkMode ? '#8473c6' : 'var(--accent)';
-btn.style.color = darkMode
-  ? getComputedStyle(document.documentElement).getPropertyValue('--text').trim()
-  : 'white';
+      btn.style.color = darkMode ? '#1c1c1e' : 'white';
       
 
     });
@@ -469,9 +467,8 @@ btn.style.color = darkMode
 
     document.querySelectorAll('.copy-btn').forEach(btn => {
       btn.style.backgroundColor = darkMode ? '#555' : '#E6E6FA';
-  btn.style.color = darkMode
-  ? getComputedStyle(document.documentElement).getPropertyValue('--text').trim()
-  : '#333';
+      btn.style.color = darkMode ? '#1c1c1e' : '#333'; // ← FIXED LINE
+
     });
 
     // Optional: rotate the moon icon on toggle
