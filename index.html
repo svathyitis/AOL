@@ -248,6 +248,56 @@ body.dark .icon {
   fill: var(--accent-hover);
 }
 
+/* Container styling */
+.subtle-card-with-text {
+  position: relative;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+/* Image animation */
+.subtle-card-with-text img {
+  width: 100%;
+  border-radius: 20px;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  animation: fadeInSubtle 0.8s ease-out forwards;
+  opacity: 0;
+  transform: translateY(10px);
+}
+
+/* Hover effects */
+.subtle-card-with-text:hover img {
+  transform: scale(1.03);
+  box-shadow: 0 0 25px rgba(180, 120, 255, 0.3);
+}
+
+/* Optional glowing animation */
+@keyframes fadeInSubtle {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Optional title overlay */
+.overlay-text {
+  position: absolute;
+  bottom: 12px;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  font-size: 1.2rem;
+  color: #ffffffdd;
+  font-family: 'Playfair Display', serif;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.subtle-card-with-text:hover .overlay-text {
+  opacity: 1;
+}
+
+
   </style>
 
 <!-- Google tag (gtag.js) -->
@@ -290,7 +340,7 @@ body.dark .icon {
 </div>  
 </div>
 
-<!-- All Programs Card  -->
+<!-- Secrets of the Subtle  -->
  <div class="iphone-frame">
   <h1>Currently screening</h1>
   <h2>Secrets of the Subtle</h2>
@@ -303,6 +353,14 @@ body.dark .icon {
   <div class="footer">
 ॐ  Jai Guru Dev ॐ
 </div>  
+</div>
+
+
+
+<!-- Serets of the Subtle Image Only -->
+<div class="iphone-frame subtle-card-with-text">
+  <img src="SecretsoftheSubtle.png" alt="Secrets of the Subtle" />
+  <div class="overlay-text">Secrets of the Subtle</div>
 </div>
 
 
