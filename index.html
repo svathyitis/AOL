@@ -297,43 +297,7 @@ body.dark .icon {
   opacity: 1;
 }
 
-.podcast-card {
-  position: relative;
-  padding: 2rem;
-  border-radius: 1.5rem;
-  background: #0f0f0f;
-  color: white;
-  overflow: hidden;
-  z-index: 1;
-}
 
-.podcast-card::before {
-  content: "";
-  position: absolute;
-  top: -2px;
-  left: -2px;
-  right: -2px;
-  bottom: -2px;
-  background: linear-gradient(120deg, #8f00ff, #b833ff, #8f00ff);
-  background-size: 300% 300%;
-  border-radius: inherit;
-  z-index: -1;
-  animation: borderRotate 4s linear infinite;
-  filter: blur(2px);
-  opacity: 0.8;
-}
-
-@keyframes borderRotate {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
-}
   </style>
 
 <!-- Google tag (gtag.js) -->
@@ -365,10 +329,8 @@ body.dark .icon {
   </svg>
 </div>
   
-</style>
-
 <!-- Podcast -  Card  -->
- <div class="podcast-card">
+ <div class="iphone-frame">
   <h1>Podcasts</h1>
   <h2>With Vishal Merani</h2>
   <a href="https://podcasts.vishalmerani.com/" class="button" target="_blank">🎧 Listen Now</a>
