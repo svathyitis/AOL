@@ -4,27 +4,27 @@
 <link rel="icon" href="assets/favicon.ico" type="image/x-icon" />
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Vishal Merani </title>
+<title>Vishal Merani | 2026</title>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
 <style>
-/* --- 1. MINIMALIST COLOR PALETTE (Subtle Red Border) --- */
+/* --- 1. NEW YEAR 2026 PALETTE (Gold & Sleek) --- */
 :root {
-    --bg: #ffffff;
-    --text: #1f1f1f; /* Standard Dark Text */
-    --muted: #777;
-    --border: #f0aaaa; /* Very Subtle Red Border */
-    --accent: #2e7d32; /* Lighter Green for buttons/icons */
-    --accent-hover: #388e3c;
+    --bg: #fdfdfd; /* Very subtle off-white */
+    --text: #1a1a1a; 
+    --muted: #666;
+    --border: #d4af37; /* Metallic Gold Border */
+    --accent: #111111; /* Sharp Black for primary buttons */
+    --accent-hover: #333333;
     --box-bg: #ffffff;
-    /* Xmas Colors */
-    --xmas-red: #cc0000;
-    --xmas-white: #ffffff;
-    --xmas-green: #2e7d32;
-    --xmas-gold: #FFD700;
+    
+    /* NY Specifics */
+    --ny-gold: #d4af37;
+    --ny-silver: #c0c0c0;
+    --ny-champagne: #f7e7ce;
 
-    /* New Grey Shades for Headings */
-    --h3-color: #4c4c4c; /* Darker Grey */
-    --h4-color: #666666; /* Lighter Grey */
+    /* Headings */
+    --h3-color: #333; 
+    --h4-color: #555; 
 }
 
 * {
@@ -33,31 +33,35 @@
     box-sizing: border-box;
 }
 
-/* --- 2. GLOBAL FONT DECREASE (Approx -15%) AND LINE HEIGHT INCREASE (Approx +4%) --- */
 body {
     font-family: 'Inter', sans-serif;
-    /* Base font size reduced by 5% (0.85em * 0.95 = 0.8075em, using 0.81em) */
     font-size: 0.81em; 
-    /* Base line height increased (approx +4%) */
     line-height: 1.4;
     background: var(--bg);
     color: var(--text);
     padding: 22px 14px;
+    transition: background 0.3s ease;
 }
 
-/* --- 3. SLEEK STRUCTURE AND UNIFORM STYLES --- */
+/* --- 2. STRUCTURE --- */
 .iphone-frame {
     background: var(--box-bg);
     border-radius: 18px; 
     max-width: 390px;
     width: 100%;
     margin: 0 auto 18px auto; 
-    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.04); 
+    box-shadow: 0 4px 20px rgba(212, 175, 55, 0.15); /* Gold glow shadow */
     padding: 24px 18px; 
     border: 1px solid var(--border); 
     position: relative;
     z-index: 1;
     overflow: hidden; 
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.iphone-frame:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 25px rgba(212, 175, 55, 0.25);
 }
 
 .iphone-frame.no-padding {
@@ -68,7 +72,6 @@ body {
 .iphone-frame.no-padding img {
     border-radius: 17px; 
 }
-
 
 header, section, footer {
     margin-bottom: 0.6rem; 
@@ -90,6 +93,14 @@ h1 {
     font-weight: 600;
     margin-bottom: 0.1rem;
     color: var(--text);
+    letter-spacing: -0.5px;
+}
+
+/* Gradient Text for Headlines */
+h1 span.year {
+    background: linear-gradient(45deg, #d4af37, #b8860b);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 h2 {
@@ -99,7 +110,6 @@ h2 {
     color: var(--text);
 }
 
-/* Updated H3 to new grey color */
 h3 {
     font-size: 0.9rem; 
     font-weight: 600;
@@ -107,7 +117,6 @@ h3 {
     color: var(--h3-color);
 }
 
-/* Updated H4 to new grey color */
 h4 {
     font-size: 0.8rem; 
     font-weight: 500;
@@ -121,75 +130,47 @@ h4 {
     margin-bottom: 0;
 }
 
+/* --- 3. BUTTONS (Sleek & Professional) --- */
 .button, input[type="submit"] {
     display: inline-block;
     background-color: var(--accent);
-    color: white;
+    color: #fff; /* White text on black/gold */
     padding: 0.5rem 0.9rem; 
     border-radius: 7px;
-    /* Button font reduced by 20% (0.75rem * 0.8 = 0.6rem) */
     font-size: 0.6rem; 
     font-weight: 600;
     margin: 0.4rem 0.2rem 0.5rem 0;
-    transition: background 0.2s ease;
+    transition: all 0.3s ease;
     text-decoration: none;
     position: relative; 
-    overflow: visible; 
-    border: none; /* Remove default button border */
+    overflow: hidden; 
+    border: 1px solid transparent;
     cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
 }
 
 .button:hover, input[type="submit"]:hover {
     background-color: var(--accent-hover);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
 }
 
-/* --- NEW, IMPROVED CHRISTMAS HAT effect (Removed for now, keeping only buttons) --- */
+/* Removed Santa Hat CSS */
 
-/* Hat Cone/Tip */
-.button::before, input[type="submit"]::before {
-    content: '';
-    position: absolute;
-    top: -12px; 
-    right: -2px; 
-    width: 0;
-    height: 0;
-    border-style: solid;
-    border-width: 0 10px 15px 0; 
-    border-color: transparent var(--xmas-red) transparent transparent;
-    transform: rotate(25deg); 
-    border-radius: 0 5px 0 5px; 
-    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
-    z-index: 10;
-}
-
-/* Hat Pompom */
-.button::after, input[type="submit"]::after {
-    content: '';
-    position: absolute;
-    top: -15px; 
-    right: 0px; 
-    width: 6px;
-    height: 6px;
-    background-color: var(--xmas-white); 
-    border-radius: 50%;
-    box-shadow: 0 0 3px rgba(0, 0, 0, 0.4);
-    z-index: 11;
-}
-
-/* --- FONT REDUCTION (40%) IN DO DEC CARD --- */
 .small-h2 {
-    /* Calculated size is 0.66rem (40% reduction from 1.1rem) */
     font-size: 0.66rem; 
     font-weight: 500;
     margin-bottom: 0.1rem;
+    text-transform: uppercase;
+    color: var(--ny-gold);
 }
 
-/* Helper class for the corrected feel good line spacing */
 .feel-good-line {
     font-size: 0.85em; 
     margin-bottom: 0.4rem;
+    font-style: italic;
 }
-
 
 ul.timeline, ul.features {
     list-style: none;
@@ -201,8 +182,12 @@ ul.timeline, ul.features {
     font-size: 0.78rem; 
     padding: 1px 0;
 }
+.features li::before {
+    content: "•";
+    color: var(--ny-gold);
+    margin-right: 5px;
+}
 
-/* --- 4. LOCATION/QUERIES TEXT (Very Small) --- */
 .location-text, .queries-text {
     color: var(--text);
     font-weight: 400;
@@ -210,10 +195,6 @@ ul.timeline, ul.features {
     display: block;
     font-size: 0.65rem; 
     line-height: 1.4; 
-}
-.location-text strong {
-    color: var(--text);
-    font-weight: 400; 
 }
 
 .queries-text {
@@ -228,60 +209,57 @@ ul.timeline, ul.features {
     margin-bottom: 0;
     line-height: 1.4; 
     padding-top: 0.4rem;
-    border-top: 1px dashed rgba(0, 0, 0, 0.08);
+    border-top: 1px solid var(--ny-gold); /* Gold line divider */
+    opacity: 0.7;
 }
 
-/* --- XMAS TREE STYLING (Removed) --- */
-
-/* --- SNOWFLAKE STYLES (New Horizontal/Flat Animation) --- */
-@keyframes float {
-    0% { transform: translate(0, 0) rotate(0deg); opacity: 0.6; }
-    50% { transform: translate(10px, -5px) rotate(5deg); opacity: 1; }
-    100% { transform: translate(0, 0) rotate(0deg); opacity: 0.6; }
+/* --- ANIMATIONS (Sparkles) --- */
+@keyframes floatUp {
+    0% { transform: translateY(0) rotate(0deg); opacity: 0; }
+    20% { opacity: 1; }
+    100% { transform: translateY(-40px) rotate(360deg); opacity: 0; }
 }
 
-.snowflake {
+.sparkle {
     position: absolute;
-    color: #fff; 
+    color: var(--ny-gold); 
     z-index: 100;
     pointer-events: none;
-    animation: float linear infinite;
-    font-size: 0.7em !important; 
-    text-shadow: 0 0 1px rgba(0, 0, 0, 0.1);
-    opacity: 0;
+    animation: floatUp linear infinite;
+    font-size: 0.8em !important; 
+    text-shadow: 0 0 5px rgba(212, 175, 55, 0.4);
 }
 
-/* --- CHRISTMAS GIFT STYLES (Thematic Icon 2) --- */
-.gift-icon {
+/* --- THEMATIC ICONS --- */
+.star-icon {
     position: absolute;
-    bottom: -8px; 
-    right: 5px;
-    font-size: 0.8em; 
+    top: 10px; 
+    right: 10px;
+    font-size: 1.2em; 
     z-index: 10;
+    color: var(--ny-gold);
 }
+.star-icon::before { content: '✦'; }
 
-.gift-icon::before {
-    content: '🎁';
-}
-
-/* --- REINDEER STYLES (Thematic Icon 3) --- */
-.reindeer-icon {
+.new-year-badge {
     position: absolute;
-    top: 5px; 
+    bottom: -5px;
     right: 5px;
-    font-size: 0.9em;
-    z-index: 10;
+    font-size: 0.7em;
+    font-weight: bold;
+    color: var(--ny-gold);
+    background: rgba(255,255,255,0.8);
+    padding: 2px 6px;
+    border-radius: 4px;
+    border: 1px solid var(--ny-gold);
 }
 
-.reindeer-icon::before {
-    content: '🦌';
-}
 
-
-/* --- 5. SOCIAL ICONS --- */
+/* --- SOCIAL ICONS --- */
 .social-icons-frame {
     padding: 16px 0 8px;
     text-align: center;
+    border-color: var(--ny-gold);
 }
 
 .social-icons-list {
@@ -294,26 +272,32 @@ ul.timeline, ul.features {
 .icon {
     width: 25px; 
     height: 25px;
-    fill: var(--accent);
-    transition: fill 0.3s ease;
+    fill: var(--text); /* Dark in light mode */
+    transition: fill 0.3s ease, transform 0.3s ease;
 }
 
 .icon:hover {
-    fill: var(--accent-hover);
+    fill: var(--ny-gold);
+    transform: scale(1.1);
 }
 
-/* --- NEW FORM STYLES --- */
+/* --- FORM STYLES --- */
 .seva-form input[type="text"], .seva-form textarea {
     width: 100%;
     padding: 8px;
     margin-bottom: 8px;
-    border: 1px solid #ddd;
+    border: 1px solid #ccc;
     border-radius: 4px;
     font-size: 0.81em;
     font-family: 'Inter', sans-serif;
     color: var(--text);
     background-color: var(--box-bg);
     box-sizing: border-box;
+    transition: border-color 0.3s;
+}
+.seva-form input[type="text"]:focus, .seva-form textarea:focus {
+    border-color: var(--ny-gold);
+    outline: none;
 }
 .seva-form textarea {
     resize: vertical;
@@ -333,7 +317,6 @@ ul.timeline, ul.features {
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
-
     gtag('config', 'G-QL72FZ9YZ2');
 </script>
 
@@ -350,8 +333,8 @@ ul.timeline, ul.features {
     justify-content: flex-end;
     padding: 14px 20px 0;
 ">
-    <svg id="snowflake-icon" xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#f0aaaa" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="cursor: pointer; transition: transform 0.3s ease, stroke 0.3s ease;">
-        <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41M15.46 12l-3.46 3.46L8.54 12l3.46-3.46z"/>
+    <svg id="theme-icon" xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#d4af37" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="cursor: pointer; transition: transform 0.5s ease;">
+        <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
     </svg>
 </div>
 
@@ -359,30 +342,31 @@ ul.timeline, ul.features {
 <div class="iphone-frame" id="card-sahaj">
     <header>
         <div class="card-title-group">
-            <h1>Dec Sahaj,</h1>
-            <p class="subtitle">with Vishal Merani/ Team</p>
+            <h1>Jan Sahaj <span class="year">2026</span></h1>
+            <p class="subtitle">Kickstart the year with Vishal Merani</p>
         </div>
         </header>
+        <div class="star-icon"></div>
 
     <section class="course-summary">
         <h2>Lapse into meditation in minutes</h2>
-        <p class="feel-good-line">Feel Good 😌 Live Light 🪶</p> 
+        <p class="feel-good-line">New Year 🥂 New Light 🪶</p> 
         <ul class="features">
-            <li>⤷ Personal</li>
-            <li>⤷ Customized</li>
-            <li>⤷ Yours</li>
+            <li>Personal</li>
+            <li>Customized</li>
+            <li>Yours</li>
         </ul>
     </section>
 
     <section class="schedule-booking">
         <h4>Pick your preference </h4>
         <ul class="features">
-            <li> 17 Dec - 19 Dec </li>
+            <li> 07 Jan - 09 Jan </li>
         </ul>
         <a href="https://www.artofliving.online/registration.php?event_id=908789" class="button" target="_blank"> 7:00 AM – 9:00 AM </a>
 
                 <ul class="features">
-            <li> 23 Dec - 25 Dec </li>
+            <li> 21 Jan - 23 Jan </li>
         </ul>
         <a href="https://www.artofliving.org/in-en/program/936141" class="button" target="_blank"> 8:00 AM – 10:00 AM </a>
 
@@ -390,7 +374,7 @@ ul.timeline, ul.features {
 
     <section class="logistics-contact">
         <ul class="timeline">
-            <li>Happening monthly-ish, tops</li>
+            <li>Happening monthly-ish</li>
             <li>We'll touch base regularly, join whatsapp 💬 </li>
         </ul>
         <span class="location-text">📍 Zoom | Online</span>
@@ -407,66 +391,18 @@ ul.timeline, ul.features {
 <div class="iphone-frame" id="card-dec-hp">
     <header>
         <div class="card-title-group">
-            <h1>Dec HP</h1>
+            <h1>New Year HP</h1>
             <h2>Hyper Detox with Sudarshan Kriya</h2>
             <p class="subtitle">with Vishal Merani</p>
         </div>
     </header>
-    <div class="reindeer-icon"></div>
 
     <section class="course-details">
         <h3>In person | English, Hindi</h3>
     </section>
 
     <section class="schedule-booking">
-        <h4>Morning Batch:</h4>
-        <a href="https://www.artofliving.org/in-en/program/926625" class="button" target="_blank">11 Dec - 13 Dec (Morning)</a>
-        <ul class="features">
-            <li> Weekday: 6:30a-9:30a </li>
-            <li> Weekend: 8a-12p </li>
-        </ul>
-        <h4>Evening Batch:</h4>
-        <a href="https://www.artofliving.org/in-en/program/926629" class="button" target="_blank">11 Dec - 13 Dec (Evening)</a>
-        <ul class="features">
-            <li> Weekday: 6:30p-9:30p </li>
-            <li> Weekend: 8a-12p </li>
-        </ul>
-    </section>
-
-    <section class="logistics-contact">
-        <ul class="features">
-            <li>Regular follow-ups</li>
-            <li>Free repeats outside ashram</li>
-        </ul>
-        <span class="location-text">📍Bhartiya City, RK Hegde Nagar, Bangalore </span>
-        <h4 class="queries-text">Queries - 9611718201 </h4>
-    </section>
-
-    <footer>
-        <div class="footer">🦦🤌🏻 Starts soon | this n♡vember <br>
-        ॐ Jai Guru Dev ॐ
-        </div>
-    </footer>
-</div>
-
-
-    
-<div class="iphone-frame" id="card-dec-hp">
-    <header>
-        <div class="card-title-group">
-            <h1>NY2026 HP</h1>
-            <h2>Hyper Detox with Sudarshan Kriya</h2>
-            <p class="subtitle">with Vishal Merani</p>
-        </div>
-    </header>
-    <div class="reindeer-icon"></div>
-
-    <section class="course-details">
-        <h3>In person | English, Hindi</h3>
-    </section>
-
-    <section class="schedule-booking">
-
+        
         <a href="https://programs.vvmvp.org/events/1254/" class="button" target="_blank">2 Jan - 4 Jan</a>
         <ul class="location-text">
             <li> Checkin From 1st Jan 2026, 2:00 pm</li>
@@ -486,7 +422,7 @@ ul.timeline, ul.features {
     </section>
 
     <footer>
-        <div class="footer">🦦🤌🏻 Starts soon | December ♡ January  <br>
+        <div class="footer">🦦🤌🏻 Starts soon | Jan 2026 <br>
         ॐ Jai Guru Dev ॐ
         </div>
     </footer>
@@ -495,19 +431,18 @@ ul.timeline, ul.features {
 <div class="iphone-frame" id="card-pune-hp">
     <header>
         <div class="card-title-group">
-            <h1>Pune 2025 HP</h1>
+            <h1>Pune <span class="year">2026</span></h1>
             <h2>Hyper Detox with Sudarshan Kriya</h2>
             <p class="subtitle">with Vishal Merani</p>
         </div>
     </header>
-    <div class="gift-icon"></div>
-
+    
     <section class="course-details">
         <h3>In person | English, Hindi</h3>
     </section>
 
     <section class="schedule-booking">
-        <a href="https://www.artofliving.org/in-en/program/932187" class="button" target="_blank">22 Dec - 24 Dec</a>
+        <a href="https://www.artofliving.org/in-en/program/932187" class="button" target="_blank">22 Jan - 24 Jan</a>
         <ul class="timeline">
             <li> Timings: 6:00p-9:00p </li>
         </ul>
@@ -523,7 +458,7 @@ ul.timeline, ul.features {
     </section>
 
     <footer>
-        <div class="footer">🦦🤌🏻 Starts soon | December♡ <br>
+        <div class="footer">🦦🤌🏻 Starts soon | January <br>
         ॐ Jai Guru Dev ॐ
         </div>
     </footer>
@@ -532,7 +467,7 @@ ul.timeline, ul.features {
 <div class="iphone-frame" id="card-yes-plus">
     <header>
         <div class="card-title-group">
-            <h1>YES+</h1>
+            <h1>YES+ <span class="year">26</span></h1>
             <h2>Join waitlist</h2>
             <p class="subtitle">Youth Special with Vishal Merani</p>
         </div>
@@ -546,7 +481,7 @@ ul.timeline, ul.features {
     <section class="schedule-booking">
         <a href="https://programs.vvmvp.org/events/783/" class="button" target="_blank">Booked for this season</a>
         <ul class="timeline">
-            <li>Join waitlist </li>
+            <li>Join waitlist for Spring '26</li>
         </ul>
     </section>
 
@@ -561,7 +496,7 @@ ul.timeline, ul.features {
     </section>
 
     <footer>
-        <div class="footer">🦦🤌🏻 Starts Nov again | Bangalore ♡ Ashram <br>
+        <div class="footer">🦦🤌🏻 Starts soon | Bangalore ♡ Ashram <br>
         ॐ Jai Guru Dev ॐ
         </div>
     </footer>
@@ -570,7 +505,7 @@ ul.timeline, ul.features {
 <div class="iphone-frame" id="card-dsar">
     <header>
         <div class="card-title-group">
-            <h1>Discover DSAR this weekend</h1>
+            <h1>Discover DSAR</h1>
             <h2>Deep Sleep, Anxiety Relief</h2>
             <p class="subtitle">with Vishal Merani</p>
         </div>
@@ -599,7 +534,7 @@ ul.timeline, ul.features {
     </section>
 
     <footer>
-        <div class="footer">💤 5–7 Jan 2025 | Late Evening ♡ Online Friendly Sessions <br>
+        <div class="footer">💤 5–7 Jan 2026 | Late Evening ♡ Online <br>
         ॐ Jai Guru Dev ॐ
         </div>
     </footer>
@@ -608,7 +543,7 @@ ul.timeline, ul.features {
 <div class="iphone-frame" id="card-do-dec">
     <header>
         <div class="card-title-group">
-            <h1>Do Dec,</h1>
+            <h1>Do Jan,</h1>
             <h2>Meditation and Breath Workshop</h2>
             <p class="subtitle">with Vishal Merani</p>
         </div>
@@ -620,19 +555,19 @@ ul.timeline, ul.features {
     </section>
 
     <section class="schedule-booking">
-        <h4>Dec 25 - 28 </h4>
-        <h2 class="small-h2"> Register </h2>
-    <ul class="timeline">
-            <li>6:30 PM to 8:30 PM</li>
-        </ul>
-        <a href="https://www.artofliving.org/in-en/program/937721" class="button" target="_blank"> Book here ♡ </a>
-        
         <h4> Jan 04 - 07 </h4>
         <h2 class="small-h2">Join in</h2>
         <ul class="timeline">
             <li> 8:00 PM to 10:00 PM</li>
         </ul>
         <a href="https://www.artofliving.org/in-en/program/936306" class="button" target="_blank"> Book here ♡ </a>
+        
+        <h4> Jan 25 - 28 </h4>
+        <h2 class="small-h2"> Register </h2>
+    <ul class="timeline">
+            <li>6:30 PM to 8:30 PM</li>
+        </ul>
+        <a href="https://www.artofliving.org/in-en/program/937721" class="button" target="_blank"> Book here ♡ </a>
     </section>
 
     <section class="logistics-contact">
@@ -654,7 +589,7 @@ ul.timeline, ul.features {
     <header>
         <div class="card-title-group">
             <h1>Silence Retreat</h1>
-            <h2>Join waitlist for 2026</h2>
+            <h2>2026 Season Open</h2>
             <p class="subtitle">With the blessings of Gurudev</p>
         </div>
     </header>
@@ -662,10 +597,10 @@ ul.timeline, ul.features {
     <section class="course-details">
         <h3>3 days of inner fireworks</h3>
         <ul class="features">
-            <li>⤷ Silence</li>
-            <li>⤷ Mudras</li>
-            <li>⤷ Online</li>
-            <li>⤷ Meditations</li>
+            <li>Silence</li>
+            <li>Mudras</li>
+            <li>Online</li>
+            <li>Meditations</li>
         </ul>
     </section>
 
@@ -702,15 +637,15 @@ ul.timeline, ul.features {
             <p class="subtitle">with Vishal Merani</p>
         </div>
     </header>
-    <div class="gift-icon"></div>
+    <div class="new-year-badge">2026</div>
 
     <section class="course-details">
         <h3>Get to know now, like never before</h3>
         <p class="subtitle">from different dimension for better decisions in life</p>
         <ul class="features">
-            <li>⤷ Answers about you</li>
-            <li>⤷ Knowing about you</li>
-            <li>⤷ Guiding your next step</li>
+            <li>Answers about you</li>
+            <li>Knowing about you</li>
+            <li>Guiding your next step</li>
         </ul>
     </section>
 
@@ -801,7 +736,7 @@ ul.timeline, ul.features {
             <h2>Curated talks & insights</h2>
         </div>
     </header>
-    <div class="gift-icon"></div>
+    <div class="star-icon"></div>
     <section>
         <a href="https://podcasts.vishalmerani.com/" class="button" target="_blank">🎧 Listen Now</a>
     </section>
@@ -851,31 +786,36 @@ ul.timeline, ul.features {
 </div>
 
 <script>
-    const snowflakeIcon = document.getElementById("snowflake-icon");
+    const themeIcon = document.getElementById("theme-icon");
     let darkMode = false;
 
-    snowflakeIcon.addEventListener("click", () => {
+    themeIcon.addEventListener("click", () => {
         darkMode = !darkMode;
         document.body.classList.toggle("dark", darkMode);
 
-        // --- UPDATED DARK MODE COLORS ---
-        const darkBg = '#1a1a1a';
-        const darkText = '#f5f5dc';
-        const darkMuted = '#aaa';
-        const darkBorder = '#333'; 
-        const darkAccent = '#5cb85c'; 
-        const darkAccentHover = '#4cae4c';
-        const darkBoxBg = '#2d2d2d';
+        // --- NEW YEAR DARK MODE (Luxurious Black & Gold) ---
+        const darkBg = '#0a0a0a'; /* Rich Black */
+        const darkText = '#f7e7ce'; /* Champagne Text */
+        const darkMuted = '#999';
+        const darkBorder = '#8a6e25'; /* Darker Gold Border */
+        const darkAccent = '#d4af37'; /* Gold Buttons */
+        const darkAccentHover = '#b8860b';
+        const darkBoxBg = '#161616'; /* Slightly lighter black for cards */
+        
+        // H3/H4 specifics for Dark Mode
+        const darkH3 = '#f7e7ce';
+        const darkH4 = '#d0d0d0';
 
         // Light mode colors (as defined in :root)
-        const lightBg = '#ffffff';
-        const lightText = '#1f1f1f';
-        const lightMuted = '#777';
-        const lightBorder = '#f0aaaa'; 
-        const lightAccent = '#2e7d32';
-        const lightAccentHover = '#388e3c';
+        const lightBg = '#fdfdfd';
+        const lightText = '#1a1a1a';
+        const lightMuted = '#666';
+        const lightBorder = '#d4af37'; 
+        const lightAccent = '#111111';
+        const lightAccentHover = '#333333';
         const lightBoxBg = '#ffffff';
-
+        const lightH3 = '#333';
+        const lightH4 = '#555';
 
         document.documentElement.style.setProperty('--bg', darkMode ? darkBg : lightBg);
         document.documentElement.style.setProperty('--text', darkMode ? darkText : lightText);
@@ -884,23 +824,32 @@ ul.timeline, ul.features {
         document.documentElement.style.setProperty('--accent', darkMode ? darkAccent : lightAccent);
         document.documentElement.style.setProperty('--accent-hover', darkMode ? darkAccentHover : lightAccentHover);
         document.documentElement.style.setProperty('--box-bg', darkMode ? darkBoxBg : lightBoxBg);
+        document.documentElement.style.setProperty('--h3-color', darkMode ? darkH3 : lightH3);
+        document.documentElement.style.setProperty('--h4-color', darkMode ? darkH4 : lightH4);
 
-        // Update snowflake icon stroke color
-        snowflakeIcon.style.stroke = darkMode ? darkText : lightBorder;
-
-        // Update social icons in dark mode
+        // Update icon color
+        themeIcon.style.stroke = darkMode ? darkAccent : lightBorder;
+        
+        // Update social icons fill
         document.querySelectorAll('.social-icons-list .icon').forEach(icon => {
-            icon.style.fill = 'var(--accent)';
+            icon.style.fill = darkMode ? darkAccent : lightAccent;
+        });
+        
+        // Change Button Text Color logic
+        // In Light mode (Black buttons) -> White Text
+        // In Dark mode (Gold buttons) -> Black Text
+        document.querySelectorAll('.button, input[type="submit"]').forEach(btn => {
+            btn.style.color = darkMode ? '#000' : '#fff';
         });
 
-        // Optional: rotate the snowflake icon on toggle
-        snowflakeIcon.style.transform = darkMode ? "rotate(180deg)" : "rotate(0deg)";
+        // Rotate icon
+        themeIcon.style.transform = darkMode ? "rotate(180deg)" : "rotate(0deg)";
     });
 
 </script>
 
 <script>
-    // List of card IDs where snowflakes should appear
+    // List of card IDs where sparkles should appear
     const cardIds = [
         "card-sahaj", 
         "card-dec-hp", 
@@ -912,55 +861,60 @@ ul.timeline, ul.features {
         "card-pain-mgmt", 
         "card-yes-plus", 
         "card-seva", 
-        "card-podcasts", 
+        "card-podcasts",
         "card-programs"
     ];
 
-    function createSnowflake(cardElement) {
-        const snowflake = document.createElement('div');
-        snowflake.innerHTML = '❄️';
-        snowflake.classList.add('snowflake');
+    function createSparkle(cardElement) {
+        const sparkle = document.createElement('div');
+        // Randomly choose between Sparkles, Stars, or "2026" text (rarely)
+        const rand = Math.random();
+        if(rand > 0.95) {
+             sparkle.innerHTML = '26';
+             sparkle.style.fontSize = '0.5em';
+             sparkle.style.fontWeight = 'bold';
+        } else if (rand > 0.6) {
+             sparkle.innerHTML = '✨';
+        } else {
+             sparkle.innerHTML = '✦';
+        }
+        
+        sparkle.classList.add('sparkle');
 
-        // Position the snowflake near the bottom right corner of the card
-        // 70% to 100% of the card width (horizontal range)
-        const startX = Math.random() * 30 + 70; 
-        // 80% to 100% of the card height (vertical range)
+        // Position
+        const startX = Math.random() * 90 + 5; 
         const startY = Math.random() * 20 + 80;
 
-        const size = Math.random() * 0.4 + 0.6; // Keep the size small (0.6em to 1.0em)
-        const duration = Math.random() * 5 + 3; // Animation duration
-        const delay = Math.random() * 3; // Animation start delay
+        const size = Math.random() * 0.5 + 0.5; 
+        const duration = Math.random() * 4 + 3; 
+        const delay = Math.random() * 2; 
 
-        snowflake.style.right = `${100 - startX}%`; 
-        snowflake.style.bottom = `${100 - startY}%`;
-        snowflake.style.animationDuration = `${duration}s`;
-        snowflake.style.animationDelay = `${delay}s`;
-        snowflake.style.opacity = Math.random() * 0.4 + 0.6; // Opacity 60% to 100%
-        snowflake.style.color = '#f5f5f5'; // Force white/light color
-        snowflake.style.fontSize = `${size}em`;
+        sparkle.style.left = `${startX}%`; 
+        sparkle.style.bottom = `0%`; // Start from bottom
+        sparkle.style.animationDuration = `${duration}s`;
+        sparkle.style.animationDelay = `${delay}s`;
+        sparkle.style.opacity = 0; 
 
-        cardElement.appendChild(snowflake);
+        cardElement.appendChild(sparkle);
 
-        // Clean up the snowflake after the animation duration plus a buffer
+        // Clean up
         setTimeout(() => {
-            snowflake.remove();
+            sparkle.remove();
         }, (duration + 1) * 1000);
     }
 
-    function generateCardSnowflakes(cardElement, count) {
+    function generateCardSparkles(cardElement, count) {
         for (let i = 0; i < count; i++) {
-            createSnowflake(cardElement);
+            createSparkle(cardElement);
         }
     }
 
-    // Initialize snowflakes for a few cards
+    // Initialize sparkles
     cardIds.forEach(id => {
         const card = document.getElementById(id);
         if (card) {
-            // Generate 3 snowflakes per card initially
-            generateCardSnowflakes(card, 3); 
-            // Continuously generate one new snowflake every few seconds
-            setInterval(() => createSnowflake(card), Math.random() * 5000 + 3000); 
+            generateCardSparkles(card, 2); 
+            setInterval(() => createSparkle(card), Math.random() * 3000 + 2000); 
         }
     });
 </script>
