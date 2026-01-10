@@ -198,6 +198,10 @@
     .social-icons-list { display: flex; justify-content: center; gap: 16px; margin: 0 auto; }
     .icon { width: 25px; height: 25px; fill: var(--text); transition: fill 0.3s ease; }
     .icon:hover { fill: var(--ny-gold); }
+
+    /* Custom styles for the updated Tour Card */
+    .tour-card { border: 2px solid var(--ny-gold) !important; text-align: center; }
+    .tour-year-display { font-size: 3rem; font-weight: 900; opacity: 0.1; position: absolute; top: -10px; left: 10px; z-index: 0; }
 </style>
 
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-QL72FZ9YZ2"></script>
@@ -216,22 +220,33 @@
     </svg>
 </div>
 
-<div class="iphone-frame" id="card-guru-unique">
-    <div class="live-badge">● SCHEDULE</div>
+<div class="iphone-frame tour-card" id="card-guru-tour">
+    <div class="live-badge">● GLOBAL TOUR</div>
+    <div class="tour-year-display">2026</div>
     
-    <div class="big-year">2026</div>
+    <header style="flex-direction: column; align-items: center; text-align: center;">
+        <div class="card-title-group" style="z-index: 2;">
+            <h1 style="font-size: 1.6rem; line-height: 1.2;">Gurudev Sri Sri <br> Ravi Shankar</h1>
+            <p class="subtitle" style="margin-top: 5px; font-weight: 600; color: var(--ny-gold);">World Tour 2026</p>
+        </div>
+    </header>
 
-    <div class="card-title-group" style="z-index: 2;">
-        <h1 class="guru-main-text">Gurudev <br>is Touring.</h1>
-        <p class="subtitle" style="margin-bottom: 20px; font-style: italic;">The much awaited 2026 calendar</p>
-    </div>
+    <section style="margin: 15px 0;">
+        <h3 style="font-size: 1rem; color: var(--text);">The Wait is Over.</h3>
+        <p class="subtitle" style="font-style: italic;">Experience peace, wisdom, and celebration in your city.</p>
+        <ul class="features" style="display: inline-block; text-align: left; margin-top: 10px;">
+            <li>Exclusive Satsangs</li>
+            <li>Masterclasses on Meditation</li>
+            <li>Global Peace Initiative</li>
+        </ul>
+    </section>
 
-    <a href="https://gurudev.artofliving.org/tour-schedule/" class="floating-btn" target="_blank"> 
-        Find Him Here → 
+    <a href="https://gurudev.artofliving.org/tour-schedule/" class="button" target="_blank" style="font-size: 0.8rem; padding: 0.8rem 1.5rem; background: linear-gradient(45deg, var(--ny-gold), #000); border: none;"> 
+        Explore Full Schedule → 
     </a>
 
     <footer>
-        <div class="footer" style="border:none; margin-top: 15px;"> ❤️💕 </div>
+        <div class="footer" style="border:none; margin-top: 10px; font-size: 0.6rem;"> 🌍 Spanning Continents | ❤️ One World Family </div>
     </footer>
 </div>
 
@@ -501,7 +516,7 @@
         snowflakeIcon.style.transform = darkMode ? "rotate(180deg)" : "rotate(0deg)";
     });
 
-    const cardIds = ["card-sahaj", "card-dec-hp", "card-dec-hp-2", "card-pune-hp", "card-dsar", "card-do-dec", "card-silence", "card-scanning", "card-pain-mgmt", "card-yes-plus", "card-seva", "card-podcasts", "card-programs"];
+    const cardIds = ["card-guru-tour", "card-sahaj", "card-dec-hp", "card-dec-hp-2", "card-pune-hp", "card-dsar", "card-do-dec", "card-silence", "card-scanning", "card-pain-mgmt", "card-yes-plus", "card-seva", "card-podcasts", "card-programs"];
     function createSnowflake(cardElement) {
         const snowflake = document.createElement('div');
         snowflake.innerHTML = Math.random() > 0.5 ? '✨' : '⋆';
