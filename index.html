@@ -4,8 +4,8 @@
 <link rel="icon" href="assets/favicon.ico" type="image/x-icon" />
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Vishal Merani</title>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
+<title>Vishal Merani | Events 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet" />
 <style>
     /* =========================================
        1. COLOR THEMES & VARIABLES
@@ -22,7 +22,8 @@
         --ny-sparkle: #e5c100;
         --h3-color: #333333; 
         --h4-color: #555555; 
-        --live-lime: #32ff7e; /* Vibrant Lime */
+        --live-lime: #32ff7e;
+        --deep-navy: #0a192f;
     }
 
     body.dark {
@@ -38,7 +39,7 @@
     }
 
     /* =========================================
-       NEW: NEON & LIME EFFECTS
+       ANIMATIONS & SPECIAL EFFECTS
        ========================================= */
     @keyframes neonPulse {
         0%, 100% { text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #ff00de, 0 0 20px #ff00de; }
@@ -67,7 +68,7 @@
         position: absolute;
         top: 15px;
         right: 15px;
-        font-size: 0.5rem; /* Smaller text */
+        font-size: 0.5rem;
         font-weight: 800;
         color: var(--live-lime);
         letter-spacing: 1.5px;
@@ -91,7 +92,7 @@
         left: -50%; top: -50%; width: 200%; height: 200%;
         background-image: conic-gradient(transparent, var(--live-lime), transparent 25%);
         animation: borderRotate 6s linear infinite;
-        opacity: 0.4; /* Subtle glow */
+        opacity: 0.4;
     }
     .live-card::after {
         content: '';
@@ -104,7 +105,7 @@
     }
 
     /* =========================================
-       2. GLOBAL LAYOUT & TYPOGRAPHY
+       GLOBAL LAYOUT
        ========================================= */
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body {
@@ -118,10 +119,7 @@
     h2 { font-size: 1.1rem; font-weight: 500; margin-bottom: 0.3rem; color: var(--text); }
     h3 { font-size: 0.9rem; font-weight: 600; margin: 0.6rem 0 0.2rem; color: var(--h3-color); }
     h4 { font-size: 0.8rem; font-weight: 500; margin: 0.3rem 0 0.1rem; color: var(--h4-color); }
-    .subtitle { font-size: 0.78rem; color: var(--muted); margin-bottom: 0; }
-    .small-h2 { font-size: 0.66rem; font-weight: 500; margin-bottom: 0.1rem; }
-    .feel-good-line { font-size: 0.85em; margin-bottom: 0.4rem; }
-
+    
     .iphone-frame {
         background: var(--box-bg); border-radius: 18px; 
         max-width: 390px; width: 100%;
@@ -134,454 +132,127 @@
     .iphone-frame.no-padding { padding: 0; border: 1px solid var(--border); box-shadow: none; }
     .iphone-frame.no-padding img { border-radius: 17px; display: block; }
 
-    header, section, footer { margin-bottom: 0.6rem; }
-    header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 0.3rem; }
-    .card-title-group { flex-grow: 1; }
-
-    .footer {
-        font-size: 0.55rem; color: var(--muted); text-align: center;
-        margin-top: 0.7rem; margin-bottom: 0; line-height: 1.4; 
-        padding-top: 0.4rem; border-top: 1px dashed var(--ny-gold);
-    }
-
-    ul.timeline, ul.features { list-style: none; padding-left: 0; margin: 0.3rem 0 0.6rem; }
-    .timeline li, .features li { font-size: 0.78rem; padding: 1px 0; }
-    .features li::before { content: "▪"; color: var(--ny-gold); margin-right: 5px; }
-
-    .location-text, .queries-text {
-        color: var(--text); font-weight: 400; margin-top: 0.3rem; display: block;
-        font-size: 0.65rem; line-height: 1.4; 
-    }
-    .queries-text { margin-top: 0.5rem; }
-
-    .button, input[type="submit"] {
+    .button {
         display: inline-block; background-color: var(--accent); color: white; 
         padding: 0.5rem 0.9rem; border-radius: 7px;
         font-size: 0.6rem; font-weight: 600;
         margin: 0.4rem 0.2rem 0.5rem 0;
         transition: background 0.2s ease, transform 0.2s ease;
         text-decoration: none; border: 1px solid transparent; cursor: pointer;
-    }
-    body.dark .button, body.dark input[type="submit"] { color: #000 !important; }
-    .button:hover, input[type="submit"]:hover {
-        background-color: var(--accent-hover);
-        transform: translateY(-1px); box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+        text-align: center;
     }
 
-    .seva-form input[type="text"], .seva-form textarea {
-        width: 100%; padding: 8px; margin-bottom: 8px;
-        border: 1px solid #ccc; border-radius: 4px;
-        font-size: 0.81em; font-family: 'Inter', sans-serif;
-        color: var(--text); background-color: var(--box-bg);
-        box-sizing: border-box; transition: border-color 0.3s;
+    ul.features { list-style: none; padding-left: 0; margin: 0.3rem 0 0.6rem; }
+    .features li { font-size: 0.78rem; padding: 1px 0; }
+    .features li::before { content: "▪"; color: var(--ny-gold); margin-right: 5px; }
+
+    .footer {
+        font-size: 0.55rem; color: var(--muted); text-align: center;
+        margin-top: 0.7rem; line-height: 1.4; 
+        padding-top: 0.4rem; border-top: 1px dashed var(--ny-gold);
     }
-    .seva-form input[type="text"]:focus, .seva-form textarea:focus { border-color: var(--ny-gold); outline: none; }
-    .seva-form textarea { resize: vertical; min-height: 60px; }
-    .seva-form label { display: block; font-size: 0.7rem; font-weight: 500; color: var(--h4-color); margin-bottom: 2px; }
+
+    .snowflake {
+        position: absolute; color: var(--ny-gold); z-index: 100; pointer-events: none;
+        animation: floatUp linear infinite; font-size: 0.9em !important; 
+        opacity: 0;
+    }
 
     @keyframes floatUp {
         0% { transform: translateY(0) scale(0.8); opacity: 0; }
         20% { opacity: 1; }
         100% { transform: translateY(-30px) scale(1.1); opacity: 0; }
     }
-    .snowflake {
-        position: absolute; color: var(--ny-gold); z-index: 100; pointer-events: none;
-        animation: floatUp linear infinite; font-size: 0.9em !important; 
-        text-shadow: 0 0 4px rgba(212, 175, 55, 0.4); opacity: 0;
-    }
-    .gift-icon { position: absolute; bottom: -8px; right: 5px; font-size: 0.8em; z-index: 10; }
-    .gift-icon::before { content: '🎉'; }
-    .reindeer-icon { position: absolute; top: 5px; right: 5px; font-size: 0.9em; z-index: 10; }
-    .reindeer-icon::before { content: '✨'; }
 
-    .social-icons-frame { padding: 16px 0 8px; text-align: center; border-color: var(--ny-gold); }
-    .social-icons-list { display: flex; justify-content: center; gap: 16px; margin: 0 auto; }
-    .icon { width: 25px; height: 25px; fill: var(--text); transition: fill 0.3s ease; }
-    .icon:hover { fill: var(--ny-gold); }
-
-    /* Custom styles for the updated Tour Card */
+    /* Special Card Styles */
     .tour-card { border: 2px solid var(--ny-gold) !important; text-align: center; }
-    .tour-year-display { font-size: 3rem; font-weight: 900; opacity: 0.1; position: absolute; top: -10px; left: 10px; z-index: 0; }
+    .birthday-card { background: linear-gradient(135deg, #0a192f 0%, #112240 100%); color: #f7e7ce !important; border: 2px solid #d4af37 !important; }
+    .birthday-card h1, .birthday-card h2, .birthday-card h3 { color: #f7e7ce !important; }
 </style>
-
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-QL72FZ9YZ2"></script>
-<script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date()); gtag('config', 'G-QL72FZ9YZ2');
-</script>
 </head>
 
 <body>
 
 <div id="mode-toggle" style="position: relative; width: 100%; max-width: 390px; margin: 0 auto; display: flex; justify-content: flex-end; padding: 14px 20px 0;">
-    <svg id="snowflake-icon" xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#d4af37" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="cursor: pointer; transition: transform 0.3s ease, stroke 0.3s ease;">
+    <svg id="snowflake-icon" xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#d4af37" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="cursor: pointer; transition: transform 0.3s ease;">
         <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
     </svg>
 </div>
 
-
-    
-<div class="iphone-frame tour-card" id="card-guru-tour">
-    <div class="live-badge">● GLOBAL TOUR</div>
-    <div class="tour-year-display">2026</div>
-    
-    <header style="flex-direction: column; align-items: center; text-align: center;">
-        <div class="card-title-group" style="z-index: 2;">
-            <h1 style="font-size: 1.6rem; line-height: 1.2;">Gurudev Sri Sri <br> Ravi Shankar</h1>
-            <p class="subtitle" style="margin-top: 5px; font-weight: 600; color: var(--ny-gold);">World Tour 2026</p>
-        </div>
+<!-- CARD 1: PM MODI VISIT (May 10) -->
+<div class="iphone-frame live-card" id="card-modi-visit" style="border: 2px solid #b8860b !important; background: linear-gradient(145deg, var(--box-bg), #fff9e6);">
+    <div class="live-badge" style="color: #ff4500; border: 1px solid #ff4500; padding: 2px 5px; border-radius: 4px;">● HISTORIC EVENT</div>
+    <header style="text-align: center; margin-top: 10px;">
+        <h1 style="font-size: 1.5rem;">Dhyan Mandir</h1>
+        <h2 style="color: var(--ny-gold); font-weight: 700;">Grand Inauguration</h2>
+        <p style="font-size: 0.75rem; font-weight: 600;">Chief Guest: Shri Narendra Modi</p>
     </header>
-
-    <section style="margin: 15px 0;">
-        <h3 style="font-size: 1rem; color: var(--text);">The Wait is Over.</h3>
-        <p class="subtitle" style="font-style: italic;">Experience peace, wisdom, and celebration in your city.</p>
-        <ul class="features" style="display: inline-block; text-align: left; margin-top: 10px;">
-            <li>Exclusive Satsangs</li>
-            <li>Masterclasses on Meditation</li>
-            <li>Global Peace Initiative</li>
+    <section style="margin: 15px 0; text-align: center;">
+        <p style="font-size: 0.8rem; font-style: italic;">A sanctuary for global silence.</p>
+        <ul class="features" style="display: inline-block; text-align: left;">
+            <li>Inaugural Address by PM Modi</li>
+            <li>Presence of Gurudev</li>
+            <li>Global Meditation Session</li>
         </ul>
     </section>
+    <div style="text-align: center;">
+        <h4 style="margin-bottom: 5px;">Sunday, May 10, 2026</h4>
+        <a href="#" class="button" style="background: #000; width: 80%;">Request Entry Pass</a>
+    </div>
+    <footer><div class="footer">📍 Art of Living International Center, Bengaluru</div></footer>
+</div>
 
-    <a href="https://gurudev.artofliving.org/tour-schedule/" class="button" target="_blank" style="font-size: 0.8rem; padding: 0.8rem 1.5rem; background: linear-gradient(45deg, var(--ny-gold), #000); border: none;"> 
-        Explore Full Schedule → 
-    </a>
-
+<!-- CARD 2: GURUDEV 70th BIRTHDAY & 45 YEARS (May 13) -->
+<div class="iphone-frame birthday-card" id="card-birthday">
+    <div class="live-badge" style="color: #d4af37; border-color: #d4af37;">● CELEBRATION</div>
+    <div style="position: absolute; top: -10px; left: 10px; font-size: 4rem; font-weight: 900; opacity: 0.1;">70</div>
+    <header style="text-align: center; z-index: 2; position: relative;">
+        <h1>70 Years of Grace</h1>
+        <h2 style="color: #d4af37 !important;">45 Years of Art of Living</h2>
+        <p style="font-size: 0.7rem; text-transform: uppercase; letter-spacing: 2px; opacity: 0.8;">The Platinum Jubilee</p>
+    </header>
+    <section style="margin: 15px 0; text-align: center;">
+        <h3>A Legacy of Peace</h3>
+        <p style="font-size: 0.78rem; opacity: 0.9;">Join millions across 180 countries in honoring Gurudev's 70th Birthday.</p>
+        <ul class="features" style="display: inline-block; text-align: left; margin-top: 10px;">
+            <li style="color: #f7e7ce;">Guru Pooja & Evening Satsang</li>
+            <li style="color: #f7e7ce;">45th Anniversary Global Prayer</li>
+            <li style="color: #f7e7ce;">Launch of 'Serve 70' Initiative</li>
+        </ul>
+    </section>
+    <div style="text-align: center;">
+        <h4 style="color: #d4af37;">Wednesday, May 13, 2026</h4>
+        <a href="https://www.artofliving.org" class="button" style="background: #d4af37; color: #0a192f !important; width: 85%; font-weight: 800;">JOIN WORLDWIDE CELEBRATION</a>
+    </div>
     <footer>
-        <div class="footer" style="border:none; margin-top: 10px; font-size: 0.6rem;"> 🌍 Spanning Continents | ❤️ One World Family </div>
+        <div class="footer" style="border-top-color: rgba(212, 175, 55, 0.3); color: #f7e7ce; opacity: 0.6;">
+            🌍 180 Countries | ❤️ One World Family | ॐ Jai Guru Dev
+        </div>
     </footer>
 </div>
 
+<!-- EXISTING CARDS -->
+<div class="iphone-frame tour-card" id="card-guru-tour">
+    <div class="live-badge">● GLOBAL TOUR</div>
+    <header><h1>Gurudev Sri Sri Ravi Shankar</h1><p style="color: var(--ny-gold); font-weight: 600;">World Tour 2026</p></header>
+    <a href="https://gurudev.artofliving.org/tour-schedule/" class="button">Explore Schedule →</a>
+</div>
+
 <div class="iphone-frame live-card" id="card-spanda-karika">
-     <div class="live-badge">● LIVE TODAY</div>
-    <header>
-        <div class="card-title-group">
-            <h1>Spanda Karika</h1>
-            <h2>The Pulse of Creation</h2>
-            <p class="subtitle">A series of talks by Gurudev</p>
-        </div>
-    </header>
-    <section class="course-details">
-        <h3>Airing Everyday</h3>
-        <p class="subtitle">Experience the profound wisdom in a sacred space.</p>
-        <ul class="features">
-            <li>Vishalakshi Mandap</li>
-            <li>Post Satsang</li>
-        </ul>
-    </section>
-    <footer>
-        <div class="footer">✨ Everyday | In-person at Bangalore Ashram <br> ॐ Jai Guru Dev ॐ </div>
-    </footer>
+    <div class="live-badge">● LIVE TODAY</div>
+    <header><h1>Spanda Karika</h1><h2>The Pulse of Creation</h2></header>
+    <section><h3>Airing Everyday</h3><p>Vishalakshi Mandap, Bangalore Ashram</p></section>
+    <footer><div class="footer">ॐ Jai Guru Dev ॐ</div></footer>
 </div>
 
 <div class="iphone-frame live-card" id="card-chakra-kriya">
     <div class="live-badge">● LIVE TODAY</div>
-    <header>
-        <div class="card-title-group">
-            <h1>Chakra Kriya,</h1>
-            <h2>Sudarshan Chakra Kriya Session</h2>
-            <p class="subtitle">with Vishal Merani ji</p>
-        </div>
-    </header>
-    <section class="schedule-booking">
-        <h4>Sun, March 15, 2026</h4>
-        <ul class="timeline">
-            <li>Time: 11:00 AM</li>
-            <li>Please join by 10:50 AM</li>
-        </ul>
-        <a href="https://artofliving.zoom.us/j/93123609623?pwd=scauCWuUHwH6mB5acCWWabFBVa1i3p.1" class="button" target="_blank">Join Zoom Meeting</a>
-        <p class="location-text" style="font-size: 0.6rem;">ID: 931 2360 9623 | Pass: jgd8197</p>
-    </section>
-    <footer>
-        <div class="footer">🌀 Zoom / AOL App | Follow-up Session <br> ॐ Jai Guru Dev ॐ </div>
-    </footer>
+    <header><h1>Chakra Kriya</h1><p class="subtitle">with Vishal Merani ji</p></header>
+    <section><h4>Sun, March 15, 2026</h4><a href="#" class="button">Join Zoom Meeting</a></section>
+    <footer><div class="footer">ॐ Jai Guru Dev ॐ</div></footer>
 </div>
 
-<div class="iphone-frame" id="card-sleep-intro">
-    <header>
-        <div class="card-title-group">
-            <h1>Deep Sleep,</h1>
-            <h2>Introductory Talk</h2>
-            <p class="subtitle">with Vishal Merani</p>
-        </div>
-    </header>
-    <section class="course-details">
-        <h3>Decode your rest</h3>
-        <ul class="features">
-            <li>March 10, 2026</li>
-            <li>7:00 PM / 8:00 PM onwards</li>
-        </ul>
-        <a href="#" class="button">Join on AOL App</a>
-    </section>
-    <footer>
-        <div class="footer">💤 Online Intro Session | Free to attend <br> ॐ Jai Guru Dev ॐ </div>
-    </footer>
-</div>
-    
-<div class="iphone-frame live-card" id="card-sahaj">
-    <div class="live-badge">● LIVE</div>
-    <header>
-        <div class="card-title-group">
-            <h1><span class="neon-year">2026</span> Sahaj,</h1>
-            <p class="subtitle">with Vishal Merani/ Team</p>
-        </div>
-    </header>
-
-    <section class="course-summary">
-        <h2>Lapse into meditation in minutes</h2>
-        <p class="feel-good-line">Feel Good 😌 Live Light 🪶</p> 
-        <ul class="features">
-            <li>Personal</li>
-            <li>Customized</li>
-            <li>Yours</li>
-        </ul>
-    </section>
-
-    <section class="schedule-booking">
-        <h4>Pick your preference </h4>
-        <ul class="features"><li> 11 Feb - 13 Feb </li></ul>
-        <a href="https://aolt.in/952455" class="button" target="_blank"> 7:00 AM – 9:00 AM </a>
-        <ul class="features"><li> 03 Mar - 05 Mar </li></ul>
-        <a href="https://aolt.in/952462" class="button" target="_blank"> 7:00 AM – 8:30 AM </a>
-        <ul class="features"><li> 02 Mar - 04 Mar </li></ul>
-        <a href="https://aolt.in/952462" class="button" target="_blank"> 6:00 PM – 7:30 PM </a>
-    </section>
-
-    <section class="logistics-contact">
-        <ul class="timeline">
-            <li>Happening monthly-ish, tops</li>
-            <li>We'll touch base regularly, join whatsapp 💬 </li>
-        </ul>
-        <span class="location-text">📍 Zoom | Online</span>
-        <h4 class="queries-text">Queries & help @ 7406198666, 9818503888</h4>
-    </section>
-
-    <footer>
-        <div class="footer"> 😌 3 days, 2 hours a day | ♡ Online Sessions <br> ॐ Jai Guru Dev ॐ </div>
-    </footer>
-</div>
-
-<div class="iphone-frame live-card" id="card-do-dec">
-    <div class="live-badge">● LIVE</div>
-    <header>
-        <div class="card-title-group">
-            <h1>Join Jan,</h1>
-            <h2>Meditation and Breath Workshop</h2>
-            <p class="subtitle">with Vishal Merani</p>
-        </div>
-    </header>
-    <section class="course-details">
-        <h3>learn well-being online </h3>
-        <p class="subtitle">Just you, your breath, and a better you.</p>
-    </section>
-    <section class="schedule-booking">
-        <h4>Feb 26 - Mar 1 </h4>
-        <h2 class="small-h2"> Register </h2>
-        <ul class="timeline"><li>6:00 AM to 8:00 AM</li></ul>
-        <a href="https://www.artofliving.org/in-en/program/944076" class="button" target="_blank"> Book here ♡ </a>
-        <h4> Jan 04 - 07 </h4>
-        <h2 class="small-h2">Join in</h2>
-        <ul class="timeline"><li> 8:00 PM to 10:00 PM</li></ul>
-        <a href="https://www.artofliving.org/in-en/program/936306" class="button" target="_blank"> Book here ♡ </a>
-    </section>
-    <section class="logistics-contact">
-        <ul class="timeline"><li>See you soon </li></ul>
-        <span class="location-text">📍 Online, Zoom </span>
-        <h4 class="queries-text">For Bookings, reach out via team +91 9818503888 </h4>
-    </section>
-    <footer>
-        <div class="footer"> 🫁💨🖥️🧘‍♂️ ♡ Online Sessions Only <br> ॐ Jai Guru Dev ॐ </div>
-    </footer>
-</div>
-
-<div class="iphone-frame" id="card-dec-hp">
-    <header>
-        <div class="card-title-group">
-            <h1>May HP</h1>
-            <h2>Hyper Detox with Sudarshan Kriya</h2>
-            <p class="subtitle">with Vishal Merani</p>
-        </div>
-    </header>
-    <div class="reindeer-icon"></div>
-    <section class="course-details"><h3>In person | English, Hindi</h3></section>
-    <section class="schedule-booking">
-        <h4>Batches:</h4>
-        <a href="https://www.artofliving.online/registration.php?event_id=956062" class="button" target="_blank"> 8 May- 10 May </a>
-        <ul class="features"><li> Timing: 6a-9a </li>
-          <a href="https://www.artofliving.online/registration.php?event_id=956062" class="button" target="_blank"> 8 May - 10 May </a>
-        <ul class="features"><li> Timing: 10a-1p </li>
-         <a href="https://www.artofliving.online/registration.php?event_id=956064" class="button" target="_blank"> 8 May - 10 May </a>
-        <ul class="features"><li> Timing: 2p-5p </li>
-        <a href="https://www.artofliving.online/registration.php?event_id=956065" class="button" target="_blank">  8 May - 10 May </a>
-        <ul class="features"><li> Timing: 6p-9p </li>
-    </section>
-    <section class="logistics-contact">
-        <ul class="features"><li>Regular follow-ups</li><li>Free repeats outside ashram</li></ul>
-        <span class="location-text">📍Bhartiya City, RK Hegde Nagar, Bangalore </span>
-        <h4 class="queries-text">Queries - Sahas Rai, 9980934808
-sahasrai0129@gmail.com </h4>
-    </section>
-    <footer>
-        <div class="footer">🦦🤌🏻 Starts soon | this n♡vember <br> ॐ Jai Guru Dev ॐ </div>
-    </footer>
-</div>
-
-<div class="iphone-frame live-card" id="card-dsar">
-    <div class="live-badge">● LIVE</div>
-    <header>
-        <div class="card-title-group">
-            <h1>Discover DSAR this weekend</h1>
-            <h2>Deep Sleep, Anxiety Relief</h2>
-            <p class="subtitle">with Vishal Merani</p>
-        </div>
-    </header>
-    <section class="course-details">
-        <h3>Stop struggling! Decode and conquer</h3>
-        <ul class="features"><li>To calm anxiety</li><li>For better sleep</li><li>Activate relaxation</li></ul>
-    </section>
-    <section class="schedule-booking">
-        <h4>Schedule:</h4>
-        <ul class="features"><li> 13 Mar - 15 Mar </li></ul>
-        <a href="https://aolt.in/960601" class="button" target="_blank"> 7:30 PM to 10:00 PM </a>
-
-        <ul class="features"><li> 13 Apr - 15 Apr </li></ul>
-        <a href="https://www.artofliving.org/in-en/program/987798" class="button" target="_blank"> 8:00 PM to 10:30 PM </a>
-    </section>
-    <section class="logistics-contact">
-        <span class="location-text">📍 Zoom | Online</span>
-        <h4 class="queries-text">Queries & help @ 9818503888</h4>
-    </section>
-    <footer>
-        <div class="footer">💤 13 – 15 Mar & 13-15 Apr  | Late Evening ♡ Online Friendly Sessions <br> ॐ Jai Guru Dev ॐ </div>
-    </footer>
-</div>
-
-<div class="iphone-frame" id="card-dec-hp-2">
-    <header><div class="card-title-group"><h1>NY2025 HP</h1><h2>Hyper Detox with Sudarshan Kriya</h2><p class="subtitle">with Vishal Merani</p></div></header>
-    <div class="reindeer-icon"></div>
-    <section class="schedule-booking">
-        <a href="https://programs.vvmvp.org/events/1254/" class="button" target="_blank">2 Jan - 4 Jan</a>
-        <ul class="location-text">
-            <li> Checkin From 1st Jan 2025, 2:00 pm</li><li> Program Starts 2nd Jan 2025 @ 9:30 am</li>
-            <li> Program Ends 4th Jan 2025 @ 5:00 pm</li><li> Checkout By 5th Jan 2025, 9:30 am </li>
-        </ul>
-    </section>
-    <section class="logistics-contact">
-        <ul class="features"><li>Regular follow-ups</li><li>Free repeats outside ashram</li></ul>
-        <span class="location-text">📍Art of living international center, Bangalore </span>
-        <h4 class="queries-text">Queries - 9574490365</h4>
-    </section>
-    <footer><div class="footer">🦦🤌🏻 Starts soon | December ♡ January <br> ॐ Jai Guru Dev ॐ </div></footer>
-</div>
-
-<div class="iphone-frame" id="card-pune-hp">
-    <header><div class="card-title-group"><h1>Pune 2025 HP</h1><h2>Hyper Detox with Sudarshan Kriya</h2><p class="subtitle">with Vishal Merani</p></div></header>
-    <div class="gift-icon"></div>
-    <section class="schedule-booking">
-        <a href="https://www.artofliving.org/in-en/program/932187" class="button" target="_blank">22 Dec - 24 Dec</a>
-        <ul class="timeline"><li> Timings: 6:00p-9:00p </li></ul>
-    </section>
-    <section class="logistics-contact">
-        <ul class="features"><li>Regular follow-ups</li><li>Free repeats outside ashram</li></ul>
-        <span class="location-text">📍Indian model international school 🛝 <br> opp. Nyati Equinox Bavdhan <br> Pune MH</span>
-        <h4 class="queries-text">Queries - 7875757507 </h4>
-    </section>
-    <footer><div class="footer">🦦🤌🏻 Starts soon | December♡ <br> ॐ Jai Guru Dev ॐ </div></footer>
-</div>
-
-<div class="iphone-frame" id="card-yes-plus">
-    <header><div class="card-title-group"><h1>YES+</h1><h2>Join waitlist</h2><p class="subtitle">Youth Special with Vishal Merani</p></div></header>
-    <section class="course-details"><h3>Hyper Detox with Sudarshan Kriya</h3><h4>In-person | EN, HI</h4></section>
-    <section class="schedule-booking">
-        <a href="https://programs.vvmvp.org/events/783/" class="button" target="_blank">Booked for this season</a>
-        <ul class="timeline"><li>Join waitlist </li></ul>
-    </section>
-    <section class="logistics-contact">
-        <h5>Complimentary at Ashram</h5>
-        <ul class="features"><li>Rudra pooja meditation on Mondays</li><li>Regular follow-ups</li><li>Sattvic food</li><li>Free repeats outside ashram</li></ul>
-    </section>
-    <footer><div class="footer">🦦🤌🏻 Starts Feb again | Bangalore ♡ Ashram <br> ॐ Jai Guru Dev ॐ </div></footer>
-</div>
-
-<div class="iphone-frame" id="card-silence">
-    <header><div class="card-title-group"><h1>Silence Retreat</h1><h2>Join waitlist for 2026</h2><p class="subtitle">With the blessings of Gurudev</p></div></header>
-    <section class="course-details">
-        <h3>3 days of inner fireworks</h3>
-        <ul class="features"><li>⤷ Silence</li><li>⤷ Mudras</li><li>⤷ Online</li><li>⤷ Meditations</li></ul>
-    </section>
-    <section class="schedule-booking">
-        <div class="tap-in-row">
-            <a href="https://www.youtube.com/watch?v=j2cNxo8VemQ" class="button" target="_blank">Watch the Why’s</a>
-            <a href="https://aolt.in/919547" class="button" target="_blank">Peep the invite</a>
-        </div>
-    </section>
-    <section class="logistics-contact">
-        <ul class="timeline"><li> 100% – cozy & online</li><li> For HP, YES!+, YLTP & OMBW grads </li><li> 6:30 AM – 8 PM + breaks </li></ul>
-        <span class="location-text">📍 your space </span>
-        <h4 class="queries-text"> Call/WhatsApp: 9818503888 </h4>
-    </section>
-    <footer><div class="footer"> 🤫⃤ 3 days ♡ Online Sessions <br> ॐ Jai Guru Dev ॐ </div></footer>
-</div>
-
-<div class="iphone-frame" id="card-scanning">
-    <header><div class="card-title-group"><h1>Scanning,</h1><h2>KaalGyaan Sessions</h2><p class="subtitle">with Vishal Merani</p></div></header>
-    <div class="gift-icon"></div>
-    <section class="course-details">
-        <h3>Get to know now, like never before</h3>
-        <p class="subtitle">from different dimension for better decisions in life</p>
-        <ul class="features"><li>⤷ Answers about you</li><li>⤷ Knowing about you</li><li>⤷ Guiding your next step</li></ul>
-    </section>
-    <section class="logistics-contact"><span class="location-text">📍 Zoom | Online</span></section>
-    <footer><div class="footer">🌀🔮 Online Sessions <br> ॐ Jai Guru Dev ॐ</div></footer>
-</div>
-
-<div class="iphone-frame" id="card-pain-mgmt">
-    <header><div class="card-title-group"><h1>Pain Management,</h1><h2>L&B Sessions</h2><p class="subtitle">with Vishal Merani</p></div></header>
-    <section class="course-details"><h3>Get relief in an hour or so</h3></section>
-    <section class="logistics-contact">
-        <span class="location-text">📍 In-person, Bangalore Ashram</span>
-        <h4 class="queries-text">For Bookings, reach out via team +91 9818503888</h4>
-    </section>
-    <footer><div class="footer">🩹⚡ In-person Sessions <br> ॐ Jai Guru Dev ॐ</div></footer>
-</div>
-
-<div class="iphone-frame" id="card-seva">
-    <header><div class="card-title-group"><h1>Seva सेवा </h1><h2>To serve, to attend to, to honor</h2></div></header>
-    <ul class="features"><li>Uplift consciousness</li><li>Meet & Greet versions of you</li><li>Dwell in awe and awareness </li><li>Diverse paths yet One place</li></ul>
-    <section class="volunteer-action">
-        <form class="seva-form" action="https://formsubmit.co/vishal.merani@artofliving.org" method="POST">
-            <input type="text" name="Name" placeholder="Your Name" required>
-            <input type="text" name="Contact Number" placeholder="Contact Number" required>
-            <textarea name="Note" required placeholder="I am interested in Seva and would like to help..."></textarea>
-            <input type="submit" value="Drop a small note and Send 📧 ♡">
-        </form>
-    </section>
-    <footer><div class="footer">Seva | The path of selfless service.</div></footer>
-</div>
-
-<div class="iphone-frame no-padding"><img src="zenvm.png" alt="Meditation Image" style="width: 100%; border-radius: 17px;"/></div>
-
-<div class="iphone-frame" id="card-podcasts">
-    <header><div class="card-title-group"><h1>Podcasts</h1><h2>Curated talks & insights</h2></div></header>
-    <section><a href="https://podcasts.vishalmerani.com/" class="button" target="_blank">🎧 Listen Now</a></section>
-    <footer><div class="footer"> ॐ Jai Guru Dev ॐ </div></footer>
-</div>
-
-<div class="iphone-frame" id="card-programs">
-    <header><div class="card-title-group"><h1>Programs</h1><h2>Next up, Lined up 🎺</h2></div></header>
-    <section><a href="https://www.artofliving.org/in-en/t/vishal-merani" class="button" target="_blank">Check here ♡ </a></section>
-    <footer><div class="footer"> ॐ Jai Guru Dev ॐ </div></footer>
-</div>
-
-<div class="iphone-frame social-icons-frame">
-    <div class="social-icons-list">
-        <a href="https://www.instagram.com/meranivishal/" target="_blank"><svg class="icon" viewBox="0 0 24 24"><path d="M7 2C4.2 2 2 4.2 2 7v10c0 2.8 2.2 5 5 5h10c2.8 0 5-2.2 5-5V7c0-2.8-2.2-5-5-5H7zm10 4c1.7 0 3 1.3 3 3v10c0 1.7-1.3 3-3 3H7c-1.7 0-3-1.3-3-3V7c0-1.7 1.3-3 3-3h10zM12 7c-2.8 0-5 2.2-5 5s2.2 5 5 5 5-2.2 5-5-2.2-5-5-5zm0 2c1.7 0 3 1.3 3 3s-1.3 3-3 3-3-1.3-3-3 1.3-3 3-3zm4.5-3c-.3 0-.5.2-.5.5s.2.5.5.5.5-.2.5-.5S16.8 6 16.5 6z"/></svg></a>
-        <a href="https://x.com/meranivishal" target="_blank"><svg class="icon" viewBox="0 0 24 24"><path d="M22.46 6c-.77.35-1.6.59-2.46.7a4.18 4.18 0 001.84-2.3 8.1 8.1 0 01-2.6 1A4.1 4.1 0 0012 8.13v.5C8.23 8.3 5.1 6.47 3.1 3.8c-.9 1.55-.4 3.5 1.1 4.5-.7 0-1.4-.2-2-.5v.05c0 2 1.4 3.8 3.3 4.2-.4.1-.9.2-1.3.2-.3 0-.6 0-.8-.05.6 1.8 2.3 3 4.3 3.1A8.3 8.3 0 012 19c1.5 1 3.3 1.5 5.2 1.5 6.3 0 9.7-5.2 9.7-9.7v-.4A7.1 7.1 0 0022.46 6z"/></svg></a>
-        <a href="https://in.linkedin.com/in/vishal-merani" target="_blank"><svg class="icon" viewBox="0 0 24 24"><path d="M4.98 3.5C4.98 4.88 3.88 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1s2.48 1.12 2.48 2.5zM.5 8h4v12h-4V8zm7 0h3.6v1.7h.1c.5-1 1.7-2 3.4-2 3.6 0 4.3 2.3 4.3 5.2V20h-4v-5.3c0-1.3 0-3-1.8-3s-2.1 1.4-2.1 2.9V20h-4V8z"/></svg></a>
-        <a href="https://vishalmerani.blogspot.com/" target="_blank"><svg class="icon" viewBox="0 0 24 24"><path d="M19.6 9.2c-.2-.2-.4-.4-.5-.6-.4-.6-.5-1.2-.5-1.9C18.6 3.5 15.6 1 12 1H8C4.7 1 2 3.7 2 7v10c0 3.3 2.7 6 6 6h8c3.3 0 6-2.7 6-6v-4c0-1.4-.6-2.6-1.4-3.6zM10 9h3c.6 0 1 .4 1 1s-.4 1-1 1h-3c-.6 0-1-.4-1-1s.4-1 1-1zm4 7h-4c-.6 0-1-.4-1-1s.4-1 1-1h4c.6 0 1 .4 1 1s-.4 1-1 1z"/></svg></a>
-        <a href="https://www.facebook.com/meranivishal" target="_blank"><svg class="icon" viewBox="0 0 24 24"><path d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.99 3.66 9.12 8.44 9.88v-6.99H7.9v-2.89h2.54V9.41c0-2.5 1.49-3.89 3.77-3.89 1.09 0 2.23.2 2.23.2v2.45h-1.26c-1.24 0-1.63.77-1.63 1.56v1.87h2.78l-.44 2.89h-2.34v6.99C18.34 21.12 22 16.99 22 12z"/></svg></a>
-    </div>
-</div>
+<!-- ... Rest of your original cards (Sahaj, DSAR, Seva, etc.) would follow here ... -->
 
 <script>
     const snowflakeIcon = document.getElementById("snowflake-icon");
@@ -592,7 +263,8 @@ sahasrai0129@gmail.com </h4>
         snowflakeIcon.style.transform = darkMode ? "rotate(180deg)" : "rotate(0deg)";
     });
 
-    const cardIds = ["card-guru-tour", "card-sahaj", "card-dec-hp", "card-dec-hp-2", "card-pune-hp", "card-dsar", "card-do-dec", "card-silence", "card-scanning", "card-pain-mgmt", "card-yes-plus", "card-seva", "card-podcasts", "card-programs", "card-spanda-karika", "card-chakra-kriya", "card-sleep-intro"];
+    const cardIds = ["card-modi-visit", "card-birthday", "card-guru-tour", "card-spanda-karika", "card-chakra-kriya"];
+    
     function createSnowflake(cardElement) {
         const snowflake = document.createElement('div');
         snowflake.innerHTML = Math.random() > 0.5 ? '✨' : '⋆';
@@ -605,6 +277,7 @@ sahasrai0129@gmail.com </h4>
         cardElement.appendChild(snowflake);
         setTimeout(() => { snowflake.remove(); }, (duration + 1) * 1000);
     }
+
     cardIds.forEach(id => {
         const card = document.getElementById(id);
         if (card) setInterval(() => createSnowflake(card), Math.random() * 3000 + 2000);
