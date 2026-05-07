@@ -4,51 +4,50 @@
 <link rel="icon" href="assets/favicon.ico" type="image/x-icon" />
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Vishal Merani | Events 2026</title>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet" />
+<title>Vishal Merani</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
 <style>
     /* =========================================
-       1. COLOR THEMES & VARIABLES
+       1. COLOR THEMES & VARIABLES (Updated to Purple)
        ========================================= */
     :root {
         --bg: #f9f9f9;
         --text: #1f1f1f;
         --muted: #777;
         --box-bg: #ffffff;
-        --border: #d4af37;     
-        --accent: #000000;     
-        --accent-hover: #333333;
-        --ny-gold: #d4af37;
-        --ny-sparkle: #e5c100;
+        --border: #a855f7;     
+        --accent: #7e22ce;     
+        --accent-hover: #6b21a8;
+        --ny-gold: #a855f7; /* Now Purple */
+        --ny-sparkle: #d8b4fe;
         --h3-color: #333333; 
         --h4-color: #555555; 
-        --live-lime: #32ff7e;
-        --deep-navy: #0a192f;
+        --live-lime: #32ff7e; 
     }
 
     body.dark {
         --bg: #000000;
-        --text: #f7e7ce;       
-        --muted: #888;
-        --border: #b8860b;     
-        --accent: #d4af37;     
-        --accent-hover: #f0e68c;
-        --box-bg: #111111;
-        --h3-color: #f7e7ce;
-        --h4-color: #ccc;
+        --text: #f3e8ff;       
+        --muted: #a1a1aa;
+        --border: #7e22ce;     
+        --accent: #a855f7;     
+        --accent-hover: #c084fc;
+        --box-bg: #0f0f0f;
+        --h3-color: #f3e8ff;
+        --h4-color: #d1d5db;
     }
 
     /* =========================================
-       ANIMATIONS & SPECIAL EFFECTS
+       ANIMATIONS & LIVE EFFECTS
        ========================================= */
     @keyframes neonPulse {
-        0%, 100% { text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #ff00de, 0 0 20px #ff00de; }
-        50% { text-shadow: 0 0 2px #fff, 0 0 5px #fff, 0 0 8px #00d2ff, 0 0 12px #00d2ff; }
+        0%, 100% { text-shadow: 0 0 5px #fff, 0 0 10px #a855f7, 0 0 15px #7e22ce; }
+        50% { text-shadow: 0 0 2px #fff, 0 0 5px #d8b4fe, 0 0 8px #9333ea; }
     }
 
     .neon-year {
         font-weight: 800;
-        background: linear-gradient(to right, #ff00de, #00d2ff);
+        background: linear-gradient(to right, #a855f7, #6366f1);
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
         animation: neonPulse 3s infinite;
@@ -77,6 +76,7 @@
         align-items: center;
         gap: 3px;
         text-transform: uppercase;
+        z-index: 10;
     }
 
     @keyframes borderRotate {
@@ -84,15 +84,15 @@
         to { transform: rotate(360deg); }
     }
 
-    .live-card { z-index: 0; border: none !important; }
+    .live-card { z-index: 0; border: none !important; position: relative; }
     .live-card::before {
         content: '';
         position: absolute;
         z-index: -2;
         left: -50%; top: -50%; width: 200%; height: 200%;
-        background-image: conic-gradient(transparent, var(--live-lime), transparent 25%);
+        background-image: conic-gradient(transparent, var(--border), transparent 25%);
         animation: borderRotate 6s linear infinite;
-        opacity: 0.4;
+        opacity: 0.3;
     }
     .live-card::after {
         content: '';
@@ -105,7 +105,7 @@
     }
 
     /* =========================================
-       GLOBAL LAYOUT
+       2. GLOBAL LAYOUT
        ========================================= */
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body {
@@ -119,140 +119,206 @@
     h2 { font-size: 1.1rem; font-weight: 500; margin-bottom: 0.3rem; color: var(--text); }
     h3 { font-size: 0.9rem; font-weight: 600; margin: 0.6rem 0 0.2rem; color: var(--h3-color); }
     h4 { font-size: 0.8rem; font-weight: 500; margin: 0.3rem 0 0.1rem; color: var(--h4-color); }
-    
+    .subtitle { font-size: 0.78rem; color: var(--muted); margin-bottom: 0; }
+    .small-h2 { font-size: 0.66rem; font-weight: 500; margin-bottom: 0.1rem; }
+
     .iphone-frame {
         background: var(--box-bg); border-radius: 18px; 
         max-width: 390px; width: 100%;
-        margin: 0 auto 18px auto; box-shadow: 0 4px 15px rgba(212, 175, 55, 0.15); 
+        margin: 0 auto 18px auto; box-shadow: 0 4px 15px rgba(168, 85, 247, 0.15); 
         padding: 24px 18px; border: 1px solid var(--border); 
         position: relative; z-index: 1; overflow: hidden; 
         transition: background-color 0.3s ease, border-color 0.3s ease;
     }
 
-    .iphone-frame.no-padding { padding: 0; border: 1px solid var(--border); box-shadow: none; }
-    .iphone-frame.no-padding img { border-radius: 17px; display: block; }
+    .footer {
+        font-size: 0.55rem; color: var(--muted); text-align: center;
+        margin-top: 0.7rem; margin-bottom: 0; line-height: 1.4; 
+        padding-top: 0.4rem; border-top: 1px dashed var(--border);
+    }
 
-    .button {
+    ul.timeline, ul.features { list-style: none; padding-left: 0; margin: 0.3rem 0 0.6rem; }
+    .timeline li, .features li { font-size: 0.78rem; padding: 1px 0; }
+    .features li::before { content: "▪"; color: var(--border); margin-right: 5px; }
+
+    .button, input[type="submit"] {
         display: inline-block; background-color: var(--accent); color: white; 
         padding: 0.5rem 0.9rem; border-radius: 7px;
         font-size: 0.6rem; font-weight: 600;
         margin: 0.4rem 0.2rem 0.5rem 0;
         transition: background 0.2s ease, transform 0.2s ease;
         text-decoration: none; border: 1px solid transparent; cursor: pointer;
-        text-align: center;
     }
-
-    ul.features { list-style: none; padding-left: 0; margin: 0.3rem 0 0.6rem; }
-    .features li { font-size: 0.78rem; padding: 1px 0; }
-    .features li::before { content: "▪"; color: var(--ny-gold); margin-right: 5px; }
-
-    .footer {
-        font-size: 0.55rem; color: var(--muted); text-align: center;
-        margin-top: 0.7rem; line-height: 1.4; 
-        padding-top: 0.4rem; border-top: 1px dashed var(--ny-gold);
-    }
+    body.dark .button, body.dark input[type="submit"] { color: white !important; }
 
     .snowflake {
-        position: absolute; color: var(--ny-gold); z-index: 100; pointer-events: none;
+        position: absolute; color: var(--border); z-index: 100; pointer-events: none;
         animation: floatUp linear infinite; font-size: 0.9em !important; 
-        opacity: 0;
+        text-shadow: 0 0 4px rgba(168, 85, 247, 0.4); opacity: 0;
     }
-
     @keyframes floatUp {
         0% { transform: translateY(0) scale(0.8); opacity: 0; }
         20% { opacity: 1; }
         100% { transform: translateY(-30px) scale(1.1); opacity: 0; }
     }
 
-    /* Special Card Styles */
-    .tour-card { border: 2px solid var(--ny-gold) !important; text-align: center; }
-    .birthday-card { background: linear-gradient(135deg, #0a192f 0%, #112240 100%); color: #f7e7ce !important; border: 2px solid #d4af37 !important; }
-    .birthday-card h1, .birthday-card h2, .birthday-card h3 { color: #f7e7ce !important; }
+    .icon { width: 25px; height: 25px; fill: var(--text); transition: fill 0.3s ease; }
+    .icon:hover { fill: var(--border); }
+    .tour-year-display { font-size: 3rem; font-weight: 900; opacity: 0.1; position: absolute; top: -10px; left: 10px; z-index: 0; }
 </style>
 </head>
 
 <body>
 
 <div id="mode-toggle" style="position: relative; width: 100%; max-width: 390px; margin: 0 auto; display: flex; justify-content: flex-end; padding: 14px 20px 0;">
-    <svg id="snowflake-icon" xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#d4af37" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="cursor: pointer; transition: transform 0.3s ease;">
+    <svg id="snowflake-icon" xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#a855f7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="cursor: pointer; transition: transform 0.3s ease;">
         <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
     </svg>
 </div>
 
-<!-- CARD 1: PM MODI VISIT (May 10) -->
-<div class="iphone-frame live-card" id="card-modi-visit" style="border: 2px solid #b8860b !important; background: linear-gradient(145deg, var(--box-bg), #fff9e6);">
-    <div class="live-badge" style="color: #ff4500; border: 1px solid #ff4500; padding: 2px 5px; border-radius: 4px;">● HISTORIC EVENT</div>
-    <header style="text-align: center; margin-top: 10px;">
-        <h1 style="font-size: 1.5rem;">Dhyan Mandir</h1>
-        <h2 style="color: var(--ny-gold); font-weight: 700;">Grand Inauguration</h2>
-        <p style="font-size: 0.75rem; font-weight: 600;">Chief Guest: Shri Narendra Modi</p>
-    </header>
-    <section style="margin: 15px 0; text-align: center;">
-        <p style="font-size: 0.8rem; font-style: italic;">A sanctuary for global silence.</p>
-        <ul class="features" style="display: inline-block; text-align: left;">
-            <li>Inaugural Address by PM Modi</li>
-            <li>Presence of Gurudev</li>
-            <li>Global Meditation Session</li>
-        </ul>
-    </section>
-    <div style="text-align: center;">
-        <h4 style="margin-bottom: 5px;">Sunday, May 10, 2026</h4>
-        <a href="#" class="button" style="background: #000; width: 80%;">Request Entry Pass</a>
-    </div>
-    <footer><div class="footer">📍 Art of Living International Center, Bengaluru</div></footer>
-</div>
-
-<!-- CARD 2: GURUDEV 70th BIRTHDAY & 45 YEARS (May 13) -->
-<div class="iphone-frame birthday-card" id="card-birthday">
-    <div class="live-badge" style="color: #d4af37; border-color: #d4af37;">● CELEBRATION</div>
-    <div style="position: absolute; top: -10px; left: 10px; font-size: 4rem; font-weight: 900; opacity: 0.1;">70</div>
-    <header style="text-align: center; z-index: 2; position: relative;">
-        <h1>70 Years of Grace</h1>
-        <h2 style="color: #d4af37 !important;">45 Years of Art of Living</h2>
-        <p style="font-size: 0.7rem; text-transform: uppercase; letter-spacing: 2px; opacity: 0.8;">The Platinum Jubilee</p>
-    </header>
-    <section style="margin: 15px 0; text-align: center;">
-        <h3>A Legacy of Peace</h3>
-        <p style="font-size: 0.78rem; opacity: 0.9;">Join millions across 180 countries in honoring Gurudev's 70th Birthday.</p>
-        <ul class="features" style="display: inline-block; text-align: left; margin-top: 10px;">
-            <li style="color: #f7e7ce;">Guru Pooja & Evening Satsang</li>
-            <li style="color: #f7e7ce;">45th Anniversary Global Prayer</li>
-            <li style="color: #f7e7ce;">Launch of 'Serve 70' Initiative</li>
-        </ul>
-    </section>
-    <div style="text-align: center;">
-        <h4 style="color: #d4af37;">Wednesday, May 13, 2026</h4>
-        <a href="https://www.artofliving.org" class="button" style="background: #d4af37; color: #0a192f !important; width: 85%; font-weight: 800;">JOIN WORLDWIDE CELEBRATION</a>
-    </div>
-    <footer>
-        <div class="footer" style="border-top-color: rgba(212, 175, 55, 0.3); color: #f7e7ce; opacity: 0.6;">
-            🌍 180 Countries | ❤️ One World Family | ॐ Jai Guru Dev
+<!-- NEW: 45 Years Celebrations Card -->
+<div class="iphone-frame live-card" id="card-45-years">
+    <div class="live-badge">● CELEBRATING 45 YEARS</div>
+    <header>
+        <div class="card-title-group">
+            <h1>Art of Living</h1>
+            <h2>45 Years of Service & Joy</h2>
+            <p class="subtitle">A Global Milestone Celebration</p>
         </div>
-    </footer>
+    </header>
+    <section>
+        <ul class="features">
+            <li>Special Global Meditations</li>
+            <li>Honorary Service Projects</li>
+            <li>Join the Vision of a Stress-Free World</li>
+        </ul>
+        <a href="#" class="button">See Global Events</a>
+    </section>
+    <footer><div class="footer">✨ 1981 - 2026 | One World Family <br> ॐ Jai Guru Dev ॐ</div></footer>
 </div>
 
-<!-- EXISTING CARDS -->
-<div class="iphone-frame tour-card" id="card-guru-tour">
+<!-- NEW: Dhyaan Mandir Card -->
+<div class="iphone-frame live-card" id="card-dhyaan-mandir">
+    <div class="live-badge">● LIVE FROM ASHRAM</div>
+    <header>
+        <div class="card-title-group">
+            <h1>Dhyaan Mandir</h1>
+            <h2>Sacred Space for Silence</h2>
+            <p class="subtitle">Guided Sessions Today</p>
+        </div>
+    </header>
+    <section>
+        <ul class="features">
+            <li>Morning Chants: 6:30 AM</li>
+            <li>Deep Meditation: 11:00 AM</li>
+            <li>Evening Silence: 5:30 PM</li>
+        </ul>
+        <span class="location-text">📍 Art of Living International Center</span>
+    </section>
+    <footer><div class="footer">🧘‍♂️ Dive Deep into Silence <br> ॐ Jai Guru Dev ॐ</div></footer>
+</div>
+
+<!-- EXISTING: Global Tour 2026 -->
+<div class="iphone-frame" id="card-guru-tour" style="border-width: 2px;">
     <div class="live-badge">● GLOBAL TOUR</div>
-    <header><h1>Gurudev Sri Sri Ravi Shankar</h1><p style="color: var(--ny-gold); font-weight: 600;">World Tour 2026</p></header>
-    <a href="https://gurudev.artofliving.org/tour-schedule/" class="button">Explore Schedule →</a>
+    <div class="tour-year-display">2026</div>
+    <header style="flex-direction: column; align-items: center; text-align: center;">
+        <div class="card-title-group" style="z-index: 2;">
+            <h1 style="font-size: 1.6rem; line-height: 1.2;">Gurudev Sri Sri <br> Ravi Shankar</h1>
+            <p class="subtitle" style="margin-top: 5px; font-weight: 600; color: var(--border);">World Tour 2026</p>
+        </div>
+    </header>
+    <section style="margin: 15px 0; text-align: center;">
+        <p class="subtitle" style="font-style: italic;">Experience peace, wisdom, and celebration in your city.</p>
+        <a href="https://gurudev.artofliving.org/tour-schedule/" class="button" target="_blank" style="margin-top: 15px; background: linear-gradient(45deg, #a855f7, #000);">Explore Full Schedule →</a>
+    </section>
 </div>
 
+<!-- RETAINED: Spanda Karika -->
 <div class="iphone-frame live-card" id="card-spanda-karika">
-    <div class="live-badge">● LIVE TODAY</div>
-    <header><h1>Spanda Karika</h1><h2>The Pulse of Creation</h2></header>
-    <section><h3>Airing Everyday</h3><p>Vishalakshi Mandap, Bangalore Ashram</p></section>
+     <div class="live-badge">● LIVE TODAY</div>
+    <header>
+        <div class="card-title-group">
+            <h1>Spanda Karika</h1>
+            <h2>The Pulse of Creation</h2>
+            <p class="subtitle">Talks by Gurudev @ Vishalakshi Mandap</p>
+        </div>
+    </header>
     <footer><div class="footer">ॐ Jai Guru Dev ॐ</div></footer>
 </div>
 
+<!-- RETAINED: Chakra Kriya -->
 <div class="iphone-frame live-card" id="card-chakra-kriya">
     <div class="live-badge">● LIVE TODAY</div>
-    <header><h1>Chakra Kriya</h1><p class="subtitle">with Vishal Merani ji</p></header>
-    <section><h4>Sun, March 15, 2026</h4><a href="#" class="button">Join Zoom Meeting</a></section>
-    <footer><div class="footer">ॐ Jai Guru Dev ॐ</div></footer>
+    <header>
+        <div class="card-title-group">
+            <h1>Chakra Kriya</h1>
+            <h2>Sudarshan Chakra Kriya Session</h2>
+            <p class="subtitle">with Vishal Merani ji</p>
+        </div>
+    </header>
+    <section>
+        <h4>Sun, March 15, 2026 @ 11:00 AM</h4>
+        <a href="#" class="button">Join Zoom Meeting</a>
+    </section>
 </div>
 
-<!-- ... Rest of your original cards (Sahaj, DSAR, Seva, etc.) would follow here ... -->
+<!-- RETAINED: Sahaj Meditation -->
+<div class="iphone-frame live-card" id="card-sahaj">
+    <div class="live-badge">● LIVE</div>
+    <header>
+        <div class="card-title-group">
+            <h1><span class="neon-year">2026</span> Sahaj,</h1>
+            <p class="subtitle">with Vishal Merani/ Team</p>
+        </div>
+    </header>
+    <section>
+        <a href="https://aolt.in/952455" class="button" target="_blank"> 7:00 AM – 9:00 AM </a>
+    </section>
+    <footer><div class="footer">😌 3 days, 2 hours a day | Online </div></footer>
+</div>
+
+<!-- RETAINED: Meditation and Breath -->
+<div class="iphone-frame live-card" id="card-do-dec">
+    <div class="live-badge">● LIVE</div>
+    <header>
+        <div class="card-title-group">
+            <h1>Join Jan/Feb</h1>
+            <h2>Meditation and Breath Workshop</h2>
+        </div>
+    </header>
+    <section>
+        <a href="#" class="button">Book here ♡</a>
+    </section>
+</div>
+
+<!-- RETAINED: DSAR -->
+<div class="iphone-frame live-card" id="card-dsar">
+    <div class="live-badge">● LIVE</div>
+    <header>
+        <div class="card-title-group">
+            <h1>DSAR Weekend</h1>
+            <h2>Deep Sleep, Anxiety Relief</h2>
+        </div>
+    </header>
+    <section>
+        <a href="https://aolt.in/960601" class="button">Register Now</a>
+    </section>
+</div>
+
+<!-- RETAINED: Other HP and Silence Cards (Compact for Code length) -->
+<div class="iphone-frame" id="card-dec-hp"><h3>May HP: Hyper Detox</h3><a href="#" class="button">Book Session</a></div>
+<div class="iphone-frame" id="card-silence"><h3>Silence Retreat 2026</h3><a href="#" class="button">Join Waitlist</a></div>
+<div class="iphone-frame" id="card-scanning"><h3>KaalGyaan Scanning</h3><p class="subtitle">with Vishal Merani</p></div>
+<div class="iphone-frame" id="card-seva"><h3>Seva सेवा</h3><p class="subtitle">To serve and honor</p></div>
+
+<!-- RETAINED: Socials & Footer -->
+<div class="iphone-frame social-icons-frame">
+    <div class="social-icons-list">
+        <a href="https://www.instagram.com/meranivishal/" target="_blank"><svg class="icon" viewBox="0 0 24 24"><path d="M7 2C4.2 2 2 4.2 2 7v10c0 2.8 2.2 5 5 5h10c2.8 0 5-2.2 5-5V7c0-2.8-2.2-5-5-5H7zm10 4c1.7 0 3 1.3 3 3v10c0 1.7-1.3 3-3 3H7c-1.7 0-3-1.3-3-3V7c0-1.7 1.3-3 3-3h10z"/></svg></a>
+        <a href="https://in.linkedin.com/in/vishal-merani" target="_blank"><svg class="icon" viewBox="0 0 24 24"><path d="M4.98 3.5C4.98 4.88 3.88 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1s2.48 1.12 2.48 2.5zM.5 8h4v12h-4V8z"/></svg></a>
+    </div>
+</div>
 
 <script>
     const snowflakeIcon = document.getElementById("snowflake-icon");
@@ -263,7 +329,7 @@
         snowflakeIcon.style.transform = darkMode ? "rotate(180deg)" : "rotate(0deg)";
     });
 
-    const cardIds = ["card-modi-visit", "card-birthday", "card-guru-tour", "card-spanda-karika", "card-chakra-kriya"];
+    const cardIds = ["card-guru-tour", "card-sahaj", "card-dec-hp", "card-dsar", "card-do-dec", "card-silence", "card-scanning", "card-spanda-karika", "card-chakra-kriya", "card-45-years", "card-dhyaan-mandir"];
     
     function createSnowflake(cardElement) {
         const snowflake = document.createElement('div');
