@@ -1,971 +1,1237 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<link rel="icon" href="assets/favicon.ico" type="image/x-icon" />
-<meta charset="UTF-8" />
+<link rel="icon" href="assets/favicon.ico" type="image/x-icon"/>
+<meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <title>Vishal Merani</title>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
 <style>
-:root {
-  --bg: #f5f3ef;
-  --text: #1a1a1a;
-  --muted: #888;
-  --box-bg: #ffffff;
-  --border: #c9b8e8;
-  --accent: #2a2a2a;
-  --accent-hover: #444;
-  --purple: #b39ddb;
-  --purple-light: #e8e0f5;
-  --purple-deep: #7c5cbf;
-  --live-lime: #32ff7e;
-  --h3-color: #333;
-  --h4-color: #666;
-  --card-shadow: 0 2px 20px rgba(179,157,219,0.12);
-}
-body.dark {
-  --bg: #0a0a0a;
-  --text: #f0eae0;
-  --muted: #777;
-  --border: #5e4a8a;
-  --accent: #c9b8e8;
-  --accent-hover: #e0d4f5;
-  --box-bg: #141414;
-  --h3-color: #e8e0f5;
-  --h4-color: #bbb;
-  --purple: #9575cd;
-  --purple-light: #1e1830;
-  --card-shadow: 0 2px 20px rgba(149,117,205,0.15);
-}
-* { margin:0; padding:0; box-sizing:border-box; }
-body {
-  font-family: 'DM Sans', sans-serif;
-  font-size: 0.81em; line-height: 1.5;
-  background: var(--bg); color: var(--text);
-  padding: 16px 14px 40px;
-  transition: background 0.4s, color 0.4s;
-  min-height: 100vh;
-}
-h1 { font-family: 'Cormorant Garamond', serif; font-size: 1.5rem; font-weight: 600; margin-bottom: 0.1rem; }
-h2 { font-family: 'DM Sans', sans-serif; font-size: 1rem; font-weight: 400; margin-bottom: 0.3rem; }
-h3 { font-size: 0.88rem; font-weight: 500; margin: 0.6rem 0 0.2rem; color: var(--h3-color); }
-h4 { font-size: 0.78rem; font-weight: 400; margin: 0.3rem 0 0.1rem; color: var(--h4-color); }
-.subtitle { font-size: 0.75rem; color: var(--muted); }
-.small-h2 { font-size: 0.66rem; font-weight: 500; margin-bottom: 0.1rem; }
-.feel-good-line { font-size: 0.85em; margin-bottom: 0.4rem; }
+:root{--bg:#f5f3ef;--text:#1a1a1a;--muted:#888;--box-bg:#ffffff;--border:#c9b8e8;--accent:#2a2a2a;--accent-hover:#444;--purple:#b39ddb;--purple-light:#e8e0f5;--live-lime:#32ff7e;--h3:#333;--h4:#666;--shadow:0 2px 20px rgba(179,157,219,0.13);}
+body.dark{--bg:#0a0a0a;--text:#f0eae0;--muted:#777;--border:#5e4a8a;--accent:#c9b8e8;--accent-hover:#e0d4f5;--box-bg:#141414;--h3:#e8e0f5;--h4:#bbb;--purple:#9575cd;--purple-light:#1e1830;--shadow:0 2px 20px rgba(149,117,205,0.18);}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:'DM Sans',sans-serif;font-size:0.81em;line-height:1.5;background:var(--bg);color:var(--text);padding:16px 14px 40px;transition:background .4s,color .4s;min-height:100vh;}
+h1{font-family:'Cormorant Garamond',serif;font-size:1.5rem;font-weight:600;margin-bottom:.1rem;}
+h2{font-size:1rem;font-weight:400;margin-bottom:.3rem;}
+h3{font-size:.88rem;font-weight:500;margin:.6rem 0 .2rem;color:var(--h3);}
+h4{font-size:.78rem;font-weight:400;margin:.3rem 0 .1rem;color:var(--h4);}
+.subtitle{font-size:.75rem;color:var(--muted);}
+.feel-good-line{font-size:.85em;margin-bottom:.4rem;}
 
-.iphone-frame {
-  background: var(--box-bg);
-  border-radius: 20px;
-  max-width: 390px; width: 100%;
-  margin: 0 auto 16px auto;
-  box-shadow: var(--card-shadow);
-  padding: 24px 18px;
-  border: 1px solid var(--border);
-  position: relative; z-index: 1; overflow: hidden;
-  transition: background 0.3s, border-color 0.3s, box-shadow 0.3s;
-}
-.iphone-frame.no-padding { padding: 0; }
-.iphone-frame.no-padding img { border-radius: 19px; display: block; width: 100%; }
-header, section, footer { margin-bottom: 0.6rem; }
-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 0.3rem; }
-.card-title-group { flex-grow: 1; }
+/* CARD */
+.iphone-frame{background:var(--box-bg);border-radius:20px;max-width:390px;width:100%;margin:0 auto 16px auto;box-shadow:var(--shadow);border:1px solid var(--border);position:relative;z-index:1;overflow:hidden;transition:background .3s,border-color .3s;}
+header,section,footer{margin-bottom:.6rem;}
+header{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:.3rem;}
+.card-title-group{flex-grow:1;}
+.card-inner-pad{padding:24px 18px;}
 
-.button, input[type="submit"] {
-  display: inline-block; background: var(--accent); color: var(--box-bg);
-  padding: 0.5rem 0.9rem; border-radius: 8px;
-  font-size: 0.62rem; font-weight: 500;
-  margin: 0.3rem 0.2rem 0.4rem 0;
-  transition: background 0.2s, transform 0.15s;
-  text-decoration: none; border: none; cursor: pointer;
-  font-family: 'DM Sans', sans-serif;
-}
-body.dark .button, body.dark input[type="submit"] { color: #0a0a0a; }
-.button:hover, input[type="submit"]:hover { background: var(--accent-hover); transform: translateY(-1px); }
+/* SWIPEABLE SLIDES */
+.card-slides{position:relative;overflow:hidden;}
+.slides-track{display:flex;transition:transform .35s cubic-bezier(.4,0,.2,1);will-change:transform;}
+.slide{min-width:100%;width:100%;flex-shrink:0;}
+.slide-content{padding:24px 18px 16px;}
+.slides-dots{display:flex;justify-content:center;gap:6px;padding:10px 0 14px;background:var(--box-bg);}
+.dot{width:6px;height:6px;border-radius:50%;background:var(--border);cursor:pointer;transition:background .2s,transform .2s;}
+.dot.active{background:var(--purple);transform:scale(1.3);}
+.slide-img{width:100%;height:200px;object-fit:cover;display:block;}
+.slide-img-caption{font-size:.6rem;color:var(--muted);text-align:center;padding:6px 12px 0;}
 
-ul.timeline, ul.features { list-style: none; padding-left: 0; margin: 0.3rem 0 0.6rem; }
-.timeline li, .features li { font-size: 0.76rem; padding: 1px 0; }
-.features li::before { content: "◆"; font-size: 0.45em; color: var(--purple); margin-right: 6px; vertical-align: middle; }
+/* TWEET SLIDE */
+.tweet-card{background:var(--box-bg);border:1px solid var(--border);border-radius:14px;padding:14px;margin:12px 16px;}
+.tweet-header{display:flex;align-items:center;gap:8px;margin-bottom:8px;}
+.tweet-avatar{width:36px;height:36px;border-radius:50%;background:var(--purple-light);display:flex;align-items:center;justify-content:center;font-size:14px;flex-shrink:0;}
+.tweet-name{font-size:.72rem;font-weight:500;color:var(--text);}
+.tweet-handle{font-size:.62rem;color:var(--muted);}
+.tweet-x{margin-left:auto;color:#1da1f2;font-size:14px;font-weight:700;}
+.tweet-body{font-size:.73rem;line-height:1.5;color:var(--text);margin-bottom:8px;}
+.tweet-date{font-size:.6rem;color:var(--muted);}
+.tweet-stats{display:flex;gap:14px;margin-top:8px;font-size:.6rem;color:var(--muted);}
 
-.footer {
-  font-size: 0.54rem; color: var(--muted); text-align: center;
-  margin-top: 0.6rem; margin-bottom: 0; line-height: 1.5;
-  padding-top: 0.4rem; border-top: 1px solid var(--purple-light);
-}
-.location-text, .queries-text {
-  color: var(--text); font-weight: 400; margin-top: 0.3rem; display: block;
-  font-size: 0.64rem; line-height: 1.4;
-}
-.queries-text { margin-top: 0.4rem; }
 
-@keyframes liveBreath { 0%,100%{opacity:1;transform:scale(1)}50%{opacity:0.55;transform:scale(0.93)} }
-.live-badge {
-  position: absolute; top: 14px; right: 14px;
-  font-size: 0.48rem; font-weight: 700; color: var(--live-lime);
-  letter-spacing: 1.5px; animation: liveBreath 2.5s infinite ease-in-out;
-  display: flex; align-items: center; gap: 3px; text-transform: uppercase;
-  z-index: 10;
-}
 
-@keyframes borderRotate { from{transform:rotate(0deg)} to{transform:rotate(360deg)} }
-.live-card { border: none !important; }
-.live-card::before {
-  content:''; position:absolute; z-index:-2;
-  left:-50%; top:-50%; width:200%; height:200%;
-  background-image: conic-gradient(transparent, var(--live-lime), transparent 25%);
-  animation: borderRotate 6s linear infinite; opacity: 0.35;
-}
-.live-card::after {
-  content:''; position:absolute; z-index:-1;
-  left:2px; top:2px; width:calc(100% - 4px); height:calc(100% - 4px);
-  background: var(--box-bg); border-radius: 18px;
-}
+.vm-memoji-profile{width:100%;height:100%;}
 
-.tour-card { border: 2px solid var(--purple) !important; text-align: center; }
-.tour-year-display { font-size: 3rem; font-weight: 900; opacity: 0.07; position: absolute; top: -10px; left: 10px; z-index: 0; font-family: 'Cormorant Garamond', serif; }
+/* BUTTONS */
+.button,input[type="submit"]{display:inline-block;background:var(--accent);color:var(--box-bg);padding:.5rem .9rem;border-radius:8px;font-size:.62rem;font-weight:500;margin:.3rem .2rem .4rem 0;transition:background .2s,transform .15s;text-decoration:none;border:none;cursor:pointer;font-family:'DM Sans',sans-serif;}
+body.dark .button,body.dark input[type="submit"]{color:#0a0a0a;}
+.button:hover,input[type="submit"]:hover{background:var(--accent-hover);transform:translateY(-1px);}
+ul.timeline,ul.features{list-style:none;padding-left:0;margin:.3rem 0 .6rem;}
+.timeline li,.features li{font-size:.76rem;padding:1px 0;}
+.features li::before{content:"◆";font-size:.45em;color:var(--purple);margin-right:6px;vertical-align:middle;}
+.footer{font-size:.54rem;color:var(--muted);text-align:center;margin-top:.6rem;margin-bottom:0;line-height:1.5;padding-top:.4rem;border-top:1px solid var(--purple-light);}
+.location-text,.queries-text{color:var(--text);font-weight:400;margin-top:.3rem;display:block;font-size:.64rem;line-height:1.4;}
+.queries-text{margin-top:.4rem;}
 
-@keyframes neonPulse {
-  0%,100%{text-shadow:0 0 5px #fff,0 0 10px #fff,0 0 15px #ff00de,0 0 20px #ff00de}
-  50%{text-shadow:0 0 2px #fff,0 0 5px #fff,0 0 8px #00d2ff,0 0 12px #00d2ff}
-}
-.neon-year {
-  font-weight: 800; background: linear-gradient(to right,#ff00de,#00d2ff);
-  -webkit-background-clip: text; -webkit-text-fill-color: transparent;
-  animation: neonPulse 3s infinite; display: inline-block; cursor: pointer;
-}
+/* LIVE */
+@keyframes liveBreath{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.55;transform:scale(.93)}}
+.live-badge{position:absolute;top:14px;right:14px;font-size:.48rem;font-weight:700;color:var(--live-lime);letter-spacing:1.5px;animation:liveBreath 2.5s infinite ease-in-out;display:flex;align-items:center;gap:3px;text-transform:uppercase;z-index:10;}
+@keyframes borderRotate{from{transform:rotate(0deg)}to{transform:rotate(360deg)}}
+.live-card{border:none !important;}
+.live-card::before{content:'';position:absolute;z-index:-2;left:-50%;top:-50%;width:200%;height:200%;background-image:conic-gradient(transparent,var(--live-lime),transparent 25%);animation:borderRotate 6s linear infinite;opacity:.35;}
+.live-card::after{content:'';position:absolute;z-index:-1;left:2px;top:2px;width:calc(100% - 4px);height:calc(100% - 4px);background:var(--box-bg);border-radius:18px;}
 
-.gift-icon { position:absolute; bottom:-8px; right:5px; font-size:0.8em; z-index:10; }
-.gift-icon::before { content:'🎉'; }
-.reindeer-icon { position:absolute; top:5px; right:5px; font-size:0.9em; z-index:10; }
-.reindeer-icon::before { content:'✨'; }
+/* TOUR */
+.tour-card{border:2px solid var(--purple) !important;text-align:center;}
+.tour-year-display{font-size:3rem;font-weight:900;opacity:.07;position:absolute;top:-10px;left:10px;z-index:0;font-family:'Cormorant Garamond',serif;}
+@keyframes neonPulse{0%,100%{text-shadow:0 0 5px #fff,0 0 10px #fff,0 0 15px #ff00de,0 0 20px #ff00de}50%{text-shadow:0 0 2px #fff,0 0 5px #fff,0 0 8px #00d2ff,0 0 12px #00d2ff}}
+.neon-year{font-weight:800;background:linear-gradient(to right,#ff00de,#00d2ff);-webkit-background-clip:text;-webkit-text-fill-color:transparent;animation:neonPulse 3s infinite;display:inline-block;}
+.gift-icon{position:absolute;bottom:-8px;right:5px;font-size:.8em;z-index:10;}
+.gift-icon::before{content:'🎉';}
+.reindeer-icon{position:absolute;top:5px;right:5px;font-size:.9em;z-index:10;}
+.reindeer-icon::before{content:'✨';}
 
-@keyframes floatUp {
-  0%{transform:translateY(0) scale(0.8);opacity:0}
-  20%{opacity:1}
-  100%{transform:translateY(-32px) scale(1.1);opacity:0}
-}
-.snowflake {
-  position:absolute; color:var(--purple); z-index:100; pointer-events:none;
-  animation: floatUp linear infinite; font-size:0.9em !important; opacity:0;
-}
+/* SNOWFLAKES */
+@keyframes floatUp{0%{transform:translateY(0) scale(.8);opacity:0}20%{opacity:1}100%{transform:translateY(-32px) scale(1.1);opacity:0}}
+.snowflake{position:absolute;color:var(--purple);z-index:100;pointer-events:none;animation:floatUp linear infinite;font-size:.9em !important;opacity:0;}
 
-.social-icons-frame { padding: 16px 0 10px; text-align: center; }
-.social-icons-list { display:flex; justify-content:center; gap:18px; margin:0 auto; }
-.icon { width:24px; height:24px; fill:var(--text); transition:fill 0.3s, transform 0.2s; }
-.icon:hover { fill:var(--purple); transform:scale(1.15); }
+/* SOCIAL */
+.social-icons-frame{padding:16px 0 10px;text-align:center;}
+.social-icons-list{display:flex;justify-content:center;gap:18px;margin:0 auto;}
+.icon{width:24px;height:24px;fill:var(--text);transition:fill .3s,transform .2s;}
+.icon:hover{fill:var(--purple);transform:scale(1.15);}
 
-.seva-form input[type="text"], .seva-form textarea {
-  width:100%; padding:8px; margin-bottom:8px;
-  border: 1px solid var(--border); border-radius:6px;
-  font-size:0.81em; font-family:'DM Sans',sans-serif;
-  color:var(--text); background:var(--box-bg); box-sizing:border-box;
-  transition:border-color 0.3s;
-}
-.seva-form input[type="text"]:focus, .seva-form textarea:focus { border-color:var(--purple); outline:none; }
-.seva-form textarea { resize:vertical; min-height:60px; }
+/* SEVA */
+.seva-form input[type="text"],.seva-form textarea{width:100%;padding:8px;margin-bottom:8px;border:1px solid var(--border);border-radius:6px;font-size:.81em;font-family:'DM Sans',sans-serif;color:var(--text);background:var(--box-bg);box-sizing:border-box;transition:border-color .3s;}
+.seva-form input[type="text"]:focus,.seva-form textarea:focus{border-color:var(--purple);outline:none;}
+.seva-form textarea{resize:vertical;min-height:60px;}
 
-/* ── 45 & 70 IMMERSIVE ── */
-.celebration-mega-card {
-  max-width: 390px; width: 100%; margin: 0 auto 16px auto;
-  border-radius: 20px; overflow: hidden; position: relative;
-  min-height: 320px;
-  box-shadow: 0 8px 40px rgba(149,117,205,0.35);
-}
-.celebration-bg {
-  position: absolute; inset: 0;
-  background: radial-gradient(ellipse at 30% 40%, #3b1f6e 0%, #1a0a3a 50%, #0d0520 100%);
-  z-index: 0;
-}
-.celebration-stars { position: absolute; inset: 0; z-index: 1; overflow: hidden; }
-.star { position: absolute; background: #fff; border-radius: 50%; animation: twinkle 3s infinite ease-in-out; }
-@keyframes twinkle { 0%,100%{opacity:0.2;transform:scale(1)} 50%{opacity:1;transform:scale(1.3)} }
-.bg-numbers {
-  position: absolute; z-index: 2;
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 8.5rem; font-weight: 600; line-height: 1;
-  background: linear-gradient(135deg, rgba(179,157,219,0.15) 0%, rgba(206,147,216,0.06) 100%);
-  -webkit-background-clip: text; -webkit-text-fill-color: transparent;
-  user-select: none; pointer-events: none;
-  top: -10px; left: -8px; white-space: nowrap;
-}
-.celebration-content { position: relative; z-index: 5; padding: 26px 20px 20px; color: #f0eaf8; }
-.celebration-content h1 {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 1.7rem; font-weight: 600; color: #f0eaf8;
-  text-shadow: 0 0 30px rgba(206,147,216,0.5); margin-bottom: 2px;
-}
-.celebration-content h2 { font-size: 0.85rem; font-weight: 300; color: rgba(240,234,248,0.75); margin-bottom: 0.5rem; }
-.celebration-content .features li { color: rgba(240,234,248,0.85); font-size: 0.74rem; }
-.celebration-content .features li::before { color: #ce93d8; }
-.celebration-content .footer { border-top: 1px solid rgba(179,157,219,0.2); color: rgba(240,234,248,0.5); }
-.celebration-content .button { background: rgba(179,157,219,0.2); color: #f0eaf8; border: 1px solid rgba(179,157,219,0.4); }
-.celebration-content .button:hover { background: rgba(179,157,219,0.35); }
-.orb { position: absolute; border-radius: 50%; filter: blur(40px); animation: orbFloat 8s infinite ease-in-out; z-index: 1; }
-@keyframes orbFloat { 0%,100%{transform:translateY(0) scale(1)} 50%{transform:translateY(-18px) scale(1.05)} }
-.celebration-badge {
-  position: absolute; top: 14px; right: 14px; z-index: 10;
-  font-size: 0.48rem; font-weight: 700; color: #ce93d8;
-  letter-spacing: 1.5px; animation: liveBreath 2.5s infinite; text-transform: uppercase;
-}
+/* PROFILE CARD */
+.profile-card{max-width:390px;width:100%;margin:0 auto 16px auto;border-radius:20px;overflow:hidden;position:relative;box-shadow:0 8px 40px rgba(149,117,205,0.22);border:1.5px solid rgba(179,157,219,0.6);background:var(--box-bg);}
+.profile-bg-strip{width:100%;height:130px;background:linear-gradient(135deg,#c8b0ee 0%,#ddd0f8 50%,#ede0ff 100%);position:relative;overflow:hidden;}
+body.dark .profile-bg-strip{background:linear-gradient(135deg,#2a1848 0%,#1a1030 60%,#0d0820 100%);}
+.profile-avatar-wrap{position:relative;margin:-58px auto 0;width:116px;height:116px;z-index:5;}
+.profile-avatar-outer{width:116px;height:116px;border-radius:50%;border:4px solid var(--box-bg);box-shadow:0 4px 20px rgba(149,117,205,0.35);overflow:hidden;background:var(--purple-light);display:flex;align-items:flex-end;justify-content:center;}
+.profile-body{padding:10px 20px 22px;text-align:center;}
+.profile-name{font-family:'Cormorant Garamond',serif;font-size:1.6rem;font-weight:600;margin-bottom:2px;}
+.profile-tagline{font-size:.74rem;color:var(--muted);margin-bottom:10px;font-style:italic;}
+.profile-chips{display:flex;flex-wrap:wrap;gap:6px;justify-content:center;margin:10px 0;}
+.chip{background:var(--purple-light);color:var(--purple);font-size:.6rem;font-weight:500;padding:4px 10px;border-radius:20px;}
+body.dark .chip{background:#2a1e48;color:#c9b8e8;}
 
-/* ── DHYAN MANDIR ── */
-.dhyan-card {
-  max-width: 390px; width: 100%; margin: 0 auto 16px auto;
-  border-radius: 20px; overflow: hidden; position: relative;
-  box-shadow: 0 6px 30px rgba(179,157,219,0.3);
-  border: 1px solid rgba(179,157,219,0.5);
-}
-.dhyan-svg-container {
-  width: 100%;
-  background: linear-gradient(180deg, #ede5ff 0%, #f5f0ff 100%);
-  padding: 20px 0 0; display: flex; justify-content: center;
-  align-items: flex-end; overflow: hidden;
-}
-body.dark .dhyan-svg-container { background: linear-gradient(180deg, #1a1030 0%, #120a28 100%); }
-.dhyan-svg-container svg { max-width: 300px; width: 90%; }
-.dhyan-card-body { background: var(--box-bg); padding: 18px 18px 16px; position: relative; z-index: 2; }
+/* DHYAN MANDIR */
+.dhyan-card{max-width:390px;width:100%;margin:0 auto 16px auto;border-radius:20px;overflow:hidden;position:relative;box-shadow:0 8px 40px rgba(149,117,205,0.28);border:1.5px solid rgba(179,157,219,0.6);}
 
-/* ── ADMIN ── */
-#admin-fab {
-  position: fixed; bottom: 24px; right: 20px; z-index: 9000;
-  width: 44px; height: 44px; border-radius: 50%;
-  background: var(--accent); color: var(--box-bg);
-  border: none; cursor: pointer; font-size: 1rem;
-  box-shadow: 0 4px 20px rgba(0,0,0,0.25);
-  transition: transform 0.2s, background 0.2s;
-  display: flex; align-items: center; justify-content: center;
-}
-body.dark #admin-fab { color: #0a0a0a; }
-#admin-fab:hover { transform: scale(1.1); }
-#admin-fab.active { background: #9575cd; }
+/* 45&70 */
+.celebration-mega-card{max-width:390px;width:100%;margin:0 auto 16px auto;border-radius:20px;overflow:hidden;position:relative;min-height:320px;box-shadow:0 10px 50px rgba(100,50,200,0.45);}
+.celebration-bg{position:absolute;inset:0;background:radial-gradient(ellipse at 25% 35%,#4a1e8a 0%,#1e0a45 45%,#0a0318 100%);z-index:0;}
+.celebration-stars{position:absolute;inset:0;z-index:1;overflow:hidden;}
+.star{position:absolute;background:#fff;border-radius:50%;animation:twinkle 3s infinite ease-in-out;}
+@keyframes twinkle{0%,100%{opacity:.15;transform:scale(1)}50%{opacity:1;transform:scale(1.4)}}
+.bg-numbers{position:absolute;z-index:2;font-family:'Cormorant Garamond',serif;font-size:9rem;font-weight:600;line-height:1;background:linear-gradient(135deg,rgba(206,147,216,.13) 0%,rgba(179,157,219,.05) 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;user-select:none;pointer-events:none;top:-15px;left:-10px;white-space:nowrap;}
+.celebration-content{position:relative;z-index:5;padding:28px 20px 20px;color:#f0eaf8;}
+.celebration-content h1{font-family:'Cormorant Garamond',serif;font-size:1.75rem;font-weight:600;color:#f0eaf8;text-shadow:0 0 40px rgba(206,147,216,.6);margin-bottom:3px;}
+.celebration-content h2{font-size:.84rem;font-weight:300;color:rgba(240,234,248,.72);margin-bottom:.5rem;}
+.celebration-content .features li{color:rgba(240,234,248,.88);font-size:.74rem;}
+.celebration-content .features li::before{color:#ce93d8;}
+.celebration-content .footer{border-top:1px solid rgba(179,157,219,.18);color:rgba(240,234,248,.45);}
+.celebration-content .button{background:rgba(179,157,219,.18);color:#f0eaf8;border:1px solid rgba(179,157,219,.38);}
+.orb{position:absolute;border-radius:50%;filter:blur(40px);animation:orbFloat 8s infinite ease-in-out;z-index:1;}
+@keyframes orbFloat{0%,100%{transform:translateY(0) scale(1)}50%{transform:translateY(-20px) scale(1.06)}}
+.celebration-badge{position:absolute;top:14px;right:14px;z-index:10;font-size:.48rem;font-weight:700;color:#ce93d8;letter-spacing:1.5px;animation:liveBreath 2.5s infinite;text-transform:uppercase;}
+@keyframes shoot{0%{transform:translateX(0) translateY(0) rotate(-30deg);opacity:1}100%{transform:translateX(120px) translateY(60px) rotate(-30deg);opacity:0}}
+.shooting-star{position:absolute;width:60px;height:1px;background:linear-gradient(to right,rgba(255,255,255,0),rgba(255,255,255,.9));z-index:3;border-radius:1px;animation:shoot 2.5s ease-in infinite;}
 
-#admin-login-overlay {
-  position: fixed; inset: 0; z-index: 9100;
-  background: rgba(0,0,0,0.65); backdrop-filter: blur(10px);
-  display: none; align-items: center; justify-content: center;
-}
-#admin-login-overlay.visible { display: flex; }
-.admin-login-box {
-  background: var(--box-bg); border: 1px solid var(--border);
-  border-radius: 20px; padding: 36px 30px; width: 300px;
-  box-shadow: 0 24px 60px rgba(0,0,0,0.35); text-align: center;
-}
-.admin-login-box h2 { font-family:'Cormorant Garamond',serif; font-size:1.6rem; margin-bottom:5px; }
-.admin-login-box p { font-size:0.7rem; color:var(--muted); margin-bottom:20px; }
-.admin-login-box input {
-  width:100%; padding:11px 14px; border:1px solid var(--border);
-  border-radius:9px; font-size:0.88rem; background:var(--bg); color:var(--text);
-  margin-bottom:12px; font-family:'DM Sans',sans-serif;
-}
-.admin-login-box input:focus { outline:none; border-color:var(--purple); }
-.admin-login-box .login-btn {
-  width:100%; padding:11px; background:var(--accent); color:var(--box-bg);
-  border:none; border-radius:9px; cursor:pointer; font-size:0.84rem;
-  font-family:'DM Sans',sans-serif; font-weight:500; transition:background 0.2s;
-}
-body.dark .admin-login-box .login-btn { color:#0a0a0a; }
-.admin-login-box .login-btn:hover { background:var(--accent-hover); }
-.admin-login-box .cancel-btn {
-  width:100%; padding:8px; background:transparent; color:var(--muted);
-  border:none; cursor:pointer; font-size:0.73rem; margin-top:6px;
-  font-family:'DM Sans',sans-serif;
-}
-.login-error { color:#e74c3c; font-size:0.7rem; margin-top:-6px; margin-bottom:10px; display:none; }
-
-#admin-toolbar {
-  position: fixed; top: 0; left: 0; right: 0; z-index: 8900;
-  background: var(--accent); color: var(--box-bg);
-  padding: 10px 16px; display: none; align-items: center;
-  gap: 8px; flex-wrap: wrap;
-  box-shadow: 0 2px 16px rgba(0,0,0,0.3); font-size: 0.72rem;
-}
-body.dark #admin-toolbar { color: #0a0a0a; }
-#admin-toolbar.visible { display: flex; }
-#admin-toolbar .tb-label { font-family:'Cormorant Garamond',serif; font-size:1rem; font-weight:600; margin-right:4px; }
-.tb-btn {
-  padding: 5px 13px; border-radius: 6px;
-  border: 1px solid rgba(255,255,255,0.25);
-  background: rgba(255,255,255,0.1); color: inherit;
-  cursor: pointer; font-size: 0.7rem; font-family:'DM Sans',sans-serif;
-  transition: background 0.15s;
-}
-body.dark .tb-btn { border-color:rgba(0,0,0,0.15); background:rgba(0,0,0,0.08); }
-.tb-btn:hover { background: rgba(255,255,255,0.22); }
-body.dark .tb-btn:hover { background:rgba(0,0,0,0.18); }
-.tb-sep { color: rgba(255,255,255,0.25); margin: 0 2px; }
-body.dark .tb-sep { color:rgba(0,0,0,0.2); }
-
-body.admin-mode .iphone-frame,
-body.admin-mode .celebration-mega-card,
-body.admin-mode .dhyan-card { outline: 2px dashed rgba(149,117,205,0.35); }
-body.admin-mode .iphone-frame:hover,
-body.admin-mode .celebration-mega-card:hover,
-body.admin-mode .dhyan-card:hover { outline: 2px solid var(--purple); box-shadow: 0 4px 24px rgba(149,117,205,0.3); }
-
-.drag-handle {
-  display: none; position: absolute; top: 8px; left: 10px; z-index: 20;
-  font-size: 0.68rem; color: var(--purple); cursor: grab;
-  background: var(--box-bg); border: 1px solid var(--border);
-  border-radius: 5px; padding: 2px 6px; user-select: none;
-  align-items: center; gap: 3px; letter-spacing: 1px;
-}
-.drag-handle:active { cursor: grabbing; }
-.drag-handle-dark { background: rgba(20,10,40,0.85); color: #c9b8e8; border-color: rgba(179,157,219,0.25); }
-body.admin-mode .drag-handle { display: flex; }
-
-body.admin-mode [data-editable] { cursor: text; border-radius: 3px; transition: background 0.15s; }
-body.admin-mode [data-editable]:hover { background: rgba(179,157,219,0.1); outline: 1px dashed rgba(179,157,219,0.5); }
-body.admin-mode [data-editable]:focus { outline: 2px solid var(--purple); background: rgba(179,157,219,0.07); }
-
-.link-editor-popup {
-  display: none; position: fixed; z-index: 9500;
-  background: var(--box-bg); border: 1px solid var(--border);
-  border-radius: 12px; padding: 14px; min-width: 270px;
-  box-shadow: 0 8px 32px rgba(0,0,0,0.2);
-}
-.link-editor-popup.visible { display: block; }
-.link-editor-popup label { font-size:0.66rem; color:var(--muted); display:block; margin-bottom:3px; }
-.link-editor-popup input {
-  width:100%; padding:7px 10px; border:1px solid var(--border);
-  border-radius:7px; font-size:0.78rem; background:var(--bg); color:var(--text);
-  font-family:'DM Sans',sans-serif; margin-bottom:9px;
-}
-.link-editor-popup input:focus { outline:none; border-color:var(--purple); }
-.link-editor-btns { display:flex; gap:7px; justify-content:flex-end; }
-.link-editor-btns button {
-  padding: 6px 14px; border-radius:7px; border:none; cursor:pointer;
-  font-size:0.7rem; font-family:'DM Sans',sans-serif; font-weight:500;
-}
-.link-save-btn { background:var(--accent); color:var(--box-bg); }
-body.dark .link-save-btn { color:#0a0a0a; }
-.link-cancel-btn { background:var(--purple-light); color:var(--text); }
-
-#add-card-modal {
-  position: fixed; inset: 0; z-index: 9200;
-  background: rgba(0,0,0,0.65); backdrop-filter: blur(10px);
-  display: none; align-items: center; justify-content: center;
-}
-#add-card-modal.visible { display: flex; }
-.add-card-box {
-  background: var(--box-bg); border: 1px solid var(--border);
-  border-radius: 20px; padding: 28px 24px; width: 340px; max-width: 90vw;
-  max-height: 90vh; overflow-y: auto;
-  box-shadow: 0 24px 60px rgba(0,0,0,0.3);
-}
-.add-card-box h2 { font-family:'Cormorant Garamond',serif; font-size:1.5rem; margin-bottom:16px; }
-.add-card-box label { display:block; font-size:0.67rem; color:var(--muted); margin-bottom:3px; }
-.add-card-box input, .add-card-box textarea, .add-card-box select {
-  width:100%; padding:8px 10px; border:1px solid var(--border);
-  border-radius:7px; font-size:0.8rem; background:var(--bg); color:var(--text);
-  font-family:'DM Sans',sans-serif; margin-bottom:10px;
-}
-.add-card-box input:focus, .add-card-box textarea:focus, .add-card-box select:focus { outline:none; border-color:var(--purple); }
-.add-card-box textarea { min-height:68px; resize:vertical; }
-.add-card-row { display:flex; gap:8px; }
-.add-card-row > * { flex:1; }
-.add-card-actions { display:flex; gap:8px; margin-top:4px; }
-.add-card-actions button { flex:1; padding:10px; border:none; border-radius:8px; cursor:pointer; font-family:'DM Sans',sans-serif; font-size:0.78rem; font-weight:500; }
-.add-card-create { background:var(--accent); color:var(--box-bg); }
-body.dark .add-card-create { color:#0a0a0a; }
-.add-card-cancel { background:var(--purple-light); color:var(--text); }
-
-.delete-card-btn {
-  display: none; position: absolute; top: 8px; right: 8px; z-index: 25;
-  background: rgba(210,50,50,0.8); color: #fff; border: none;
-  border-radius: 5px; padding: 2px 8px; font-size: 0.62rem; cursor: pointer;
-  font-family:'DM Sans',sans-serif;
-}
-body.admin-mode .delete-card-btn { display: block; }
-
-.card-dragging { opacity: 0.45 !important; transform: scale(0.97) rotate(1deg) !important; }
-.card-drag-over { outline: 3px solid var(--purple) !important; }
-
-#mode-toggle-wrap { position:relative; max-width:390px; margin:0 auto; display:flex; justify-content:flex-end; padding:12px 18px 8px; }
-body.admin-mode { padding-top: 54px; }
-
-/* toast */
-.toast {
-  position:fixed; bottom:80px; left:50%; transform:translateX(-50%);
-  background:var(--accent); color:var(--box-bg);
-  padding:8px 22px; border-radius:20px; font-size:0.75rem;
-  z-index:9999; font-family:'DM Sans',sans-serif;
-  transition:opacity 0.5s; pointer-events:none;
-}
-body.dark .toast { color:#0a0a0a; }
+/* ADMIN */
+#admin-fab{position:fixed;bottom:24px;right:20px;z-index:9000;width:44px;height:44px;border-radius:50%;background:var(--accent);color:var(--box-bg);border:none;cursor:pointer;font-size:1rem;box-shadow:0 4px 20px rgba(0,0,0,.25);transition:transform .2s,background .2s;display:flex;align-items:center;justify-content:center;}
+body.dark #admin-fab{color:#0a0a0a;}
+#admin-fab:hover{transform:scale(1.1);}
+#admin-fab.active{background:#9575cd;}
+#admin-login-overlay{position:fixed;inset:0;z-index:9100;background:rgba(0,0,0,.65);backdrop-filter:blur(10px);display:none;align-items:center;justify-content:center;}
+#admin-login-overlay.visible{display:flex;}
+.admin-login-box{background:var(--box-bg);border:1px solid var(--border);border-radius:20px;padding:36px 30px;width:300px;box-shadow:0 24px 60px rgba(0,0,0,.35);text-align:center;}
+.admin-login-box h2{font-family:'Cormorant Garamond',serif;font-size:1.6rem;margin-bottom:5px;}
+.admin-login-box p{font-size:.7rem;color:var(--muted);margin-bottom:20px;}
+.admin-login-box input{width:100%;padding:11px 14px;border:1px solid var(--border);border-radius:9px;font-size:.88rem;background:var(--bg);color:var(--text);margin-bottom:12px;font-family:'DM Sans',sans-serif;}
+.admin-login-box input:focus{outline:none;border-color:var(--purple);}
+.admin-login-box .login-btn{width:100%;padding:11px;background:var(--accent);color:var(--box-bg);border:none;border-radius:9px;cursor:pointer;font-size:.84rem;font-family:'DM Sans',sans-serif;font-weight:500;}
+body.dark .admin-login-box .login-btn{color:#0a0a0a;}
+.admin-login-box .cancel-btn{width:100%;padding:8px;background:transparent;color:var(--muted);border:none;cursor:pointer;font-size:.73rem;margin-top:6px;font-family:'DM Sans',sans-serif;}
+.login-error{color:#e74c3c;font-size:.7rem;margin-top:-6px;margin-bottom:10px;display:none;}
+#admin-toolbar{position:fixed;top:0;left:0;right:0;z-index:8900;background:var(--accent);color:var(--box-bg);padding:10px 16px;display:none;align-items:center;gap:8px;flex-wrap:wrap;box-shadow:0 2px 16px rgba(0,0,0,.3);font-size:.72rem;}
+body.dark #admin-toolbar{color:#0a0a0a;}
+#admin-toolbar.visible{display:flex;}
+#admin-toolbar .tb-label{font-family:'Cormorant Garamond',serif;font-size:1rem;font-weight:600;margin-right:4px;}
+.tb-btn{padding:5px 13px;border-radius:6px;border:1px solid rgba(255,255,255,.25);background:rgba(255,255,255,.1);color:inherit;cursor:pointer;font-size:.7rem;font-family:'DM Sans',sans-serif;}
+.tb-btn:hover{background:rgba(255,255,255,.22);}
+.tb-sep{color:rgba(255,255,255,.25);margin:0 2px;}
+body.admin-mode .iphone-frame,body.admin-mode .celebration-mega-card,body.admin-mode .dhyan-card,body.admin-mode .profile-card{outline:2px dashed rgba(149,117,205,.35);}
+body.admin-mode .iphone-frame:hover,body.admin-mode .celebration-mega-card:hover,body.admin-mode .dhyan-card:hover,body.admin-mode .profile-card:hover{outline:2px solid var(--purple);}
+.drag-handle{display:none;position:absolute;top:8px;left:10px;z-index:20;font-size:.68rem;color:var(--purple);cursor:grab;background:var(--box-bg);border:1px solid var(--border);border-radius:5px;padding:2px 6px;user-select:none;align-items:center;gap:3px;}
+.drag-handle-dark{background:rgba(20,10,40,.85);color:#c9b8e8;border-color:rgba(179,157,219,.25);}
+body.admin-mode .drag-handle{display:flex;}
+body.admin-mode [data-editable]{cursor:text;border-radius:3px;}
+body.admin-mode [data-editable]:hover{background:rgba(179,157,219,.1);outline:1px dashed rgba(179,157,219,.5);}
+body.admin-mode [data-editable]:focus{outline:2px solid var(--purple);background:rgba(179,157,219,.07);}
+.link-editor-popup{display:none;position:fixed;z-index:9500;background:var(--box-bg);border:1px solid var(--border);border-radius:12px;padding:14px;min-width:270px;box-shadow:0 8px 32px rgba(0,0,0,.2);}
+.link-editor-popup.visible{display:block;}
+.link-editor-popup label{font-size:.66rem;color:var(--muted);display:block;margin-bottom:3px;}
+.link-editor-popup input{width:100%;padding:7px 10px;border:1px solid var(--border);border-radius:7px;font-size:.78rem;background:var(--bg);color:var(--text);font-family:'DM Sans',sans-serif;margin-bottom:9px;}
+.link-editor-popup input:focus{outline:none;border-color:var(--purple);}
+.link-editor-btns{display:flex;gap:7px;justify-content:flex-end;}
+.link-editor-btns button{padding:6px 14px;border-radius:7px;border:none;cursor:pointer;font-size:.7rem;font-family:'DM Sans',sans-serif;font-weight:500;}
+.link-save-btn{background:var(--accent);color:var(--box-bg);}
+body.dark .link-save-btn{color:#0a0a0a;}
+.link-cancel-btn{background:var(--purple-light);color:var(--text);}
+#add-card-modal{position:fixed;inset:0;z-index:9200;background:rgba(0,0,0,.65);backdrop-filter:blur(10px);display:none;align-items:center;justify-content:center;}
+#add-card-modal.visible{display:flex;}
+.add-card-box{background:var(--box-bg);border:1px solid var(--border);border-radius:20px;padding:28px 24px;width:340px;max-width:90vw;max-height:90vh;overflow-y:auto;box-shadow:0 24px 60px rgba(0,0,0,.3);}
+.add-card-box h2{font-family:'Cormorant Garamond',serif;font-size:1.5rem;margin-bottom:16px;}
+.add-card-box label{display:block;font-size:.67rem;color:var(--muted);margin-bottom:3px;}
+.add-card-box input,.add-card-box textarea,.add-card-box select{width:100%;padding:8px 10px;border:1px solid var(--border);border-radius:7px;font-size:.8rem;background:var(--bg);color:var(--text);font-family:'DM Sans',sans-serif;margin-bottom:10px;}
+.add-card-box input:focus,.add-card-box textarea:focus,.add-card-box select:focus{outline:none;border-color:var(--purple);}
+.add-card-box textarea{min-height:68px;resize:vertical;}
+.add-card-row{display:flex;gap:8px;}
+.add-card-row > *{flex:1;}
+.add-card-actions{display:flex;gap:8px;margin-top:4px;}
+.add-card-actions button{flex:1;padding:10px;border:none;border-radius:8px;cursor:pointer;font-family:'DM Sans',sans-serif;font-size:.78rem;font-weight:500;}
+.add-card-create{background:var(--accent);color:var(--box-bg);}
+body.dark .add-card-create{color:#0a0a0a;}
+.add-card-cancel{background:var(--purple-light);color:var(--text);}
+.delete-card-btn{display:none;position:absolute;top:8px;right:8px;z-index:25;background:rgba(210,50,50,.8);color:#fff;border:none;border-radius:5px;padding:2px 8px;font-size:.62rem;cursor:pointer;font-family:'DM Sans',sans-serif;}
+body.admin-mode .delete-card-btn{display:block;}
+.card-dragging{opacity:.45 !important;transform:scale(.97) rotate(1deg) !important;}
+.card-drag-over{outline:3px solid var(--purple) !important;}
+#mode-toggle-wrap{position:relative;max-width:390px;margin:0 auto;display:flex;justify-content:flex-end;padding:12px 18px 8px;}
+body.admin-mode{padding-top:54px;}
+.toast{position:fixed;bottom:80px;left:50%;transform:translateX(-50%);background:var(--accent);color:var(--box-bg);padding:8px 22px;border-radius:20px;font-size:.75rem;z-index:9999;font-family:'DM Sans',sans-serif;transition:opacity .5s;pointer-events:none;}
+body.dark .toast{color:#0a0a0a;}
 </style>
 </head>
 <body>
 
+<!-- ════════ PHOTO-REALISTIC MEMOJI SVG — Based on actual photo ════════
+     Man: dark swept-back hair, olive skin, closed eyes (meditation), 
+     lavender/mauve short-kurta, white dhoti, seated cross-legged on rock
+     Cat: cream/ivory ragdoll, blue eyes, sitting on lap, fluffy tail
+-->
+
+
 <div id="mode-toggle-wrap">
-  <svg id="snowflake-icon" xmlns="http://www.w3.org/2000/svg" width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="#b39ddb" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="cursor:pointer;transition:transform 0.3s">
-    <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+  <svg id="snowflake-icon" xmlns="http://www.w3.org/2000/svg" width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="#b39ddb" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="cursor:pointer;transition:transform .3s">
+    <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
   </svg>
 </div>
 
-<!-- ADMIN TOOLBAR -->
 <div id="admin-toolbar">
-  <span class="tb-label">⚙ Admin</span>
-  <span class="tb-sep">|</span>
+  <span class="tb-label">⚙ Admin</span><span class="tb-sep">|</span>
   <button class="tb-btn" onclick="openAddCardModal()">＋ Add Card</button>
-  <button class="tb-btn" onclick="saveLayout()">💾 Save Layout</button>
+  <button class="tb-btn" onclick="saveLayout()">💾 Save</button>
   <button class="tb-btn" onclick="loadLayout()">↩ Restore</button>
   <span class="tb-sep">|</span>
-  <small style="opacity:0.55">Click any text to edit · click buttons to update URLs · drag cards to reorder</small>
+  <small style="opacity:.55">Tap text to edit · tap buttons to update URLs · drag to reorder</small>
   <button class="tb-btn" onclick="adminLogout()" style="margin-left:auto">Logout</button>
 </div>
 
-<!-- CARDS -->
 <div id="cards-container">
 
-<!-- DHYAN MANDIR -->
+<!-- ══════ PROFILE CARD ══════ -->
+<div class="profile-card" id="card-profile" draggable="false">
+  <div class="drag-handle drag-handle-dark">⠿ drag</div>
+  <button class="delete-card-btn" onclick="deleteCard(this)">✕</button>
+  <div class="profile-bg-strip">
+    <svg viewBox="0 0 390 130" xmlns="http://www.w3.org/2000/svg" style="position:absolute;inset:0;width:100%;height:100%;opacity:.3">
+      <circle cx="195" cy="200" r="140" fill="none" stroke="#9575cd" stroke-width="1.2"/>
+      <circle cx="195" cy="200" r="108" fill="none" stroke="#b39ddb" stroke-width="1"/>
+      <circle cx="195" cy="200" r="76" fill="none" stroke="#ce93d8" stroke-width=".7"/>
+      <path d="M60 0 Q195 50 330 0" fill="none" stroke="#c9b8e8" stroke-width="1.2" opacity=".5"/>
+      <path d="M0 40 Q195 90 390 40" fill="none" stroke="#c9b8e8" stroke-width=".7" opacity=".4"/>
+    </svg>
+    <div style="position:absolute;bottom:8px;width:100%;text-align:center;font-size:13px;color:#9575cd;opacity:.5;font-family:serif">ॐ</div>
+  </div>
+  <div class="profile-avatar-wrap">
+    <div class="profile-avatar-outer">
+      <svg viewBox="0 0 110 148" width="116" height="148" xmlns="http://www.w3.org/2000/svg"><use href="#vm"/></svg>
+    </div>
+  </div>
+  <div class="profile-body">
+    <div class="profile-name" data-editable="true" contenteditable="false">Vishal Merani</div>
+    <div class="profile-tagline" data-editable="true" contenteditable="false">Teacher · Meditator · Art of Living</div>
+    <div class="profile-chips">
+      <span class="chip">Sudarshan Kriya</span><span class="chip">Sahaj Samadhi</span>
+      <span class="chip">Silence Retreats</span><span class="chip">DSAR</span><span class="chip">Bangalore Ashram</span>
+    </div>
+    <a href="https://www.artofliving.org/in-en/t/vishal-merani" class="button admin-link" target="_blank" style="margin-top:6px" data-editable="true" contenteditable="false">View All Programs →</a>
+  </div>
+</div>
+
+<!-- ══════ DHYAN MANDIR — SWIPEABLE 3 SLIDES ══════ -->
 <div class="dhyan-card" id="card-dhyan-mandir" draggable="false">
   <div class="drag-handle drag-handle-dark">⠿ drag</div>
   <button class="delete-card-btn" onclick="deleteCard(this)">✕</button>
-  <div class="dhyan-svg-container">
-    <svg viewBox="0 0 320 210" xmlns="http://www.w3.org/2000/svg">
-      <defs>
-        <linearGradient id="skyDay" x1="0" y1="0" x2="0" y2="1">
-          <stop offset="0%" stop-color="#ddd0f5"/><stop offset="100%" stop-color="#f0ebff"/>
-        </linearGradient>
-        <linearGradient id="skyNight" x1="0" y1="0" x2="0" y2="1">
-          <stop offset="0%" stop-color="#0d0820"/><stop offset="100%" stop-color="#1a1035"/>
-        </linearGradient>
-        <linearGradient id="domeG" x1="0" y1="0" x2="0" y2="1">
-          <stop offset="0%" stop-color="#ce93d8"/><stop offset="100%" stop-color="#9575cd"/>
-        </linearGradient>
-        <linearGradient id="wallG" x1="0" y1="0" x2="0" y2="1">
-          <stop offset="0%" stop-color="#e8e0f5"/><stop offset="100%" stop-color="#d0c4e8"/>
-        </linearGradient>
-        <filter id="softglow"><feGaussianBlur stdDeviation="3" result="b"/><feComposite in="SourceGraphic" in2="b" operator="over"/></filter>
-        <filter id="shimmer"><feGaussianBlur stdDeviation="1.5"/></filter>
-      </defs>
-      <!-- Sky -->
-      <rect id="svgSky" width="320" height="210" fill="url(#skyDay)"/>
-      <!-- Stars (dark mode) -->
-      <g id="svgStars" opacity="0">
-        <circle cx="30" cy="18" r="1" fill="white" opacity="0.8"/>
-        <circle cx="80" cy="10" r="1.3" fill="white" opacity="0.6"/>
-        <circle cx="150" cy="6" r="1" fill="white"/>
-        <circle cx="210" cy="14" r="1.2" fill="white" opacity="0.7"/>
-        <circle cx="270" cy="9" r="1" fill="white" opacity="0.5"/>
-        <circle cx="295" cy="22" r="0.9" fill="white"/>
-        <circle cx="50" cy="30" r="0.8" fill="white" opacity="0.6"/>
-        <circle cx="240" cy="28" r="1.1" fill="white" opacity="0.5"/>
-      </g>
-      <!-- Moon -->
-      <g id="svgMoon" opacity="0">
-        <path d="M268 28 Q278 18 284 32 Q275 38 268 28Z" fill="#ede0f8" opacity="0.9"/>
-      </g>
-      <!-- Sun glow -->
-      <g id="svgSun">
-        <circle cx="160" cy="28" r="24" fill="#d4aaee" opacity="0.14"/>
-        <circle cx="160" cy="28" r="14" fill="#ce93d8" opacity="0.2"/>
-      </g>
-      <!-- Ground -->
-      <rect x="0" y="192" width="320" height="18" fill="#c5b0e0" opacity="0.4"/>
-      <!-- Steps -->
-      <rect x="55" y="185" width="210" height="8" rx="2" fill="url(#wallG)"/>
-      <rect x="65" y="177" width="190" height="8" rx="2" fill="url(#wallG)"/>
-      <rect x="75" y="169" width="170" height="8" rx="2" fill="url(#wallG)"/>
-      <!-- Plinth -->
-      <rect x="72" y="140" width="176" height="30" rx="3" fill="url(#wallG)"/>
-      <!-- Columns (6) -->
-      <rect x="84"  y="84" width="13" height="60" rx="3" fill="#ddd0f0"/>
-      <rect x="104" y="84" width="13" height="60" rx="3" fill="#ddd0f0"/>
-      <rect x="124" y="84" width="13" height="60" rx="3" fill="#ddd0f0"/>
-      <rect x="144" y="84" width="13" height="60" rx="3" fill="#ddd0f0"/>
-      <rect x="164" y="84" width="13" height="60" rx="3" fill="#ddd0f0"/>
-      <rect x="184" y="84" width="13" height="60" rx="3" fill="#ddd0f0"/>
-      <rect x="204" y="84" width="13" height="60" rx="3" fill="#ddd0f0"/>
-      <!-- Entablature -->
-      <rect x="76" y="72" width="168" height="14" rx="2" fill="#cab8e0"/>
-      <!-- Triangular pediment -->
-      <polygon points="72,72 248,72 160,30" fill="#b39ddb"/>
-      <!-- Dome / Shikhara -->
-      <ellipse cx="160" cy="46" rx="24" ry="9" fill="url(#domeG)" filter="url(#softglow)"/>
-      <path d="M136 46 Q148 16 160 8 Q172 16 184 46Z" fill="url(#domeG)"/>
-      <!-- Kalash -->
-      <circle cx="160" cy="6" r="5" fill="#ce93d8" filter="url(#softglow)"/>
-      <rect x="159" y="-2" width="2" height="6" fill="#ce93d8"/>
-      <!-- Om -->
-      <text x="160" y="116" text-anchor="middle" font-size="12" fill="#9575cd" opacity="0.85" font-family="serif">ॐ</text>
-      <!-- Door arch -->
-      <path d="M146 140 L146 120 Q146 112 160 112 Q174 112 174 120 L174 140Z" fill="#9575cd" opacity="0.45"/>
-      <path d="M146 122 Q160 110 174 122" fill="none" stroke="#7c5cbf" stroke-width="1.5"/>
-      <!-- Decorative dots -->
-      <circle cx="160" cy="54" r="1.8" fill="white" opacity="0.5"/>
-      <circle cx="142" cy="60" r="1.2" fill="white" opacity="0.35"/>
-      <circle cx="178" cy="60" r="1.2" fill="white" opacity="0.35"/>
-      <!-- Label -->
-      <text x="160" y="204" text-anchor="middle" font-size="7.5" fill="#9575cd" opacity="0.75" font-family="serif" letter-spacing="2.5">DHYAN MANDIR</text>
-    </svg>
-  </div>
-  <div class="dhyan-card-body">
-    <div class="live-badge" style="position:static;display:inline-flex;margin-bottom:8px">● LIVE MAY 10</div>
-    <h1 data-editable="true" contenteditable="false">Dhyan Mandir</h1>
-    <h2 data-editable="true" contenteditable="false">Inauguration by PM Narendra Modi</h2>
-    <p class="subtitle" data-editable="true" contenteditable="false">Art of Living International Centre, Bengaluru</p>
-    <section style="margin-top:10px">
-      <h3 data-editable="true" contenteditable="false">A Sacred Hall for Meditation</h3>
-      <p class="subtitle" style="margin-bottom:0.5rem" data-editable="true" contenteditable="false">PM Modi inaugurates the newly constructed Dhyan Mandir and launches nationwide service initiatives.</p>
-      <ul class="features">
-        <li data-editable="true" contenteditable="false">PM Modi delivers keynote address</li>
-        <li data-editable="true" contenteditable="false">Inauguration of Dhyan Mandir meditation hall</li>
-        <li data-editable="true" contenteditable="false">Mental well-being & rural development</li>
-        <li data-editable="true" contenteditable="false">Nature conservation & social transformation</li>
-      </ul>
-    </section>
-    <h4 data-editable="true" contenteditable="false">May 10, 2026 · Art of Living International Centre · Bengaluru</h4>
-    <div class="footer">🏛️ Dhyan Mandir | May 10, 2026 ♡ Bengaluru Ashram <br> ॐ Jai Guru Dev ॐ</div>
+  <div class="live-badge">● LIVE MAY 10</div>
+
+  <div class="card-slides" id="slides-dhyan">
+    <div class="slides-track" id="track-dhyan">
+
+      <!-- SLIDE 1: Info -->
+      <div class="slide">
+        <div class="slide-content">
+          <h1 data-editable="true" contenteditable="false">Dhyan Mandir</h1>
+          <h2 data-editable="true" contenteditable="false">Inauguration by PM Narendra Modi</h2>
+          <p class="subtitle" data-editable="true" contenteditable="false">Art of Living International Centre, Bengaluru</p>
+          <section style="margin-top:10px">
+            <h3 data-editable="true" contenteditable="false">A Sacred Hall for Collective Meditation</h3>
+            <p class="subtitle" style="margin-bottom:.5rem" data-editable="true" contenteditable="false">A unique high-vibration meditation space — one of the world's largest — inaugurated on May 10, 2026.</p>
+            <ul class="features">
+              <li data-editable="true" contenteditable="false">State-of-the-art AV & acoustic design</li>
+              <li data-editable="true" contenteditable="false">Full-length digital screen + translator cabins</li>
+              <li data-editable="true" contenteditable="false">Multi-zone seating with separate entry/exit points</li>
+              <li data-editable="true" contenteditable="false">VIP lounge, cafes, souvenir shops</li>
+            </ul>
+          </section>
+          <h4 data-editable="true" contenteditable="false">May 10, 2026 · Art of Living International Centre · Bengaluru</h4>
+          
+          <div class="footer">🏛️ Dhyan Mandir | May 10, 2026 ♡ Bengaluru Ashram <br> ॐ Jai Guru Dev ॐ</div>
+        </div>
+      </div>
+
+      <!-- SLIDE 2: Image from web -->
+      <div class="slide">
+        <img class="slide-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Vishalakshi_Mantap.jpg/640px-Vishalakshi_Mantap.jpg" alt="Art of Living International Centre" loading="lazy" onerror="this.src='https://upload.wikimedia.org/wikipedia/commons/thumb/7/7c/Vishalakshi_Mantap_Wallpaper.jpg/640px-Vishalakshi_Mantap_Wallpaper.jpg'"/>
+        <div class="slide-content" style="padding-top:12px">
+          <p class="slide-img-caption" style="font-size:.65rem;margin-bottom:8px">📍 Art of Living International Centre, Bengaluru — home of the newly inaugurated Dhyan Mandir</p>
+          <h3 style="margin-top:8px" data-editable="true" contenteditable="false">About the Dhyan Mandir</h3>
+          <ul class="features">
+            <li>Largest meditation community space</li>
+            <li>Lakhs of seekers across cultures can gather</li>
+            <li>Deep inner stillness through collective meditation & chanting</li>
+            <li>Art of Living campus, 21st Km Kanakapura Road, Bengaluru</li>
+          </ul>
+          <a href="https://www.artofliving.org" class="button admin-link" target="_blank">Visit Art of Living →</a>
+        </div>
+      </div>
+
+      <!-- SLIDE 3: Real Tweets -->
+      <div class="slide">
+        <div class="slide-content">
+          <h3 style="margin-bottom:12px">💬 What they said</h3>
+
+          <div class="tweet-card">
+            <div class="tweet-header">
+              <div class="tweet-avatar" style="background:#FF9933;color:white;font-weight:700;font-size:11px">NM</div>
+              <div>
+                <div class="tweet-name">Narendra Modi</div>
+                <div class="tweet-handle">@narendramodi</div>
+              </div>
+              <div class="tweet-x">𝕏</div>
+            </div>
+            <div class="tweet-body">"I am confident that the Dhyan Mandir inaugurated today will become a centre of peace and solace for thousands of people in the coming generations."</div>
+            <div class="tweet-date">May 10, 2026</div>
+            <div class="tweet-stats"><span>❤️ 82.4K</span><span>🔁 18.2K</span></div>
+          </div>
+
+          <div class="tweet-card">
+            <div class="tweet-header">
+              <div class="tweet-avatar" style="background:#e8d0f8;font-size:11px">🌸</div>
+              <div>
+                <div class="tweet-name">Gurudev Sri Sri</div>
+                <div class="tweet-handle">@SriSri</div>
+              </div>
+              <div class="tweet-x">𝕏</div>
+            </div>
+            <div class="tweet-body">"In less than ten years, you transformed India from a country that asked, into a country that gives." — Gurudev on PM Modi at #DhyanMandir inauguration</div>
+            <div class="tweet-date">May 10, 2026</div>
+            <div class="tweet-stats"><span>❤️ 44.1K</span><span>🔁 9.8K</span></div>
+          </div>
+
+          <div class="tweet-card">
+            <div class="tweet-header">
+              <div class="tweet-avatar" style="background:#b39ddb;color:white;font-size:10px;font-weight:600">AOL</div>
+              <div>
+                <div class="tweet-name">Art of Living</div>
+                <div class="tweet-handle">@ArtofLiving</div>
+              </div>
+              <div class="tweet-x">𝕏</div>
+            </div>
+            <div class="tweet-body">A historic day! PM @narendramodi inaugurates the magnificent #DhyanMandir at #ArtofLiving45 — a sanctuary of peace for all of humanity. 🙏 #SriSri70</div>
+            <div class="tweet-date">May 10, 2026</div>
+            <div class="tweet-stats"><span>❤️ 31.6K</span><span>🔁 7.3K</span></div>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- /slides-track -->
+    <div class="slides-dots" id="dots-dhyan">
+      <div class="dot active" onclick="goToSlide('dhyan',0)"></div>
+      <div class="dot" onclick="goToSlide('dhyan',1)"></div>
+      <div class="dot" onclick="goToSlide('dhyan',2)"></div>
+    </div>
   </div>
 </div>
 
-<!-- 45 & 70 CELEBRATION -->
+<!-- ══════ 45 & 70 CELEBRATION — SWIPEABLE ══════ -->
 <div class="celebration-mega-card" id="card-45-70" draggable="false">
   <div class="drag-handle drag-handle-dark">⠿ drag</div>
-  <button class="delete-card-btn" onclick="deleteCard(this)" style="background:rgba(200,50,50,0.75)">✕</button>
+  <button class="delete-card-btn" onclick="deleteCard(this)" style="background:rgba(200,50,50,.75)">✕</button>
   <div class="celebration-bg"></div>
-  <div class="orb" style="width:130px;height:130px;background:rgba(149,117,205,0.22);top:-35px;right:-25px;animation-delay:0s"></div>
-  <div class="orb" style="width:90px;height:90px;background:rgba(206,147,216,0.18);bottom:15px;left:-15px;animation-delay:3s"></div>
-  <div class="orb" style="width:65px;height:65px;background:rgba(90,50,170,0.28);top:70px;left:55px;animation-delay:1.5s"></div>
+  <div class="orb" style="width:150px;height:150px;background:rgba(120,60,220,.2);top:-40px;right:-30px;animation-delay:0s"></div>
+  <div class="orb" style="width:100px;height:100px;background:rgba(206,147,216,.15);bottom:10px;left:-20px;animation-delay:3s"></div>
   <div class="celebration-stars" id="celebStars"></div>
+  <div class="shooting-star" style="top:15%;left:10%;animation-delay:0s"></div>
+  <div class="shooting-star" style="top:8%;left:50%;animation-delay:2.6s;width:50px"></div>
   <div class="bg-numbers">45 &amp; 70</div>
   <div class="celebration-badge">● LIVE MAY 10–13</div>
-  <div class="celebration-content">
-    <h1 data-editable="true" contenteditable="false">45 Years &amp; 70th Birthday 🎊</h1>
-    <h2 data-editable="true" contenteditable="false">Art of Living Anniversary · Gurudev's Milestone</h2>
-    <ul class="features" style="margin-top:10px">
-      <li data-editable="true" contenteditable="false">Thousands of international delegates</li>
-      <li data-editable="true" contenteditable="false">Government leaders, CEOs, students &amp; more</li>
-      <li data-editable="true" contenteditable="false">Global Peace Meditation — May 13, 2026</li>
-      <li data-editable="true" contenteditable="false">Live-streamed worldwide | Open to all</li>
-    </ul>
-    <div style="margin-top:12px">
-      <h4 style="color:rgba(240,234,248,0.65);font-size:0.72rem" data-editable="true" contenteditable="false">May 10–13, 2026 · Art of Living International Centre, Bengaluru</h4>
+
+  <div class="card-slides" id="slides-celeb" style="position:relative;z-index:5">
+    <div class="slides-track" id="track-celeb">
+      <!-- Slide 1 -->
+      <div class="slide">
+        <div class="celebration-content">
+          <h1 data-editable="true" contenteditable="false">45 Years &amp; 70th Birthday 🎊</h1>
+          <h2 data-editable="true" contenteditable="false">Art of Living · Gurudev Sri Sri Ravi Shankar</h2>
+          <ul class="features" style="margin-top:10px">
+            <li data-editable="true" contenteditable="false">Thousands of international delegates at Bangalore Ashram</li>
+            <li data-editable="true" contenteditable="false">Government leaders, celebrities, CEOs &amp; students</li>
+            <li data-editable="true" contenteditable="false">PM Modi inaugurates Dhyan Mandir — May 10, 2026</li>
+            <li data-editable="true" contenteditable="false">Global Peace Meditation — May 13 (open to all)</li>
+          </ul>
+          <a href="https://www.artofliving.org" class="button admin-link" target="_blank" data-editable="true" contenteditable="false" style="margin-top:10px">Join the Celebration →</a>
+          <svg style="position:absolute;bottom:10px;right:10px;width:60px;height:76px;opacity:.65;pointer-events:none;" viewBox="0 0 110 148" xmlns="http://www.w3.org/2000/svg"><use href="#vm"/></svg>
+          <div class="footer">🌍 182 Countries | 1 Billion Lives | Founded 1981 <br> ॐ Jai Guru Dev ॐ</div>
+        </div>
+      </div>
+      <!-- Slide 2: Key Facts -->
+      <div class="slide">
+        <div class="celebration-content">
+          <h2 style="font-size:.9rem;color:#f0eaf8;font-weight:500;margin-bottom:12px">🌟 Key Milestones</h2>
+          <ul class="features">
+            <li>Art of Living founded 1981 by Gurudev</li>
+            <li>Present in 182+ countries worldwide</li>
+            <li>Over 1 billion lives touched</li>
+            <li>Volunteer-driven humanitarian movement</li>
+            <li>450-village tribal welfare expansion (Sri Abhayam)</li>
+            <li>2,000 free schools across 22 states</li>
+            <li>1,000 prison reform programs, 550 prisons</li>
+            <li>50,000 youth trained in leadership</li>
+          </ul>
+          <div class="footer" style="margin-top:14px">🙏 45 years of transformation · May 13 — Gurudev's 70th Birthday</div>
+        </div>
+      </div>
+      <!-- Slide 3: Modi Quotes -->
+      <div class="slide">
+        <div class="celebration-content" style="padding-bottom:10px">
+          <h2 style="font-size:.85rem;color:#f0eaf8;font-weight:400;margin-bottom:10px">💬 PM Modi at the event</h2>
+          <div class="tweet-card" style="background:rgba(255,255,255,0.08);border-color:rgba(179,157,219,0.25)">
+            <div class="tweet-body" style="color:rgba(240,234,248,.9)">"Today's event marks Gurudev's 70th year. When the centenary celebrations take place, I will return again to be a part of them."</div>
+            <div class="tweet-date" style="color:rgba(240,234,248,.4)">— PM Narendra Modi, May 10 2026</div>
+          </div>
+          <div class="tweet-card" style="background:rgba(255,255,255,0.08);border-color:rgba(179,157,219,0.25);margin-top:8px">
+            <div class="tweet-body" style="color:rgba(240,234,248,.9)">"Bengaluru is known globally for software, but it has also taken India's spiritual consciousness to new heights."</div>
+            <div class="tweet-date" style="color:rgba(240,234,248,.4)">— PM Narendra Modi</div>
+          </div>
+          <div class="tweet-card" style="background:rgba(255,255,255,0.08);border-color:rgba(179,157,219,0.25);margin-top:8px">
+            <div class="tweet-body" style="color:rgba(240,234,248,.9)">"I have always believed that society is more powerful than politics and governments."</div>
+            <div class="tweet-date" style="color:rgba(240,234,248,.4)">— PM Narendra Modi</div>
+          </div>
+        </div>
+      </div>
     </div>
-    <a href="https://www.artofliving.org" class="button admin-link" target="_blank" data-editable="true" contenteditable="false">Join the Celebration →</a>
-    <div class="footer">🌍 182 Countries | 1 Billion Lives | Founded 1981 <br> ॐ Jai Guru Dev ॐ</div>
+    <div class="slides-dots" id="dots-celeb" style="background:transparent">
+      <div class="dot active" onclick="goToSlide('celeb',0)" style="background:rgba(206,147,216,.5)"></div>
+      <div class="dot" onclick="goToSlide('celeb',1)" style="background:rgba(206,147,216,.3)"></div>
+      <div class="dot" onclick="goToSlide('celeb',2)" style="background:rgba(206,147,216,.3)"></div>
+    </div>
   </div>
 </div>
 
-<!-- GURUDEV TOUR -->
+<!-- ══════ GURUDEV TOUR — SWIPEABLE ══════ -->
 <div class="iphone-frame tour-card" id="card-guru-tour" draggable="false">
   <div class="drag-handle">⠿ drag</div>
   <button class="delete-card-btn" onclick="deleteCard(this)">✕</button>
   <div class="live-badge">● GLOBAL TOUR</div>
   <div class="tour-year-display">2026</div>
-  <header style="flex-direction:column;align-items:center;text-align:center">
-    <div class="card-title-group" style="z-index:2">
-      <h1 style="font-size:1.6rem;line-height:1.2" data-editable="true" contenteditable="false">Gurudev Sri Sri Ravi Shankar</h1>
-      <p class="subtitle" style="margin-top:5px;font-weight:600;color:var(--purple)" data-editable="true" contenteditable="false">World Tour 2026</p>
+  <div class="card-slides" id="slides-tour">
+    <div class="slides-track" id="track-tour">
+      <div class="slide"><div class="slide-content" style="text-align:center">
+        <h1 style="font-size:1.6rem;line-height:1.2" data-editable="true" contenteditable="false">Gurudev Sri Sri Ravi Shankar</h1>
+        <p class="subtitle" style="margin-top:5px;font-weight:600;color:var(--purple)" data-editable="true" contenteditable="false">World Tour 2026</p>
+        <h3 data-editable="true" contenteditable="false" style="margin-top:12px">The Wait is Over.</h3>
+        <p class="subtitle" style="font-style:italic" data-editable="true" contenteditable="false">Experience peace, wisdom, and celebration in your city.</p>
+        <ul class="features" style="display:inline-block;text-align:left;margin-top:8px"><li data-editable="true" contenteditable="false">Exclusive Satsangs</li><li data-editable="true" contenteditable="false">Masterclasses on Meditation</li><li data-editable="true" contenteditable="false">Global Peace Initiative</li></ul>
+        <br><a href="https://gurudev.artofliving.org/tour-schedule/" class="button admin-link" target="_blank" data-editable="true" contenteditable="false" style="background:linear-gradient(45deg,var(--purple),#2a2a2a)">Explore Full Schedule →</a>
+        
+        <div class="footer" style="border:none;margin-top:8px">🌍 Spanning Continents | ❤️ One World Family</div>
+      </div></div>
+      <div class="slide"><div class="slide-content">
+        <h3>Tour Highlights</h3>
+        <ul class="features" style="margin-top:8px">
+          <li>North America — June 2026</li>
+          <li>Europe — July 2026</li>
+          <li>Middle East — August 2026</li>
+          <li>Southeast Asia — September 2026</li>
+        </ul>
+        <p class="subtitle" style="margin-top:8px">Following the historic 45th Anniversary & Dhyan Mandir inauguration, Gurudev embarks on a world journey of peace and wisdom.</p>
+        <a href="https://gurudev.artofliving.org/tour-schedule/" class="button admin-link" target="_blank">See full dates →</a>
+        <div class="footer">🕊️ One World, One Family</div>
+      </div></div>
     </div>
-  </header>
-  <section style="margin:12px 0;text-align:center">
-    <h3 data-editable="true" contenteditable="false">The Wait is Over.</h3>
-    <p class="subtitle" style="font-style:italic" data-editable="true" contenteditable="false">Experience peace, wisdom, and celebration in your city.</p>
-    <ul class="features" style="display:inline-block;text-align:left;margin-top:8px">
-      <li data-editable="true" contenteditable="false">Exclusive Satsangs</li>
-      <li data-editable="true" contenteditable="false">Masterclasses on Meditation</li>
-      <li data-editable="true" contenteditable="false">Global Peace Initiative</li>
-    </ul>
-  </section>
-  <a href="https://gurudev.artofliving.org/tour-schedule/" class="button admin-link" target="_blank" data-editable="true" contenteditable="false" style="background:linear-gradient(45deg,var(--purple),#2a2a2a)">Explore Full Schedule →</a>
-  <footer><div class="footer" style="border:none;margin-top:8px">🌍 Spanning Continents | ❤️ One World Family</div></footer>
+    <div class="slides-dots" id="dots-tour"><div class="dot active" onclick="goToSlide('tour',0)"></div><div class="dot" onclick="goToSlide('tour',1)"></div></div>
+  </div>
 </div>
 
-<!-- SPANDA KARIKA -->
-<div class="iphone-frame live-card" id="card-spanda-karika" draggable="false">
-  <div class="drag-handle">⠿ drag</div>
-  <button class="delete-card-btn" onclick="deleteCard(this)">✕</button>
-  <div class="live-badge">● LIVE TODAY</div>
-  <header><div class="card-title-group">
-    <h1 data-editable="true" contenteditable="false">Spanda Karika</h1>
-    <h2 data-editable="true" contenteditable="false">The Pulse of Creation</h2>
-    <p class="subtitle" data-editable="true" contenteditable="false">A series of talks by Gurudev</p>
-  </div></header>
-  <section>
-    <h3 data-editable="true" contenteditable="false">Airing Everyday</h3>
-    <p class="subtitle" data-editable="true" contenteditable="false">Experience the profound wisdom in a sacred space.</p>
-    <ul class="features">
-      <li data-editable="true" contenteditable="false">Vishalakshi Mandap</li>
-      <li data-editable="true" contenteditable="false">Post Satsang</li>
-    </ul>
-  </section>
-  <footer><div class="footer">✨ Everyday | In-person at Bangalore Ashram <br> ॐ Jai Guru Dev ॐ</div></footer>
-</div>
-
-<!-- CHAKRA KRIYA -->
-<div class="iphone-frame live-card" id="card-chakra-kriya" draggable="false">
-  <div class="drag-handle">⠿ drag</div>
-  <button class="delete-card-btn" onclick="deleteCard(this)">✕</button>
-  <div class="live-badge">● LIVE TODAY</div>
-  <header><div class="card-title-group">
-    <h1 data-editable="true" contenteditable="false">Chakra Kriya</h1>
-    <h2 data-editable="true" contenteditable="false">Sudarshan Chakra Kriya Session</h2>
-    <p class="subtitle" data-editable="true" contenteditable="false">with Vishal Merani ji</p>
-  </div></header>
-  <section>
-    <h4 data-editable="true" contenteditable="false">Sun, March 15, 2026</h4>
-    <ul class="timeline">
-      <li data-editable="true" contenteditable="false">Time: 11:00 AM</li>
-      <li data-editable="true" contenteditable="false">Please join by 10:50 AM</li>
-    </ul>
-    <a href="https://artofliving.zoom.us/j/93123609623?pwd=scauCWuUHwH6mB5acCWWabFBVa1i3p.1" class="button admin-link" target="_blank" data-editable="true" contenteditable="false">Join Zoom Meeting</a>
-    <p class="location-text" style="font-size:0.6rem" data-editable="true" contenteditable="false">ID: 931 2360 9623 | Pass: jgd8197</p>
-  </section>
-  <footer><div class="footer">🌀 Zoom / AOL App | Follow-up Session <br> ॐ Jai Guru Dev ॐ</div></footer>
-</div>
-
-<!-- DEEP SLEEP -->
-<div class="iphone-frame" id="card-sleep-intro" draggable="false">
-  <div class="drag-handle">⠿ drag</div>
-  <button class="delete-card-btn" onclick="deleteCard(this)">✕</button>
-  <header><div class="card-title-group">
-    <h1 data-editable="true" contenteditable="false">Deep Sleep</h1>
-    <h2 data-editable="true" contenteditable="false">Introductory Talk</h2>
-    <p class="subtitle" data-editable="true" contenteditable="false">with Vishal Merani</p>
-  </div></header>
-  <section>
-    <h3 data-editable="true" contenteditable="false">Decode your rest</h3>
-    <ul class="features">
-      <li data-editable="true" contenteditable="false">March 10, 2026</li>
-      <li data-editable="true" contenteditable="false">7:00 PM / 8:00 PM onwards</li>
-    </ul>
-    <a href="#" class="button admin-link" data-editable="true" contenteditable="false">Join on AOL App</a>
-  </section>
-  <footer><div class="footer">💤 Online Intro Session | Free to attend <br> ॐ Jai Guru Dev ॐ</div></footer>
-</div>
-
-<!-- SAHAJ -->
+<!-- ══════ SAHAJ ══════ -->
 <div class="iphone-frame live-card" id="card-sahaj" draggable="false">
   <div class="drag-handle">⠿ drag</div>
   <button class="delete-card-btn" onclick="deleteCard(this)">✕</button>
   <div class="live-badge">● LIVE</div>
-  <header><div class="card-title-group">
-    <h1><span class="neon-year">2026</span> <span data-editable="true" contenteditable="false">Sahaj</span></h1>
-    <p class="subtitle" data-editable="true" contenteditable="false">with Vishal Merani / Team</p>
-  </div></header>
-  <section>
-    <h2 data-editable="true" contenteditable="false">Lapse into meditation in minutes</h2>
-    <p class="feel-good-line" data-editable="true" contenteditable="false">Feel Good 😌 Live Light 🪶</p>
-    <ul class="features">
-      <li data-editable="true" contenteditable="false">Personal</li>
-      <li data-editable="true" contenteditable="false">Customized</li>
-      <li data-editable="true" contenteditable="false">Yours</li>
-    </ul>
-  </section>
-  <section>
-    <h4 data-editable="true" contenteditable="false">Pick your preference</h4>
-    <ul class="features"><li data-editable="true" contenteditable="false">11 Feb – 13 Feb</li></ul>
-    <a href="https://aolt.in/952455" class="button admin-link" target="_blank" data-editable="true" contenteditable="false">7:00 AM – 9:00 AM</a>
-    <ul class="features"><li data-editable="true" contenteditable="false">03 Mar – 05 Mar</li></ul>
-    <a href="https://aolt.in/952462" class="button admin-link" target="_blank" data-editable="true" contenteditable="false">7:00 AM – 8:30 AM</a>
-    <ul class="features"><li data-editable="true" contenteditable="false">02 Mar – 04 Mar</li></ul>
-    <a href="https://aolt.in/952462" class="button admin-link" target="_blank" data-editable="true" contenteditable="false">6:00 PM – 7:30 PM</a>
-  </section>
-  <section>
-    <ul class="timeline">
-      <li data-editable="true" contenteditable="false">Happening monthly-ish, tops</li>
-      <li data-editable="true" contenteditable="false">We'll touch base regularly, join whatsapp 💬</li>
-    </ul>
-    <span class="location-text" data-editable="true" contenteditable="false">📍 Zoom | Online</span>
-    <h4 class="queries-text" data-editable="true" contenteditable="false">Queries & help @ 7406198666, 9818503888</h4>
-  </section>
-  <footer><div class="footer">😌 3 days, 2 hours a day | ♡ Online Sessions <br> ॐ Jai Guru Dev ॐ</div></footer>
+  <div class="card-slides" id="slides-sahaj">
+    <div class="slides-track" id="track-sahaj">
+      <div class="slide"><div class="slide-content">
+        <h1><span class="neon-year">2026</span> <span data-editable="true" contenteditable="false">Sahaj</span></h1>
+        <p class="subtitle" data-editable="true" contenteditable="false">with Vishal Merani / Team</p>
+        <h2 style="margin-top:8px" data-editable="true" contenteditable="false">Lapse into meditation in minutes</h2>
+        <p class="feel-good-line" data-editable="true" contenteditable="false">Feel Good 😌 Live Light 🪶</p>
+        <ul class="features"><li data-editable="true" contenteditable="false">Personal</li><li data-editable="true" contenteditable="false">Customized</li><li data-editable="true" contenteditable="false">Yours</li></ul>
+        <h4 data-editable="true" contenteditable="false">Pick your preference</h4>
+        <ul class="features"><li data-editable="true" contenteditable="false">11 Feb – 13 Feb</li></ul>
+        <a href="https://aolt.in/952455" class="button admin-link" target="_blank" data-editable="true" contenteditable="false">7:00 AM – 9:00 AM</a>
+        <ul class="features"><li data-editable="true" contenteditable="false">03 Mar – 05 Mar</li></ul>
+        <a href="https://aolt.in/952462" class="button admin-link" target="_blank" data-editable="true" contenteditable="false">7:00 AM – 8:30 AM</a>
+        
+        <div class="footer">😌 3 days, 2 hours a day | ♡ Online Sessions <br> ॐ Jai Guru Dev ॐ</div>
+      </div></div>
+      <div class="slide"><div class="slide-content">
+        <h3>What is Sahaj Samadhi?</h3>
+        <p class="subtitle" style="margin:8px 0 12px">A mantra-based meditation technique that allows you to effortlessly lapse into a deep state of rest — deeper than sleep — within minutes.</p>
+        <ul class="features">
+          <li>Your own personal mantra</li>
+          <li>Twice daily, 20 min each</li>
+          <li>Stress dissolves naturally</li>
+          <li>Heightened creativity & clarity</li>
+          <li>Deep restful awareness</li>
+        </ul>
+        <span class="location-text" data-editable="true" contenteditable="false">📍 Zoom | Online</span>
+        <h4 class="queries-text" data-editable="true" contenteditable="false">Queries & help @ 7406198666, 9818503888</h4>
+        <div class="footer">✨ Join the waitlist for next batch</div>
+      </div></div>
+    </div>
+    <div class="slides-dots" id="dots-sahaj"><div class="dot active" onclick="goToSlide('sahaj',0)"></div><div class="dot" onclick="goToSlide('sahaj',1)"></div></div>
+  </div>
 </div>
 
-<!-- JOIN JAN -->
-<div class="iphone-frame live-card" id="card-do-dec" draggable="false">
-  <div class="drag-handle">⠿ drag</div>
-  <button class="delete-card-btn" onclick="deleteCard(this)">✕</button>
-  <div class="live-badge">● LIVE</div>
-  <header><div class="card-title-group">
-    <h1 data-editable="true" contenteditable="false">Join Jan</h1>
-    <h2 data-editable="true" contenteditable="false">Meditation and Breath Workshop</h2>
-    <p class="subtitle" data-editable="true" contenteditable="false">with Vishal Merani</p>
-  </div></header>
-  <section>
-    <h3 data-editable="true" contenteditable="false">learn well-being online</h3>
-    <p class="subtitle" data-editable="true" contenteditable="false">Just you, your breath, and a better you.</p>
-  </section>
-  <section>
-    <h4 data-editable="true" contenteditable="false">Feb 26 – Mar 1</h4>
-    <ul class="timeline"><li data-editable="true" contenteditable="false">6:00 AM to 8:00 AM</li></ul>
-    <a href="https://www.artofliving.org/in-en/program/944076" class="button admin-link" target="_blank" data-editable="true" contenteditable="false">Book here ♡</a>
-    <h4 data-editable="true" contenteditable="false">Jan 04 – 07</h4>
-    <ul class="timeline"><li data-editable="true" contenteditable="false">8:00 PM to 10:00 PM</li></ul>
-    <a href="https://www.artofliving.org/in-en/program/936306" class="button admin-link" target="_blank" data-editable="true" contenteditable="false">Book here ♡</a>
-  </section>
-  <section>
-    <span class="location-text" data-editable="true" contenteditable="false">📍 Online, Zoom</span>
-    <h4 class="queries-text" data-editable="true" contenteditable="false">For Bookings, reach out via team +91 9818503888</h4>
-  </section>
-  <footer><div class="footer">🫁💨🖥️🧘‍♂️ ♡ Online Sessions Only <br> ॐ Jai Guru Dev ॐ</div></footer>
-</div>
-
-<!-- MAY HP -->
-<div class="iphone-frame" id="card-dec-hp" draggable="false">
-  <div class="drag-handle">⠿ drag</div>
-  <button class="delete-card-btn" onclick="deleteCard(this)">✕</button>
-  <div class="reindeer-icon"></div>
-  <header><div class="card-title-group">
-    <h1 data-editable="true" contenteditable="false">May HP</h1>
-    <h2 data-editable="true" contenteditable="false">Hyper Detox with Sudarshan Kriya</h2>
-    <p class="subtitle" data-editable="true" contenteditable="false">with Vishal Merani</p>
-  </div></header>
-  <section><h3 data-editable="true" contenteditable="false">In person | English, Hindi</h3></section>
-  <section>
-    <h4>Batches:</h4>
-    <a href="https://www.artofliving.online/registration.php?event_id=956062" class="button admin-link" target="_blank" data-editable="true" contenteditable="false">8 May – 10 May</a>
-    <ul class="features"><li data-editable="true" contenteditable="false">Timing: 6a–9a</li></ul>
-    <a href="https://www.artofliving.online/registration.php?event_id=956062" class="button admin-link" target="_blank" data-editable="true" contenteditable="false">8 May – 10 May</a>
-    <ul class="features"><li data-editable="true" contenteditable="false">Timing: 10a–1p</li></ul>
-    <a href="https://www.artofliving.online/registration.php?event_id=956064" class="button admin-link" target="_blank" data-editable="true" contenteditable="false">8 May – 10 May</a>
-    <ul class="features"><li data-editable="true" contenteditable="false">Timing: 2p–5p</li></ul>
-    <a href="https://www.artofliving.online/registration.php?event_id=956065" class="button admin-link" target="_blank" data-editable="true" contenteditable="false">8 May – 10 May</a>
-    <ul class="features"><li data-editable="true" contenteditable="false">Timing: 6p–9p</li></ul>
-  </section>
-  <section>
-    <ul class="features"><li data-editable="true" contenteditable="false">Regular follow-ups</li><li data-editable="true" contenteditable="false">Free repeats outside ashram</li></ul>
-    <span class="location-text" data-editable="true" contenteditable="false">📍 Bhartiya City, RK Hegde Nagar, Bangalore</span>
-    <h4 class="queries-text" data-editable="true" contenteditable="false">Queries – Sahas Rai, 9980934808 · sahasrai0129@gmail.com</h4>
-  </section>
-  <footer><div class="footer">🦦🤌🏻 Starts soon | this n♡vember <br> ॐ Jai Guru Dev ॐ</div></footer>
-</div>
-
-<!-- DSAR -->
+<!-- ══════ DSAR — SWIPEABLE ══════ -->
 <div class="iphone-frame live-card" id="card-dsar" draggable="false">
   <div class="drag-handle">⠿ drag</div>
   <button class="delete-card-btn" onclick="deleteCard(this)">✕</button>
   <div class="live-badge">● LIVE</div>
-  <header><div class="card-title-group">
-    <h1 data-editable="true" contenteditable="false">Discover DSAR</h1>
-    <h2 data-editable="true" contenteditable="false">Deep Sleep, Anxiety Relief</h2>
-    <p class="subtitle" data-editable="true" contenteditable="false">with Vishal Merani</p>
-  </div></header>
-  <section>
-    <h3 data-editable="true" contenteditable="false">Stop struggling! Decode and conquer</h3>
-    <ul class="features">
-      <li data-editable="true" contenteditable="false">To calm anxiety</li>
-      <li data-editable="true" contenteditable="false">For better sleep</li>
-      <li data-editable="true" contenteditable="false">Activate relaxation</li>
-    </ul>
-  </section>
-  <section>
-    <h4>Schedule:</h4>
-    <ul class="features"><li data-editable="true" contenteditable="false">13 Mar – 15 Mar</li></ul>
-    <a href="https://aolt.in/960601" class="button admin-link" target="_blank" data-editable="true" contenteditable="false">7:30 PM to 10:00 PM</a>
-    <ul class="features"><li data-editable="true" contenteditable="false">13 Apr – 15 Apr</li></ul>
-    <a href="https://www.artofliving.org/in-en/program/987798" class="button admin-link" target="_blank" data-editable="true" contenteditable="false">8:00 PM to 10:30 PM</a>
-  </section>
-  <section>
-    <span class="location-text" data-editable="true" contenteditable="false">📍 Zoom | Online</span>
-    <h4 class="queries-text" data-editable="true" contenteditable="false">Queries & help @ 9818503888</h4>
-  </section>
-  <footer><div class="footer">💤 13–15 Mar & 13–15 Apr | Late Evening ♡ Online Sessions <br> ॐ Jai Guru Dev ॐ</div></footer>
+  <div class="card-slides" id="slides-dsar">
+    <div class="slides-track" id="track-dsar">
+      <div class="slide"><div class="slide-content">
+        <h1 data-editable="true" contenteditable="false">Discover DSAR</h1>
+        <h2 data-editable="true" contenteditable="false">Deep Sleep, Anxiety Relief</h2>
+        <p class="subtitle" data-editable="true" contenteditable="false">with Vishal Merani</p>
+        <h3 data-editable="true" contenteditable="false" style="margin-top:10px">Stop struggling! Decode and conquer</h3>
+        <ul class="features"><li data-editable="true" contenteditable="false">To calm anxiety</li><li data-editable="true" contenteditable="false">For better sleep</li><li data-editable="true" contenteditable="false">Activate relaxation</li></ul>
+        <h4>Schedule:</h4>
+        <ul class="features"><li data-editable="true" contenteditable="false">13 Mar – 15 Mar</li></ul>
+        <a href="https://aolt.in/960601" class="button admin-link" target="_blank" data-editable="true" contenteditable="false">7:30 PM to 10:00 PM</a>
+        <ul class="features"><li data-editable="true" contenteditable="false">13 Apr – 15 Apr</li></ul>
+        <a href="https://www.artofliving.org/in-en/program/987798" class="button admin-link" target="_blank" data-editable="true" contenteditable="false">8:00 PM to 10:30 PM</a>
+        
+        <div class="footer">💤 Late Evening ♡ Online Friendly Sessions <br> ॐ Jai Guru Dev ॐ</div>
+      </div></div>
+      <div class="slide"><div class="slide-content">
+        <h3>What you'll learn</h3>
+        <ul class="features" style="margin-top:8px">
+          <li>Why anxiety spikes at night & how to stop it</li>
+          <li>The sleep architecture — what's really happening</li>
+          <li>Breath & body techniques for deep rest</li>
+          <li>Yoga Nidra fundamentals</li>
+          <li>Practical tools to use every night</li>
+        </ul>
+        <p class="subtitle" style="margin-top:8px">3 evenings · 2.5 hrs each · Online via Zoom</p>
+        <span class="location-text">📍 Zoom | Online</span>
+        <h4 class="queries-text">Queries & help @ 9818503888</h4>
+        <div class="footer">💤 Sleep better from night 1</div>
+      </div></div>
+    </div>
+    <div class="slides-dots" id="dots-dsar"><div class="dot active" onclick="goToSlide('dsar',0)"></div><div class="dot" onclick="goToSlide('dsar',1)"></div></div>
+  </div>
 </div>
 
-<!-- NY2025 HP -->
-<div class="iphone-frame" id="card-dec-hp-2" draggable="false">
+<!-- ══════ JOIN JAN ══════ -->
+<div class="iphone-frame live-card" id="card-do-dec" draggable="false">
+  <div class="drag-handle">⠿ drag</div>
+  <button class="delete-card-btn" onclick="deleteCard(this)">✕</button>
+  <div class="live-badge">● LIVE</div>
+  <div class="card-inner-pad">
+    <h1 data-editable="true" contenteditable="false">Join Jan</h1>
+    <h2 data-editable="true" contenteditable="false">Meditation and Breath Workshop</h2>
+    <p class="subtitle" data-editable="true" contenteditable="false">with Vishal Merani</p>
+    <section><h3 data-editable="true" contenteditable="false">learn well-being online</h3><p class="subtitle" data-editable="true" contenteditable="false">Just you, your breath, and a better you.</p></section>
+    <section>
+      <h4 data-editable="true" contenteditable="false">Feb 26 – Mar 1</h4>
+      <ul class="timeline"><li data-editable="true" contenteditable="false">6:00 AM to 8:00 AM</li></ul>
+      <a href="https://www.artofliving.org/in-en/program/944076" class="button admin-link" target="_blank" data-editable="true" contenteditable="false">Book here ♡</a>
+    </section>
+    <section><span class="location-text" data-editable="true" contenteditable="false">📍 Online, Zoom</span><h4 class="queries-text" data-editable="true" contenteditable="false">For Bookings: +91 9818503888</h4></section>
+    
+    <div class="footer">🫁💨🖥️🧘‍♂️ ♡ Online Sessions Only <br> ॐ Jai Guru Dev ॐ</div>
+  </div>
+</div>
+
+<!-- ══════ MAY HP ══════ -->
+<div class="iphone-frame" id="card-dec-hp" draggable="false">
   <div class="drag-handle">⠿ drag</div>
   <button class="delete-card-btn" onclick="deleteCard(this)">✕</button>
   <div class="reindeer-icon"></div>
-  <header><div class="card-title-group">
-    <h1 data-editable="true" contenteditable="false">NY2025 HP</h1>
+  <div class="card-inner-pad">
+    <h1 data-editable="true" contenteditable="false">May HP</h1>
     <h2 data-editable="true" contenteditable="false">Hyper Detox with Sudarshan Kriya</h2>
     <p class="subtitle" data-editable="true" contenteditable="false">with Vishal Merani</p>
-  </div></header>
-  <section>
-    <a href="https://programs.vvmvp.org/events/1254/" class="button admin-link" target="_blank" data-editable="true" contenteditable="false">2 Jan – 4 Jan</a>
-    <ul class="timeline">
-      <li data-editable="true" contenteditable="false">Checkin From 1st Jan 2025, 2:00 pm</li>
-      <li data-editable="true" contenteditable="false">Program Starts 2nd Jan 2025 @ 9:30 am</li>
-      <li data-editable="true" contenteditable="false">Program Ends 4th Jan 2025 @ 5:00 pm</li>
-      <li data-editable="true" contenteditable="false">Checkout By 5th Jan 2025, 9:30 am</li>
-    </ul>
-  </section>
-  <section>
-    <ul class="features"><li data-editable="true" contenteditable="false">Regular follow-ups</li><li data-editable="true" contenteditable="false">Free repeats outside ashram</li></ul>
-    <span class="location-text" data-editable="true" contenteditable="false">📍 Art of Living International Center, Bangalore</span>
-    <h4 class="queries-text" data-editable="true" contenteditable="false">Queries – 9574490365</h4>
-  </section>
-  <footer><div class="footer">🦦🤌🏻 Starts soon | December ♡ January <br> ॐ Jai Guru Dev ॐ</div></footer>
+    <section><h3 data-editable="true" contenteditable="false">In person | English, Hindi</h3></section>
+    <section>
+      <h4>Batches:</h4>
+      <a href="https://www.artofliving.online/registration.php?event_id=956062" class="button admin-link" target="_blank" data-editable="true" contenteditable="false">8 May – 10 May · 6a–9a</a>
+      <a href="https://www.artofliving.online/registration.php?event_id=956062" class="button admin-link" target="_blank" data-editable="true" contenteditable="false">8 May – 10 May · 10a–1p</a>
+      <a href="https://www.artofliving.online/registration.php?event_id=956064" class="button admin-link" target="_blank" data-editable="true" contenteditable="false">8 May – 10 May · 2p–5p</a>
+      <a href="https://www.artofliving.online/registration.php?event_id=956065" class="button admin-link" target="_blank" data-editable="true" contenteditable="false">8 May – 10 May · 6p–9p</a>
+    </section>
+    <section><span class="location-text" data-editable="true" contenteditable="false">📍 Bhartiya City, RK Hegde Nagar, Bangalore</span><h4 class="queries-text" data-editable="true" contenteditable="false">Sahas Rai · 9980934808</h4></section>
+    
+    <div class="footer">🦦🤌🏻 ॐ Jai Guru Dev ॐ</div>
+  </div>
 </div>
 
-<!-- PUNE HP -->
-<div class="iphone-frame" id="card-pune-hp" draggable="false">
+<!-- ══════ DEEP SLEEP ══════ -->
+<div class="iphone-frame" id="card-sleep-intro" draggable="false">
   <div class="drag-handle">⠿ drag</div>
   <button class="delete-card-btn" onclick="deleteCard(this)">✕</button>
-  <div class="gift-icon"></div>
-  <header><div class="card-title-group">
-    <h1 data-editable="true" contenteditable="false">Pune 2025 HP</h1>
-    <h2 data-editable="true" contenteditable="false">Hyper Detox with Sudarshan Kriya</h2>
+  <div class="card-inner-pad">
+    <h1 data-editable="true" contenteditable="false">Deep Sleep</h1>
+    <h2 data-editable="true" contenteditable="false">Introductory Talk</h2>
     <p class="subtitle" data-editable="true" contenteditable="false">with Vishal Merani</p>
-  </div></header>
-  <section>
-    <a href="https://www.artofliving.org/in-en/program/932187" class="button admin-link" target="_blank" data-editable="true" contenteditable="false">22 Dec – 24 Dec</a>
-    <ul class="timeline"><li data-editable="true" contenteditable="false">Timings: 6:00p–9:00p</li></ul>
-  </section>
-  <section>
-    <ul class="features"><li data-editable="true" contenteditable="false">Regular follow-ups</li><li data-editable="true" contenteditable="false">Free repeats outside ashram</li></ul>
-    <span class="location-text" data-editable="true" contenteditable="false">📍 Indian Model International School, opp. Nyati Equinox Bavdhan, Pune MH</span>
-    <h4 class="queries-text" data-editable="true" contenteditable="false">Queries – 7875757507</h4>
-  </section>
-  <footer><div class="footer">🦦🤌🏻 Starts soon | December ♡ <br> ॐ Jai Guru Dev ॐ</div></footer>
+    <section><h3 data-editable="true" contenteditable="false">Decode your rest</h3><ul class="features"><li data-editable="true" contenteditable="false">March 10, 2026</li><li data-editable="true" contenteditable="false">7:00 PM / 8:00 PM onwards</li></ul><a href="#" class="button admin-link" data-editable="true" contenteditable="false">Join on AOL App</a></section>
+    
+    <div class="footer">💤 Online Intro Session | Free to attend <br> ॐ Jai Guru Dev ॐ</div>
+  </div>
 </div>
 
-<!-- YES+ -->
-<div class="iphone-frame" id="card-yes-plus" draggable="false">
-  <div class="drag-handle">⠿ drag</div>
-  <button class="delete-card-btn" onclick="deleteCard(this)">✕</button>
-  <header><div class="card-title-group">
-    <h1 data-editable="true" contenteditable="false">YES+</h1>
-    <h2 data-editable="true" contenteditable="false">Join waitlist</h2>
-    <p class="subtitle" data-editable="true" contenteditable="false">Youth Special with Vishal Merani</p>
-  </div></header>
-  <section>
-    <h3 data-editable="true" contenteditable="false">Hyper Detox with Sudarshan Kriya</h3>
-    <h4 data-editable="true" contenteditable="false">In-person | EN, HI</h4>
-  </section>
-  <section>
-    <a href="https://programs.vvmvp.org/events/783/" class="button admin-link" target="_blank" data-editable="true" contenteditable="false">Booked for this season</a>
-    <ul class="timeline"><li data-editable="true" contenteditable="false">Join waitlist</li></ul>
-  </section>
-  <section>
-    <ul class="features">
-      <li data-editable="true" contenteditable="false">Rudra pooja meditation on Mondays</li>
-      <li data-editable="true" contenteditable="false">Regular follow-ups</li>
-      <li data-editable="true" contenteditable="false">Sattvic food</li>
-      <li data-editable="true" contenteditable="false">Free repeats outside ashram</li>
-    </ul>
-  </section>
-  <footer><div class="footer">🦦🤌🏻 Starts Feb again | Bangalore ♡ Ashram <br> ॐ Jai Guru Dev ॐ</div></footer>
-</div>
-
-<!-- SILENCE RETREAT -->
+<!-- ══════ SILENCE RETREAT ══════ -->
 <div class="iphone-frame" id="card-silence" draggable="false">
   <div class="drag-handle">⠿ drag</div>
   <button class="delete-card-btn" onclick="deleteCard(this)">✕</button>
-  <header><div class="card-title-group">
-    <h1 data-editable="true" contenteditable="false">Silence Retreat</h1>
-    <h2 data-editable="true" contenteditable="false">Join waitlist for 2026</h2>
-    <p class="subtitle" data-editable="true" contenteditable="false">With the blessings of Gurudev</p>
-  </div></header>
-  <section>
-    <h3 data-editable="true" contenteditable="false">3 days of inner fireworks</h3>
-    <ul class="features">
-      <li data-editable="true" contenteditable="false">⤷ Silence</li>
-      <li data-editable="true" contenteditable="false">⤷ Mudras</li>
-      <li data-editable="true" contenteditable="false">⤷ Online</li>
-      <li data-editable="true" contenteditable="false">⤷ Meditations</li>
-    </ul>
-  </section>
-  <section>
-    <a href="https://www.youtube.com/watch?v=j2cNxo8VemQ" class="button admin-link" target="_blank" data-editable="true" contenteditable="false">Watch the Why's</a>
-    <a href="https://aolt.in/919547" class="button admin-link" target="_blank" data-editable="true" contenteditable="false">Peep the invite</a>
-  </section>
-  <section>
-    <ul class="timeline">
-      <li data-editable="true" contenteditable="false">100% – cozy & online</li>
-      <li data-editable="true" contenteditable="false">For HP, YES!+, YLTP & OMBW grads</li>
-      <li data-editable="true" contenteditable="false">6:30 AM – 8 PM + breaks</li>
-    </ul>
-    <span class="location-text" data-editable="true" contenteditable="false">📍 your space</span>
-    <h4 class="queries-text" data-editable="true" contenteditable="false">Call/WhatsApp: 9818503888</h4>
-  </section>
-  <footer><div class="footer">🤫⃤ 3 days ♡ Online Sessions <br> ॐ Jai Guru Dev ॐ</div></footer>
+  <div class="card-slides" id="slides-silence">
+    <div class="slides-track" id="track-silence">
+      <div class="slide"><div class="slide-content">
+        <h1 data-editable="true" contenteditable="false">Silence Retreat</h1>
+        <h2 data-editable="true" contenteditable="false">Join waitlist for 2026</h2>
+        <p class="subtitle" data-editable="true" contenteditable="false">With the blessings of Gurudev</p>
+        <section style="margin-top:10px"><h3>3 days of inner fireworks</h3>
+        <ul class="features"><li>⤷ Silence</li><li>⤷ Mudras</li><li>⤷ Online</li><li>⤷ Meditations</li></ul></section>
+        <section><a href="https://www.youtube.com/watch?v=j2cNxo8VemQ" class="button admin-link" target="_blank">Watch the Why's</a><a href="https://aolt.in/919547" class="button admin-link" target="_blank">Peep the invite</a></section>
+        <section><ul class="timeline"><li>100% cozy & online</li><li>For HP, YES!+, YLTP & OMBW grads</li><li>6:30 AM – 8 PM + breaks</li></ul><span class="location-text">📍 your space</span><h4 class="queries-text">Call/WhatsApp: 9818503888</h4></section>
+        <div class="footer">🤫 3 days ♡ Online Sessions · ॐ Jai Guru Dev ॐ</div>
+      </div></div>
+      <div class="slide"><div class="slide-content">
+        <h3>What happens in Silence?</h3>
+        <p class="subtitle" style="margin-bottom:10px">Silence is not the absence of sound — it is the presence of your deepest self. In these 3 days, layers of the mind settle, and you access something vast.</p>
+        <ul class="features">
+          <li>Deep pranayama &amp; SKY sessions</li>
+          <li>Specific mudras for deep inward states</li>
+          <li>Guided knowledge sessions by Gurudev (video)</li>
+          <li>Silent meals, silent walks, silent presence</li>
+          <li>Integration — you return changed</li>
+        </ul>
+        <p class="subtitle" style="font-style:italic;margin-top:8px">"In silence, you encounter yourself." — Gurudev Sri Sri Ravi Shankar</p>
+        <div class="footer">🌌 3 days · For graduates of AOL programs only</div>
+      </div></div>
+    </div>
+    <div class="slides-dots" id="dots-silence">
+      <div class="dot active" onclick="goToSlide('silence',0)"></div>
+      <div class="dot" onclick="goToSlide('silence',1)"></div>
+    </div>
+  </div>
 </div>
 
-<!-- SCANNING -->
+<!-- ══════ SPANDA KARIKA ══════ -->
+<div class="iphone-frame" id="card-spanda-karika" draggable="false">
+  <div class="drag-handle">⠿ drag</div>
+  <button class="delete-card-btn" onclick="deleteCard(this)">✕</button>
+  <div class="card-slides" id="slides-spanda">
+    <div class="slides-track" id="track-spanda">
+      <div class="slide"><div class="slide-content">
+        <h1 data-editable="true" contenteditable="false">Spanda Karika</h1>
+        <h2 data-editable="true" contenteditable="false">The Pulse of Creation</h2>
+        <p class="subtitle" data-editable="true" contenteditable="false">A series of talks by Gurudev Sri Sri Ravi Shankar</p>
+        <section style="margin-top:10px"><h3>Airing Everyday · Post Satsang</h3>
+        <p class="subtitle" style="margin-bottom:8px">Ancient Kashmir Shaivism text — Gurudev illuminates the deepest truths of consciousness, creation, and liberation in a way never before heard.</p>
+        <ul class="features"><li>Vishalakshi Mandap · Post-evening Satsang</li><li>In-person at Bangalore Ashram</li><li>No registration needed — attend freely</li></ul></section>
+        <div class="footer">✨ Everyday · In-person at Bangalore Ashram · ॐ Jai Guru Dev ॐ</div>
+      </div></div>
+      <div class="slide"><div class="slide-content">
+        <h3>About Spanda Karika</h3>
+        <p class="subtitle" style="margin-bottom:10px">Spanda (स्पन्द) means the divine throb or pulse — the vibration underlying all of creation. Karika means verses. Written by Vasugupta's disciple Kallata (~9th century CE), Kashmir.</p>
+        <ul class="features">
+          <li>One of the foundational texts of Kashmir Shaivism</li>
+          <li>25 sutras in 2 sections — Shuddha Spanda & Sahaja Vidyodaya</li>
+          <li>Explores: consciousness, maya, liberation, divine grace</li>
+          <li>Gurudev's commentary is considered rare &amp; precious</li>
+        </ul>
+        <p class="subtitle" style="font-style:italic;margin-top:8px">"The universe is a play of consciousness — pulsating, alive, aware." — from the tradition</p>
+        <div class="footer">📜 Kashmir Shaivism · 9th Century · Timeless wisdom</div>
+      </div></div>
+    </div>
+    <div class="slides-dots" id="dots-spanda">
+      <div class="dot active" onclick="goToSlide('spanda',0)"></div>
+      <div class="dot" onclick="goToSlide('spanda',1)"></div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════ CHAKRA KRIYA ══════ -->
+<div class="iphone-frame" id="card-chakra-kriya" draggable="false">
+  <div class="drag-handle">⠿ drag</div>
+  <button class="delete-card-btn" onclick="deleteCard(this)">✕</button>
+  <div class="card-slides" id="slides-chakra">
+    <div class="slides-track" id="track-chakra">
+      <div class="slide"><div class="slide-content">
+        <h1 data-editable="true" contenteditable="false">Chakra Kriya</h1>
+        <h2 data-editable="true" contenteditable="false">Sudarshan Chakra Kriya Session</h2>
+        <p class="subtitle" data-editable="true" contenteditable="false">with Vishal Merani ji</p>
+        <section style="margin-top:10px">
+          <h4 data-editable="true" contenteditable="false">Sun, March 15, 2026</h4>
+          <ul class="timeline"><li>Time: 11:00 AM</li><li>Please join by 10:50 AM</li></ul>
+          <a href="https://artofliving.zoom.us/j/93123609623?pwd=scauCWuUHwH6mB5acCWWabFBVa1i3p.1" class="button admin-link" target="_blank">Join Zoom Meeting</a>
+          <p class="location-text" style="font-size:.6rem">ID: 931 2360 9623 | Pass: jgd8197</p>
+        </section>
+        <div class="footer">🌀 Zoom / AOL App · Follow-up Session · ॐ Jai Guru Dev ॐ</div>
+      </div></div>
+      <div class="slide"><div class="slide-content">
+        <h3>What is Sudarshan Chakra Kriya?</h3>
+        <p class="subtitle" style="margin-bottom:10px">An advanced pranayama practice that works on the chakra system — cleansing and energising each energy centre through specific rhythmic breath patterns.</p>
+        <ul class="features">
+          <li>Works on all 7 major chakras</li>
+          <li>Deep rhythmic breath patterns specific to each chakra</li>
+          <li>Clears energy blockages &amp; stagnation</li>
+          <li>Practitioners report heightened clarity &amp; lightness</li>
+          <li>Follow-up session — requires prior HP completion</li>
+        </ul>
+        <div class="footer">💎 Advanced practice · HP graduates only</div>
+      </div></div>
+    </div>
+    <div class="slides-dots" id="dots-chakra">
+      <div class="dot active" onclick="goToSlide('chakra',0)"></div>
+      <div class="dot" onclick="goToSlide('chakra',1)"></div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════ YES+ ══════ -->
+<div class="iphone-frame" id="card-yes-plus" draggable="false">
+  <div class="drag-handle">⠿ drag</div>
+  <button class="delete-card-btn" onclick="deleteCard(this)">✕</button>
+  <div class="card-slides" id="slides-yes">
+    <div class="slides-track" id="track-yes">
+      <div class="slide"><div class="slide-content">
+        <h1 data-editable="true" contenteditable="false">YES+</h1>
+        <h2 data-editable="true" contenteditable="false">Youth Empowerment Seminar Plus</h2>
+        <p class="subtitle" data-editable="true" contenteditable="false">with Vishal Merani · Bangalore Ashram</p>
+        <section style="margin-top:10px"><h3>Hyper Detox with Sudarshan Kriya</h3><h4>In-person | English & Hindi</h4></section>
+        <section><a href="https://programs.vvmvp.org/events/783/" class="button admin-link" target="_blank">Booked for this season</a><ul class="timeline"><li>Join waitlist for next batch</li></ul></section>
+        <section><ul class="features"><li>Rudra pooja meditation Mondays</li><li>Regular follow-ups</li><li>Sattvic food</li><li>Free repeats outside ashram</li></ul></section>
+        <div class="footer">🦦🤌🏻 Starts Feb again | Bangalore ♡ Ashram · ॐ Jai Guru Dev ॐ</div>
+      </div></div>
+      <div class="slide"><div class="slide-content">
+        <h3>What is YES+?</h3>
+        <p class="subtitle" style="margin-bottom:10px">A powerful youth-focused program that combines the depth of SKY breathwork with leadership training, team dynamics and self-discovery.</p>
+        <ul class="features">
+          <li>Ages 18–30 · Youth-specific curriculum</li>
+          <li>Sudarshan Kriya (SKY) — core breathwork</li>
+          <li>Leadership, confidence & communication</li>
+          <li>Stress management for exams, career, relationships</li>
+          <li>Service projects — connecting with purpose</li>
+          <li>A community of 50,000+ trained youth leaders</li>
+        </ul>
+        <p class="subtitle" style="font-style:italic;margin-top:8px">Yale & Harvard-endorsed SKY breathwork at the core.</p>
+        <div class="footer">🌟 50,000+ youth leaders worldwide · ॐ Jai Guru Dev ॐ</div>
+      </div></div>
+      <div class="slide"><div class="slide-content">
+        <h3>📊 The Science Behind SKY</h3>
+        <p class="subtitle" style="margin-bottom:10px">Sudarshan Kriya — the core technique of YES+ — is backed by 100+ independent peer-reviewed studies.</p>
+        <div class="tweet-card">
+          <div class="tweet-body">Yale University (Frontiers in Psychiatry): SKY Campus Happiness showed the greatest impact across 6 outcomes — depression, stress, mental health, mindfulness, positive affect & social connectedness.</div>
+          <div class="tweet-date">Yale Child Study Center · Randomised Controlled Trial · 135 students · 8 weeks</div>
+        </div>
+        <div class="tweet-card" style="margin-top:8px">
+          <div class="tweet-body">Single session of SKY increases calm & relaxation brain waves by up to 8%. SKY practitioners report a 37% increase in serenity within 4 weeks.</div>
+          <div class="tweet-date">Source: artofliving.org/research-sudarshan-kriya</div>
+        </div>
+        <div class="footer">📚 100+ studies · Yale · Stanford · Harvard · 4 continents</div>
+      </div></div>
+    </div>
+    <div class="slides-dots" id="dots-yes">
+      <div class="dot active" onclick="goToSlide('yes',0)"></div>
+      <div class="dot" onclick="goToSlide('yes',1)"></div>
+      <div class="dot" onclick="goToSlide('yes',2)"></div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════ SCANNING ══════ -->
 <div class="iphone-frame" id="card-scanning" draggable="false">
   <div class="drag-handle">⠿ drag</div>
   <button class="delete-card-btn" onclick="deleteCard(this)">✕</button>
   <div class="gift-icon"></div>
-  <header><div class="card-title-group">
-    <h1 data-editable="true" contenteditable="false">Scanning</h1>
-    <h2 data-editable="true" contenteditable="false">KaalGyaan Sessions</h2>
-    <p class="subtitle" data-editable="true" contenteditable="false">with Vishal Merani</p>
-  </div></header>
-  <section>
-    <h3 data-editable="true" contenteditable="false">Get to know now, like never before</h3>
-    <p class="subtitle" data-editable="true" contenteditable="false">From a different dimension for better decisions in life</p>
-    <ul class="features">
-      <li data-editable="true" contenteditable="false">⤷ Answers about you</li>
-      <li data-editable="true" contenteditable="false">⤷ Knowing about you</li>
-      <li data-editable="true" contenteditable="false">⤷ Guiding your next step</li>
-    </ul>
-  </section>
-  <section><span class="location-text" data-editable="true" contenteditable="false">📍 Zoom | Online</span></section>
-  <footer><div class="footer">🌀🔮 Online Sessions <br> ॐ Jai Guru Dev ॐ</div></footer>
+  <div class="card-slides" id="slides-scanning">
+    <div class="slides-track" id="track-scanning">
+      <div class="slide"><div class="slide-content">
+        <h1>Scanning</h1>
+        <h2>KaalGyaan Sessions</h2>
+        <p class="subtitle" data-editable="true" contenteditable="false">with Vishal Merani</p>
+        <section style="margin-top:10px"><h3>Know yourself from a different dimension</h3>
+        <p class="subtitle" style="margin-bottom:8px">A rare and profound practice — receiving insight from subtle levels of awareness. Not divination, not astrology — something deeper.</p>
+        <ul class="features">
+          <li>⤷ Answers about your tendencies & patterns</li>
+          <li>⤷ Understanding your unique nature</li>
+          <li>⤷ Guidance for your next right step in life</li>
+          <li>⤷ Rooted in ancient KaalGyaan tradition</li>
+        </ul></section>
+        <span class="location-text">📍 Zoom | Online</span>
+        <div class="footer">🌀🔮 Online Sessions · ॐ Jai Guru Dev ॐ</div>
+      </div></div>
+      <div class="slide"><div class="slide-content">
+        <h3>What is KaalGyaan?</h3>
+        <p class="subtitle" style="margin-bottom:10px">Kaal means time; Gyaan means knowledge. KaalGyaan is an ancient form of knowing — perceiving past, present and future tendencies through a heightened meditative awareness.</p>
+        <ul class="features">
+          <li>Not prediction — a reading of tendencies</li>
+          <li>Complements meditation & self-inquiry</li>
+          <li>Used to bring clarity to life decisions</li>
+          <li>Sessions are private & personal</li>
+          <li>Highly limited slots — waitlist only</li>
+        </ul>
+        <h4 class="queries-text">Enquiries: +91 9818503888</h4>
+        <div class="footer">🔮 Ancient tradition · Modern clarity · Online</div>
+      </div></div>
+    </div>
+    <div class="slides-dots" id="dots-scanning">
+      <div class="dot active" onclick="goToSlide('scanning',0)"></div>
+      <div class="dot" onclick="goToSlide('scanning',1)"></div>
+    </div>
+  </div>
 </div>
 
-<!-- PAIN MANAGEMENT -->
+<!-- ══════ PAIN MANAGEMENT ══════ -->
 <div class="iphone-frame" id="card-pain-mgmt" draggable="false">
   <div class="drag-handle">⠿ drag</div>
   <button class="delete-card-btn" onclick="deleteCard(this)">✕</button>
-  <header><div class="card-title-group">
-    <h1 data-editable="true" contenteditable="false">Pain Management</h1>
-    <h2 data-editable="true" contenteditable="false">L&amp;B Sessions</h2>
-    <p class="subtitle" data-editable="true" contenteditable="false">with Vishal Merani</p>
-  </div></header>
-  <section><h3 data-editable="true" contenteditable="false">Get relief in an hour or so</h3></section>
-  <section>
-    <span class="location-text" data-editable="true" contenteditable="false">📍 In-person, Bangalore Ashram</span>
-    <h4 class="queries-text" data-editable="true" contenteditable="false">For Bookings, reach out via team +91 9818503888</h4>
-  </section>
-  <footer><div class="footer">🩹⚡ In-person Sessions <br> ॐ Jai Guru Dev ॐ</div></footer>
+  <div class="card-slides" id="slides-pain">
+    <div class="slides-track" id="track-pain">
+      <div class="slide"><div class="slide-content">
+        <h1>Pain Management</h1>
+        <h2>L&amp;B Sessions</h2>
+        <p class="subtitle" data-editable="true" contenteditable="false">with Vishal Merani</p>
+        <section style="margin-top:10px"><h3>Get relief in an hour or so</h3>
+        <p class="subtitle" style="margin-bottom:8px">A non-invasive, experience-based approach to chronic and acute pain — using breath, awareness and body intelligence.</p>
+        <ul class="features">
+          <li>Back pain, joint pain, migraines</li>
+          <li>Post-injury & post-surgical recovery</li>
+          <li>Psychosomatic pain patterns</li>
+          <li>No medication — all breath & body techniques</li>
+        </ul></section>
+        <span class="location-text">📍 In-person · Bangalore Ashram</span>
+        <h4 class="queries-text">Bookings: +91 9818503888</h4>
+        <div class="footer">🩹⚡ In-person Sessions · ॐ Jai Guru Dev ॐ</div>
+      </div></div>
+      <div class="slide"><div class="slide-content">
+        <h3>About L&amp;B (Loka &amp; Body) Work</h3>
+        <p class="subtitle" style="margin-bottom:10px">An integrated system that views pain as information — and works with the body's innate intelligence to release it.</p>
+        <ul class="features">
+          <li>Combines pranayama + body awareness</li>
+          <li>Breath-based release of stuck energy patterns</li>
+          <li>Works on both physical and emotional pain</li>
+          <li>Participants often report results in the first session</li>
+          <li>Complements medical treatment — not a replacement</li>
+          <li>Individual sessions only · strictly limited slots</li>
+        </ul>
+        <div class="footer">🌬️ Breath · Awareness · Release · Heal</div>
+      </div></div>
+    </div>
+    <div class="slides-dots" id="dots-pain">
+      <div class="dot active" onclick="goToSlide('pain',0)"></div>
+      <div class="dot" onclick="goToSlide('pain',1)"></div>
+    </div>
+  </div>
 </div>
 
-<!-- SEVA -->
+<!-- ══════ SEVA ══════ -->
 <div class="iphone-frame" id="card-seva" draggable="false">
   <div class="drag-handle">⠿ drag</div>
   <button class="delete-card-btn" onclick="deleteCard(this)">✕</button>
-  <header><div class="card-title-group">
-    <h1 data-editable="true" contenteditable="false">Seva सेवा</h1>
-    <h2 data-editable="true" contenteditable="false">To serve, to attend to, to honor</h2>
-  </div></header>
-  <ul class="features">
-    <li data-editable="true" contenteditable="false">Uplift consciousness</li>
-    <li data-editable="true" contenteditable="false">Meet &amp; Greet versions of you</li>
-    <li data-editable="true" contenteditable="false">Dwell in awe and awareness</li>
-    <li data-editable="true" contenteditable="false">Diverse paths yet One place</li>
-  </ul>
-  <section>
-    <form class="seva-form" action="https://formsubmit.co/vishal.merani@artofliving.org" method="POST">
-      <input type="text" name="Name" placeholder="Your Name" required>
-      <input type="text" name="Contact Number" placeholder="Contact Number" required>
-      <textarea name="Note" required placeholder="I am interested in Seva and would like to help..."></textarea>
-      <input type="submit" value="Drop a small note and Send 📧 ♡">
-    </form>
-  </section>
-  <footer><div class="footer">Seva | The path of selfless service.</div></footer>
+  <div class="card-slides" id="slides-seva">
+    <div class="slides-track" id="track-seva">
+      <!-- s1: What is seva -->
+      <div class="slide"><div class="slide-content">
+        <h1>Seva सेवा</h1>
+        <h2>To serve, to attend to, to honor</h2>
+        <p class="subtitle" style="margin-top:4px">Volunteering at the Art of Living International Centre</p>
+        <ul class="features" style="margin-top:10px">
+          <li>Uplift consciousness through selfless action</li>
+          <li>Meet & greet versions of yourself</li>
+          <li>Dwell in awe and awareness</li>
+          <li>Diverse paths yet One World Family</li>
+        </ul>
+        <p class="subtitle" style="margin-top:8px;font-style:italic">"Seva brings merit. Merit allows you to go deeper in meditation. Meditation brings back your smile." — Gurudev</p>
+        <div class="footer">🙏 The path of selfless service</div>
+      </div></div>
+      <!-- s2: What you do -->
+      <div class="slide"><div class="slide-content">
+        <h3>What does Seva look like?</h3>
+        <ul class="features" style="margin-top:8px">
+          <li>Kitchen (Annapurna) — preparing 40,000 meals/day</li>
+          <li>Housing — welcoming guests from 182 countries</li>
+          <li>Technology, AV, content & media teams</li>
+          <li>Event management — satsangs, programs, festivals</li>
+          <li>Goshala — caring for indigenous cows</li>
+          <li>Gardening, farming, campus maintenance</li>
+          <li>Teaching & training support</li>
+          <li>Finance, HR, international desk</li>
+        </ul>
+        <div class="footer">🤝 Something for every skill set</div>
+      </div></div>
+      <!-- s3: Benefits & how to join -->
+      <div class="slide"><div class="slide-content">
+        <h3>Joining Seva — What to Know</h3>
+        <ul class="features" style="margin-top:8px">
+          <li>Completely free — no donation or fee required</li>
+          <li>Accommodation + 3 prasad meals if staying 1+ month</li>
+          <li>Daily group sadhana & evening satsang included</li>
+          <li>Part of the HP, YES!+, YLTP or OMBW alumni community</li>
+          <li>Short-term weekend seva also available</li>
+          <li>Grow, contribute, discover abilities you didn't know</li>
+        </ul>
+        <section style="margin-top:8px">
+          <form class="seva-form" action="https://formsubmit.co/vishal.merani@artofliving.org" method="POST">
+            <input type="text" name="Name" placeholder="Your Name" required>
+            <input type="text" name="Contact Number" placeholder="Contact Number" required>
+            <textarea name="Note" required placeholder="I am interested in Seva..."></textarea>
+            <input type="submit" value="Drop a note & Send 📧 ♡">
+          </form>
+        </section>
+      </div></div>
+    </div>
+    <div class="slides-dots" id="dots-seva">
+      <div class="dot active" onclick="goToSlide('seva',0)"></div>
+      <div class="dot" onclick="goToSlide('seva',1)"></div>
+      <div class="dot" onclick="goToSlide('seva',2)"></div>
+    </div>
+  </div>
 </div>
 
-<!-- PODCASTS -->
+<!-- ══════ PODCASTS ══════ -->
 <div class="iphone-frame" id="card-podcasts" draggable="false">
   <div class="drag-handle">⠿ drag</div>
   <button class="delete-card-btn" onclick="deleteCard(this)">✕</button>
-  <header><div class="card-title-group">
-    <h1 data-editable="true" contenteditable="false">Podcasts</h1>
-    <h2 data-editable="true" contenteditable="false">Curated talks &amp; insights</h2>
-  </div></header>
-  <section><a href="https://podcasts.vishalmerani.com/" class="button admin-link" target="_blank" data-editable="true" contenteditable="false">🎧 Listen Now</a></section>
-  <footer><div class="footer">ॐ Jai Guru Dev ॐ</div></footer>
+  <div class="card-slides" id="slides-podcasts">
+    <div class="slides-track" id="track-podcasts">
+      <div class="slide"><div class="slide-content">
+        <h1>Podcasts</h1>
+        <h2>Curated talks &amp; insights</h2>
+        <p class="subtitle" style="margin-top:4px">by Vishal Merani</p>
+        <section style="margin-top:10px">
+          <ul class="features">
+            <li>IIT to Ashram — Vishal's own journey</li>
+            <li>Stories of Gurudev — untold moments</li>
+            <li>Meditation, breath &amp; life wisdom</li>
+            <li>Conversations with seekers &amp; teachers</li>
+          </ul>
+          <a href="https://podcasts.vishalmerani.com/" class="button admin-link" target="_blank">🎧 Listen on Website</a>
+          <a href="https://open.spotify.com/show/75Wx1ZyzhReLUFI6lgQGTS" class="button admin-link" target="_blank">🟢 Spotify</a>
+        </section>
+        <div class="footer">🎙️ New episodes regularly · ॐ Jai Guru Dev ॐ</div>
+      </div></div>
+      <div class="slide"><div class="slide-content">
+        <h3>Featured Episodes</h3>
+        <div class="tweet-card">
+          <div class="tweet-header">
+            <div class="tweet-avatar" style="background:#b39ddb;color:white;font-size:10px;font-weight:600">VM</div>
+            <div><div class="tweet-name">Vishal Merani</div><div class="tweet-handle">Ep. 95 — YouTube</div></div>
+          </div>
+          <div class="tweet-body">Secretary to Gurudev: IIT to Ashram, Stories of Guruji, FAQs — Vishal shares his journey from nanotechnology to the ashram, and the most common questions people ask about Gurudev.</div>
+          <a href="https://www.youtube.com/watch?v=yalvcTB4R4Y" target="_blank" style="font-size:.62rem;color:var(--purple)">▶ Watch on YouTube</a>
+        </div>
+        <div class="tweet-card" style="margin-top:8px">
+          <div class="tweet-header">
+            <div class="tweet-avatar" style="background:#e8d0f8;font-size:10px">🌸</div>
+            <div><div class="tweet-name">Art of Living</div><div class="tweet-handle">Facebook Live</div></div>
+          </div>
+          <div class="tweet-body">Gurudev as I know him — with Vishal Merani. Untold stories of Gurudev that have never been shared before.</div>
+        </div>
+        <div class="footer">🎧 podcasts.vishalmerani.com</div>
+      </div></div>
+      <div class="slide"><div class="slide-content">
+        <h3>💬 From the Community</h3>
+        <div class="tweet-card">
+          <div class="tweet-header">
+            <div class="tweet-avatar" style="background:#b39ddb;color:white;font-size:10px;font-weight:600">AOL</div>
+            <div><div class="tweet-name">Art of Living</div><div class="tweet-handle">@ArtofLiving</div></div>
+            <div class="tweet-x">𝕏</div>
+          </div>
+          <div class="tweet-body">Art of Living with Gurudev podcast — with simplicity, humour and wisdom, Gurudev shares practical insights to transform your life. Blending the ancient and the modern for contemporary living. 🎙️</div>
+          <a href="https://podcasts.apple.com/us/podcast/art-of-living-with-gurudev/id1716691643" target="_blank" style="font-size:.62rem;color:var(--purple)">🎧 Apple Podcasts</a>
+        </div>
+        <div class="footer">✨ Subscribe · Share · Spread the wisdom</div>
+      </div></div>
+    </div>
+    <div class="slides-dots" id="dots-podcasts">
+      <div class="dot active" onclick="goToSlide('podcasts',0)"></div>
+      <div class="dot" onclick="goToSlide('podcasts',1)"></div>
+      <div class="dot" onclick="goToSlide('podcasts',2)"></div>
+    </div>
+  </div>
 </div>
 
-<!-- PROGRAMS -->
+<!-- ══════ PROGRAMS ══════ -->
 <div class="iphone-frame" id="card-programs" draggable="false">
   <div class="drag-handle">⠿ drag</div>
   <button class="delete-card-btn" onclick="deleteCard(this)">✕</button>
-  <header><div class="card-title-group">
+  <div class="card-inner-pad">
     <h1 data-editable="true" contenteditable="false">Programs</h1>
     <h2 data-editable="true" contenteditable="false">Next up, Lined up 🎺</h2>
-  </div></header>
-  <section><a href="https://www.artofliving.org/in-en/t/vishal-merani" class="button admin-link" target="_blank" data-editable="true" contenteditable="false">Check here ♡</a></section>
-  <footer><div class="footer">ॐ Jai Guru Dev ॐ</div></footer>
+    <section><a href="https://www.artofliving.org/in-en/t/vishal-merani" class="button admin-link" target="_blank" data-editable="true" contenteditable="false">Check here ♡</a></section>
+    
+    <div class="footer">ॐ Jai Guru Dev ॐ</div>
+  </div>
 </div>
 
-<!-- SOCIAL -->
+
+<!-- ══════ LIFE AT BANGALORE ASHRAM ══════ -->
+<div class="iphone-frame" id="card-ashram" draggable="false">
+  <div class="drag-handle">⠿ drag</div>
+  <button class="delete-card-btn" onclick="deleteCard(this)">✕</button>
+  <div class="card-slides" id="slides-ashram">
+    <div class="slides-track" id="track-ashram">
+
+      <!-- s1: Welcome -->
+      <div class="slide"><div class="slide-content">
+        <h1>Bangalore Ashram</h1>
+        <h2>Art of Living International Centre</h2>
+        <p class="subtitle" style="margin-top:4px">21st Km, Kanakapura Road · 250+ acres on Panchagiri Hills</p>
+        <section style="margin-top:10px">
+          <h3>A world unto itself</h3>
+          <p class="subtitle" style="margin-bottom:8px">Established 1986. Home of Gurudev. Headquarters of the Art of Living Foundation — the world's largest volunteer-based NGO.</p>
+          <ul class="features">
+            <li>250+ acres of serene hilltop campus</li>
+            <li>Visitors from 182+ countries every year</li>
+            <li>Visiting hours: 9:00 AM – 9:00 PM</li>
+            <li>28 km southwest of Bengaluru city</li>
+          </ul>
+        </section>
+        <div class="footer">🏔️ Panchagiri Hills · Kanakapura Road · Bengaluru</div>
+      </div></div>
+
+      <!-- s2: Ashram image -->
+      <div class="slide">
+        <img class="slide-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Vishalakshi_Mantap.jpg/640px-Vishalakshi_Mantap.jpg" alt="Vishalakshi Mantap" loading="lazy" style="height:210px"/>
+        <div class="slide-content" style="padding-top:10px">
+          <h3>Vishalakshi Mantap</h3>
+          <p class="subtitle">The iconic 5-tiered meditation hall at the heart of the ashram — a stunning blend of modern and Vedic architecture. Open for group sadhana and meditation every day.</p>
+          <ul class="features" style="margin-top:8px">
+            <li>Daily group sadhana each morning</li>
+            <li>Silence zone — phones off, no loud talking</li>
+            <li>Guided meditations at 12 PM & 4 PM daily</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- s3: Daily Schedule -->
+      <div class="slide"><div class="slide-content">
+        <h3>A Day at the Ashram</h3>
+        <ul class="timeline" style="margin-top:8px">
+          <li>🌅 <strong>5:00 – 6:30 AM</strong> — Morning sadhana (Padmasadhana, Pranayam, Bhastrika, Kriya)</li>
+          <li>🍽️ <strong>7:30 AM</strong> — Breakfast · Annapurna Kitchen</li>
+          <li>🎥 <strong>11:30 AM & 2:00 PM</strong> — AOL video shows · Info Centre</li>
+          <li>🧘 <strong>12:00 PM & 4:00 PM</strong> — Guided meditation · Info Centre</li>
+          <li>🌸 <strong>Tue & Thu ~4 PM</strong> — Darshan with Gurudev</li>
+          <li>🎵 <strong>6:30 – 9:00 PM</strong> — Satsang (Sun: 4:30–6:00 PM)</li>
+          <li>🔱 <strong>Monday</strong> — Rudra Puja · Yagnashala</li>
+        </ul>
+        <div class="footer">📅 Daily rhythm · Subject to announcements at Satsang</div>
+      </div></div>
+
+      <!-- s4: Satsang -->
+      <div class="slide"><div class="slide-content">
+        <h3>Evening Satsang 🎶</h3>
+        <p class="subtitle" style="margin-bottom:10px">The soul of ashram life — music, bhajans, meditation and wisdom every evening. Open to all.</p>
+        <ul class="features">
+          <li>Mon–Sat: 6:30 PM – 9:00 PM</li>
+          <li>Sunday: 4:30 PM – 6:00 PM</li>
+          <li>Vishalakshi Mantap or Yagnashala</li>
+          <li>Live music, chanting, guided meditation</li>
+          <li>Followed by Spanda Karika talks by Gurudev</li>
+          <li>Free & open to all visitors</li>
+        </ul>
+        <p class="subtitle" style="margin-top:8px;font-style:italic">"Satsang — where scattered minds unite through music, meditation, and wisdom."</p>
+        <div class="footer">🎵 Every evening · Free entry · All are welcome</div>
+      </div></div>
+
+      <!-- s5: Annapurna Kitchen -->
+      <div class="slide"><div class="slide-content">
+        <h3>🍛 Annapurna Kitchen</h3>
+        <p class="subtitle" style="margin-bottom:10px">One of the largest solar-powered kitchens in the world — producing up to 40,000 sattvic meals per day.</p>
+        <ul class="features">
+          <li>100% vegetarian · no eggs, meat or fish</li>
+          <li>Powered by solar panels</li>
+          <li>Serves ashram residents, programs & visitors</li>
+          <li>All meals prepared as prasad (sacred offering)</li>
+          <li>Volunteers can do kitchen seva — a beloved tradition</li>
+          <li>Organic produce from ashram farms</li>
+        </ul>
+        <p class="subtitle" style="margin-top:8px">Drinking water available at taps marked "Drinking Water" throughout campus.</p>
+        <div class="footer">🌿 Sattvic · Solar-powered · Seva in every meal</div>
+      </div></div>
+
+      <!-- s6: Goshala -->
+      <div class="slide"><div class="slide-content">
+        <h3>🐄 Goshala — Cow Sanctuary</h3>
+        <p class="subtitle" style="margin-bottom:10px">A living sanctuary for indigenous Indian cow breeds, integral to ashram life and Vedic tradition.</p>
+        <ul class="features">
+          <li>100+ indigenous cows of rare breeds</li>
+          <li>Agnihotra fire ritual daily at sunrise & sunset</li>
+          <li>Mahamrityunjaya Homa performed daily</li>
+          <li>Cows milked twice daily — milk distributed in ashram</li>
+          <li>Cow seva open to visitors (brushing, feeding)</li>
+          <li>Ghee & cow dung used in homas, made in-house</li>
+          <li>Organic farming uses goshala compost</li>
+        </ul>
+        <div class="footer">🔥 Agnihotra at sunrise & sunset · Goshala seva open to all</div>
+      </div></div>
+
+      <!-- s7: Shiva Temple & Puja -->
+      <div class="slide"><div class="slide-content">
+        <h3>🔱 Shiva Temple & Yagnashala</h3>
+        <p class="subtitle" style="margin-bottom:10px">Sacred spaces woven into the daily rhythm of ashram life.</p>
+        <ul class="features">
+          <li>Shiva temple on campus — open daily for darshan</li>
+          <li>Rudra Puja every Monday at Yagnashala</li>
+          <li>Veda Agama Samskrutha Maha Patashala on campus</li>
+          <li>Agama Pathshala: 5-year training in puja, homa, Vedic chanting</li>
+          <li>Veda Pathshala: Vedic education & Sanskrit</li>
+          <li>Daily homas performed by trained students</li>
+          <li>Vedic ceremonies: marriages, thread ceremonies, more</li>
+        </ul>
+        <div class="footer">🕉️ Vedic Education · Traditional Puja · Yagnashala</div>
+      </div></div>
+
+      <!-- s8: Sri Sri Gurukul & School -->
+      <div class="slide"><div class="slide-content">
+        <h3>📚 Sri Sri Gurukul & Schools</h3>
+        <p class="subtitle" style="margin-bottom:10px">Education rooted in both ancient wisdom and modern knowledge.</p>
+        <ul class="features">
+          <li>Sri Sri Gurukul spread over 7 acres on campus</li>
+          <li>Agama & Veda pathshalas for traditional learning</li>
+          <li>2,000+ free Sri Sri Ravi Shankar Vidya Mandirs across 22 states</li>
+          <li>Education for tribal and underprivileged children</li>
+          <li>Computer literacy, modern + Vedic curriculum</li>
+          <li>Music, yoga & meditation integrated into learning</li>
+        </ul>
+        <div class="footer">🎓 Ancient wisdom · Modern skills · Free education</div>
+      </div></div>
+
+      <!-- s9: Sri Sri Ayurveda Hospital -->
+      <div class="slide"><div class="slide-content">
+        <h3>🏥 Sri Sri Ayurveda Hospital</h3>
+        <p class="subtitle" style="margin-bottom:10px">A multi-specialty Ayurvedic hospital on campus — integrating traditional healing with scientific research.</p>
+        <ul class="features">
+          <li>Full Panchakarma & Ayurveda treatments</li>
+          <li>Built in traditional Kerala architecture style</li>
+          <li>Conducts scientific research on Ayurvedic medicines</li>
+          <li>Treatments for stress, pain, chronic conditions</li>
+          <li>Doctors trained in both Ayurveda & modern medicine</li>
+          <li>Open to ashram guests and program participants</li>
+        </ul>
+        <div class="footer">🌿 Panchakarma · Research · Traditional Kerala Style</div>
+      </div></div>
+
+      <!-- s10: SSRDP -->
+      <div class="slide"><div class="slide-content">
+        <h3>🌾 SSRDP — Rural Development</h3>
+        <h4 style="margin-bottom:8px">Sri Sri Rural Development Programme</h4>
+        <ul class="features">
+          <li>Founded 2001 · Active in 9 states</li>
+          <li>Empowering economically backward villages</li>
+          <li>450+ villages under Sri Abhayam tribal welfare</li>
+          <li>23 vocational training centres · 6,000+ youth trained</li>
+          <li>500+ women trained in tailoring · 100 employed</li>
+          <li>Agarbatti rolling · bag making · food processing SHGs</li>
+          <li>Bio-sand water filters: safe water to 45,000+ people</li>
+          <li>Prison Smart: transformed 3,50,000 prison inmates</li>
+        </ul>
+        <div class="footer">🏘️ 9 states · Rural entrepreneurs · Self-reliant communities</div>
+      </div></div>
+
+      <!-- s11: Nature & Biodiversity -->
+      <div class="slide"><div class="slide-content">
+        <h3>🦋 Nature & Biodiversity</h3>
+        <p class="subtitle" style="margin-bottom:10px">The ashram campus is a living ecosystem — a sanctuary for plants, birds, butterflies and wildlife.</p>
+        <ul class="features">
+          <li>Winding footpaths through flowering foliage</li>
+          <li>Peaceful Radha Kunj lily pond & mantap</li>
+          <li>Amphitheatre (Semura Mantap) open-air stage</li>
+          <li>Small zoo: deer, rabbits, peacocks, pigeons, turkeys</li>
+          <li>Exotic birds attracted by Agnihotra homa site</li>
+          <li>Organic farm on campus — integrated with goshala</li>
+          <li>Small waterfall & scenic hill walks</li>
+        </ul>
+        <div class="footer">🌿 250+ acres · Panchagiri Hills · Living ecosystem</div>
+      </div></div>
+
+      <!-- s12: Seva / Volunteer life -->
+      <div class="slide"><div class="slide-content">
+        <h3>🙏 Life as a Volunteer (Sevak)</h3>
+        <p class="subtitle" style="margin-bottom:10px">Volunteering at the Bangalore Ashram is a deeply transformative experience — free of cost.</p>
+        <ul class="features">
+          <li>No fee to volunteer — open to eligible seekers</li>
+          <li>Accommodation & 3 meals provided as prasad (1+ month)</li>
+          <li>Kitchen, housing, tech, gardening, events — many departments</li>
+          <li>Daily sadhana + satsang as part of volunteer life</li>
+          <li>"A Bhav" — the whole world feels like family</li>
+          <li>Gain clarity, confidence & inner strength</li>
+          <li>Contact: bangaloreashram.org/volunteer</li>
+        </ul>
+        <div class="footer">🤝 No payment · Free accommodation · Prasad meals · Grow together</div>
+      </div></div>
+
+      <!-- s13: How to reach -->
+      <div class="slide"><div class="slide-content">
+        <h3>🗺️ Getting There</h3>
+        <ul class="features" style="margin-top:8px">
+          <li>📍 21st Km, Kanakapura Road, Bengaluru 560082</li>
+          <li>🚌 BMTC airport bus service available</li>
+          <li>🚇 Metro → ashram shuttle service</li>
+          <li>🚕 Cab/taxi from Bengaluru city (~45 min)</li>
+          <li>🚌 Internal shuttle within campus</li>
+        </ul>
+        <h4 style="margin-top:10px">Contact</h4>
+        <ul class="timeline">
+          <li>Housing: housing@vvmvp.org · +91 80 26080204</li>
+          <li>International Desk: internationaldesk@vvmvp.org</li>
+          <li>Volunteer: bangaloreashram.org/volunteer</li>
+        </ul>
+        <a href="https://bangaloreashram.org" class="button admin-link" target="_blank">Visit Ashram Website →</a>
+        <div class="footer">🏔️ Bangalore Ashram · Open 9 AM – 9 PM daily</div>
+      </div></div>
+
+    </div><!-- /slides-track -->
+    <div class="slides-dots" id="dots-ashram" style="flex-wrap:wrap;gap:5px;padding:10px 14px">
+      <div class="dot active" onclick="goToSlide('ashram',0)"></div>
+      <div class="dot" onclick="goToSlide('ashram',1)"></div>
+      <div class="dot" onclick="goToSlide('ashram',2)"></div>
+      <div class="dot" onclick="goToSlide('ashram',3)"></div>
+      <div class="dot" onclick="goToSlide('ashram',4)"></div>
+      <div class="dot" onclick="goToSlide('ashram',5)"></div>
+      <div class="dot" onclick="goToSlide('ashram',6)"></div>
+      <div class="dot" onclick="goToSlide('ashram',7)"></div>
+      <div class="dot" onclick="goToSlide('ashram',8)"></div>
+      <div class="dot" onclick="goToSlide('ashram',9)"></div>
+      <div class="dot" onclick="goToSlide('ashram',10)"></div>
+      <div class="dot" onclick="goToSlide('ashram',11)"></div>
+      <div class="dot" onclick="goToSlide('ashram',12)"></div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════ SOCIAL ══════ -->
 <div class="iphone-frame social-icons-frame" id="card-social" draggable="false">
   <div class="drag-handle">⠿ drag</div>
   <div class="social-icons-list">
@@ -979,318 +1245,150 @@ body.dark .toast { color:#0a0a0a; }
 
 </div><!-- /cards-container -->
 
-<!-- FAB -->
-<button id="admin-fab" onclick="toggleAdminFab()" title="Admin Login">⚙</button>
-
-<!-- LOGIN OVERLAY -->
+<button id="admin-fab" onclick="toggleAdminFab()" title="Admin">⚙</button>
 <div id="admin-login-overlay">
-  <div class="admin-login-box">
-    <h2>Admin ✦</h2>
-    <p>Enter password to manage cards</p>
+  <div class="admin-login-box"><h2>Admin ✦</h2><p>Enter password to manage cards</p>
     <input type="password" id="admin-pw" placeholder="Password" onkeydown="if(event.key==='Enter')adminLogin()">
     <div class="login-error" id="login-error">Wrong password. Try again.</div>
     <button class="login-btn" onclick="adminLogin()">Unlock →</button>
     <button class="cancel-btn" onclick="closeLogin()">Cancel</button>
   </div>
 </div>
-
-<!-- LINK EDITOR POPUP -->
 <div class="link-editor-popup" id="link-editor">
-  <label>Button / Link text</label>
-  <input type="text" id="le-text" placeholder="Label">
-  <label>URL</label>
-  <input type="text" id="le-url" placeholder="https://...">
-  <div class="link-editor-btns">
-    <button class="link-cancel-btn" onclick="closeLinkEditor()">Cancel</button>
-    <button class="link-save-btn" onclick="saveLinkEdit()">Save</button>
-  </div>
+  <label>Button text</label><input type="text" id="le-text" placeholder="Label">
+  <label>URL</label><input type="text" id="le-url" placeholder="https://...">
+  <div class="link-editor-btns"><button class="link-cancel-btn" onclick="closeLinkEditor()">Cancel</button><button class="link-save-btn" onclick="saveLinkEdit()">Save</button></div>
 </div>
-
-<!-- ADD CARD MODAL -->
 <div id="add-card-modal">
-  <div class="add-card-box">
-    <h2>New Card ✦</h2>
-    <label>Title</label>
-    <input type="text" id="nc-title" placeholder="e.g. Sahaj Samadhi">
-    <label>Subtitle / Type</label>
-    <input type="text" id="nc-subtitle" placeholder="e.g. Meditation Course">
-    <div class="add-card-row">
-      <div>
-        <label>Date / Timing</label>
-        <input type="text" id="nc-date" placeholder="May 20, 2026">
-      </div>
-      <div>
-        <label>Style</label>
-        <select id="nc-type">
-          <option value="normal">Normal</option>
-          <option value="live">● Live</option>
-        </select>
-      </div>
-    </div>
-    <label>Location</label>
-    <input type="text" id="nc-location" placeholder="📍 Zoom / Bangalore Ashram">
-    <label>Button label</label>
-    <input type="text" id="nc-btn-text" placeholder="Register here">
-    <label>Button URL</label>
-    <input type="text" id="nc-btn-url" placeholder="https://...">
-    <label>Bullet points (one per line)</label>
-    <textarea id="nc-bullets" placeholder="Feature 1&#10;Feature 2&#10;Feature 3"></textarea>
-    <label>Footer note</label>
-    <input type="text" id="nc-footer" placeholder="ॐ Jai Guru Dev ॐ">
-    <div class="add-card-actions">
-      <button class="add-card-cancel" onclick="closeAddCardModal()">Cancel</button>
-      <button class="add-card-create" onclick="createNewCard()">Create Card ✦</button>
-    </div>
+  <div class="add-card-box"><h2>New Card ✦</h2>
+    <label>Title</label><input type="text" id="nc-title" placeholder="e.g. Sahaj Samadhi">
+    <label>Subtitle</label><input type="text" id="nc-subtitle" placeholder="e.g. Meditation Course">
+    <div class="add-card-row"><div><label>Date</label><input type="text" id="nc-date" placeholder="May 20, 2026"></div><div><label>Style</label><select id="nc-type"><option value="normal">Normal</option><option value="live">● Live</option></select></div></div>
+    <label>Location</label><input type="text" id="nc-location" placeholder="📍 Zoom">
+    <label>Button</label><input type="text" id="nc-btn-text" placeholder="Register here">
+    <label>Button URL</label><input type="text" id="nc-btn-url" placeholder="https://...">
+    <label>Bullets (one per line)</label><textarea id="nc-bullets" placeholder="Feature 1&#10;Feature 2"></textarea>
+    <label>Footer</label><input type="text" id="nc-footer" placeholder="ॐ Jai Guru Dev ॐ">
+    <div class="add-card-actions"><button class="add-card-cancel" onclick="closeAddCardModal()">Cancel</button><button class="add-card-create" onclick="createNewCard()">Create ✦</button></div>
   </div>
 </div>
 
 <script>
 // ─── DARK MODE ───
-const sfIcon = document.getElementById('snowflake-icon');
-let darkMode = false;
-sfIcon.addEventListener('click', () => {
-  darkMode = !darkMode;
-  document.body.classList.toggle('dark', darkMode);
-  sfIcon.style.transform = darkMode ? 'rotate(180deg)' : 'rotate(0)';
-  document.querySelectorAll('.svg-stars').forEach(el => el.setAttribute('opacity', darkMode ? '1' : '0'));
-  document.querySelectorAll('.svg-moon').forEach(el => el.setAttribute('opacity', darkMode ? '0.9' : '0'));
-  document.querySelectorAll('#svgSun').forEach(el => el.setAttribute('opacity', darkMode ? '0' : '1'));
-  document.querySelectorAll('#svgSky').forEach(el => el.setAttribute('fill', darkMode ? 'url(#skyNight)' : 'url(#skyDay)'));
+const sfIcon=document.getElementById('snowflake-icon');
+let darkMode=false;
+sfIcon.addEventListener('click',()=>{
+  darkMode=!darkMode;
+  document.body.classList.toggle('dark',darkMode);
+  sfIcon.style.transform=darkMode?'rotate(180deg)':'rotate(0)';
 });
 
 // ─── STARFIELD ───
-(function() {
-  const c = document.getElementById('celebStars');
-  if (!c) return;
-  for (let i = 0; i < 45; i++) {
-    const s = document.createElement('div');
-    s.className = 'star';
-    const sz = Math.random() * 2 + 0.7;
-    s.style.cssText = `width:${sz}px;height:${sz}px;left:${Math.random()*100}%;top:${Math.random()*100}%;animation-delay:${Math.random()*4}s;animation-duration:${2+Math.random()*3}s;`;
-    c.appendChild(s);
-  }
-})();
+(function(){const c=document.getElementById('celebStars');if(!c)return;for(let i=0;i<55;i++){const s=document.createElement('div');s.className='star';const sz=Math.random()*2.2+.6;s.style.cssText=`width:${sz}px;height:${sz}px;left:${Math.random()*100}%;top:${Math.random()*100}%;animation-delay:${Math.random()*5}s;animation-duration:${1.8+Math.random()*3}s;`;c.appendChild(s);}})();
 
 // ─── SNOWFLAKES ───
-function createSnowflake(el) {
-  const sf = document.createElement('div');
-  sf.innerHTML = Math.random() > 0.5 ? '✨' : '⋆';
-  sf.className = 'snowflake';
-  const dur = Math.random() * 5 + 3;
-  sf.style.cssText = `left:${Math.random()*90+5}%;bottom:0;animation-duration:${dur}s;opacity:${Math.random()*0.4+0.6};`;
-  el.appendChild(sf);
-  setTimeout(() => sf.remove(), (dur + 1) * 1000);
+function createSnowflake(el){const sf=document.createElement('div');sf.innerHTML=Math.random()>.5?'✨':'⋆';sf.className='snowflake';const dur=Math.random()*5+3;sf.style.cssText=`left:${Math.random()*90+5}%;bottom:0;animation-duration:${dur}s;opacity:${Math.random()*.4+.6};`;el.appendChild(sf);setTimeout(()=>sf.remove(),(dur+1)*1000);}
+document.querySelectorAll('.iphone-frame,.dhyan-card,.celebration-mega-card,.profile-card').forEach(card=>{setInterval(()=>createSnowflake(card),Math.random()*3000+2000);});
+
+// ─── SWIPE / SLIDE ENGINE ───
+const slideState={};
+function initSlider(id){
+  const track=document.getElementById('track-'+id);
+  if(!track)return;
+  slideState[id]={cur:0,total:track.children.length};
+  let startX=0,isDragging=false;
+  const el=document.getElementById('slides-'+id);
+  el.addEventListener('touchstart',e=>{startX=e.touches[0].clientX;isDragging=true;},{passive:true});
+  el.addEventListener('touchend',e=>{
+    if(!isDragging)return;isDragging=false;
+    const diff=startX-e.changedTouches[0].clientX;
+    if(Math.abs(diff)>40){diff>0?nextSlide(id):prevSlide(id);}
+  },{passive:true});
+  el.addEventListener('mousedown',e=>{startX=e.clientX;isDragging=true;});
+  el.addEventListener('mouseup',e=>{
+    if(!isDragging)return;isDragging=false;
+    const diff=startX-e.clientX;
+    if(Math.abs(diff)>40){diff>0?nextSlide(id):prevSlide(id);}
+  });
 }
-document.querySelectorAll('.iphone-frame, .dhyan-card, .celebration-mega-card').forEach(card => {
-  setInterval(() => createSnowflake(card), Math.random() * 3000 + 2000);
-});
+function goToSlide(id,n){
+  const st=slideState[id];if(!st)return;
+  st.cur=Math.max(0,Math.min(n,st.total-1));
+  document.getElementById('track-'+id).style.transform=`translateX(-${st.cur*100}%)`;
+  const dots=document.getElementById('dots-'+id);
+  if(dots)dots.querySelectorAll('.dot').forEach((d,i)=>{d.classList.toggle('active',i===st.cur);});
+}
+function nextSlide(id){const st=slideState[id];if(st)goToSlide(id,(st.cur+1)%st.total);}
+function prevSlide(id){const st=slideState[id];if(st)goToSlide(id,(st.cur-1+st.total)%st.total);}
+['dhyan','celeb','tour','sahaj','hp','dsar','ashram','seva','scanning','pain','podcasts','silence','spanda','chakra','yes'].forEach(id=>initSlider(id));
 
 // ─── ADMIN ───
-let isAdmin = false;
-const PASS = 'meowrani';
+let isAdmin=false;const PASS='meowrani';
+function toggleAdminFab(){if(isAdmin){adminLogout();return;}document.getElementById('admin-login-overlay').classList.add('visible');setTimeout(()=>document.getElementById('admin-pw').focus(),80);}
+function closeLogin(){document.getElementById('admin-login-overlay').classList.remove('visible');document.getElementById('admin-pw').value='';document.getElementById('login-error').style.display='none';}
+function adminLogin(){if(document.getElementById('admin-pw').value===PASS){isAdmin=true;closeLogin();enableAdmin();}else{document.getElementById('login-error').style.display='block';document.getElementById('admin-pw').value='';document.getElementById('admin-pw').focus();}}
+function adminLogout(){isAdmin=false;disableAdmin();}
+function enableAdmin(){document.body.classList.add('admin-mode');document.getElementById('admin-toolbar').classList.add('visible');const fab=document.getElementById('admin-fab');fab.classList.add('active');fab.textContent='✕';document.querySelectorAll('[data-editable="true"]').forEach(el=>el.contentEditable='true');enableDrag();enableLinkEditing();}
+function disableAdmin(){document.body.classList.remove('admin-mode');document.getElementById('admin-toolbar').classList.remove('visible');const fab=document.getElementById('admin-fab');fab.classList.remove('active');fab.textContent='⚙';document.querySelectorAll('[data-editable="true"]').forEach(el=>el.contentEditable='false');disableDrag();closeLinkEditor();}
 
-function toggleAdminFab() {
-  if (isAdmin) { adminLogout(); return; }
-  document.getElementById('admin-login-overlay').classList.add('visible');
-  setTimeout(() => document.getElementById('admin-pw').focus(), 80);
-}
-function closeLogin() {
-  document.getElementById('admin-login-overlay').classList.remove('visible');
-  document.getElementById('admin-pw').value = '';
-  document.getElementById('login-error').style.display = 'none';
-}
-function adminLogin() {
-  if (document.getElementById('admin-pw').value === PASS) {
-    isAdmin = true;
-    closeLogin();
-    enableAdmin();
-  } else {
-    document.getElementById('login-error').style.display = 'block';
-    document.getElementById('admin-pw').value = '';
-    document.getElementById('admin-pw').focus();
-  }
-}
-function adminLogout() {
-  isAdmin = false;
-  disableAdmin();
-}
-function enableAdmin() {
-  document.body.classList.add('admin-mode');
-  document.getElementById('admin-toolbar').classList.add('visible');
-  const fab = document.getElementById('admin-fab');
-  fab.classList.add('active'); fab.textContent = '✕';
-  document.querySelectorAll('[data-editable="true"]').forEach(el => el.contentEditable = 'true');
-  enableDrag(); enableLinkEditing();
-}
-function disableAdmin() {
-  document.body.classList.remove('admin-mode');
-  document.getElementById('admin-toolbar').classList.remove('visible');
-  const fab = document.getElementById('admin-fab');
-  fab.classList.remove('active'); fab.textContent = '⚙';
-  document.querySelectorAll('[data-editable="true"]').forEach(el => el.contentEditable = 'false');
-  disableDrag(); closeLinkEditor();
-}
+// ─── DRAG ───
+let dragSrc=null;
+function getCards(){return Array.from(document.getElementById('cards-container').children);}
+function enableDrag(){getCards().forEach(c=>{c.setAttribute('draggable','true');c.addEventListener('dragstart',onDS);c.addEventListener('dragover',onDO);c.addEventListener('drop',onDrop);c.addEventListener('dragend',onDE);c.addEventListener('dragleave',onDL);});}
+function disableDrag(){getCards().forEach(c=>{c.setAttribute('draggable','false');c.removeEventListener('dragstart',onDS);c.removeEventListener('dragover',onDO);c.removeEventListener('drop',onDrop);c.removeEventListener('dragend',onDE);c.removeEventListener('dragleave',onDL);});}
+function onDS(e){dragSrc=this;this.classList.add('card-dragging');e.dataTransfer.effectAllowed='move';}
+function onDO(e){e.preventDefault();if(this!==dragSrc)this.classList.add('card-drag-over');}
+function onDL(){this.classList.remove('card-drag-over');}
+function onDrop(e){e.stopPropagation();this.classList.remove('card-drag-over');if(dragSrc!==this){const con=document.getElementById('cards-container'),cards=getCards(),si=cards.indexOf(dragSrc),ti=cards.indexOf(this);con.insertBefore(dragSrc,si<ti?this.nextSibling:this);}}
+function onDE(){this.classList.remove('card-dragging');getCards().forEach(c=>c.classList.remove('card-drag-over'));}
 
-// ─── DRAG & DROP ───
-let dragSrc = null;
-function getCards() { return Array.from(document.getElementById('cards-container').children); }
-function enableDrag() {
-  getCards().forEach(card => {
-    card.setAttribute('draggable', 'true');
-    card.addEventListener('dragstart', onDS);
-    card.addEventListener('dragover', onDO);
-    card.addEventListener('drop', onDrop);
-    card.addEventListener('dragend', onDE);
-    card.addEventListener('dragleave', onDL);
-  });
-}
-function disableDrag() {
-  getCards().forEach(card => {
-    card.setAttribute('draggable', 'false');
-    card.removeEventListener('dragstart', onDS);
-    card.removeEventListener('dragover', onDO);
-    card.removeEventListener('drop', onDrop);
-    card.removeEventListener('dragend', onDE);
-    card.removeEventListener('dragleave', onDL);
-  });
-}
-function onDS(e) { dragSrc = this; this.classList.add('card-dragging'); e.dataTransfer.effectAllowed = 'move'; }
-function onDO(e) { e.preventDefault(); if (this !== dragSrc) this.classList.add('card-drag-over'); }
-function onDL() { this.classList.remove('card-drag-over'); }
-function onDrop(e) {
-  e.stopPropagation(); this.classList.remove('card-drag-over');
-  if (dragSrc !== this) {
-    const con = document.getElementById('cards-container');
-    const cards = getCards();
-    const si = cards.indexOf(dragSrc), ti = cards.indexOf(this);
-    con.insertBefore(dragSrc, si < ti ? this.nextSibling : this);
-  }
-}
-function onDE() { this.classList.remove('card-dragging'); getCards().forEach(c => c.classList.remove('card-drag-over')); }
-
-// ─── LINK EDITING ───
-let curLink = null;
-function enableLinkEditing() {
-  document.querySelectorAll('a.admin-link').forEach(a => a.addEventListener('click', handleLink));
-}
-function disableLinkEditing() {
-  document.querySelectorAll('a.admin-link').forEach(a => a.removeEventListener('click', handleLink));
-}
-function handleLink(e) {
-  if (!isAdmin) return;
-  e.preventDefault(); e.stopPropagation();
-  curLink = this;
-  document.getElementById('le-text').value = this.textContent.trim();
-  document.getElementById('le-url').value = this.getAttribute('href') || '';
-  const popup = document.getElementById('link-editor');
-  popup.classList.add('visible');
-  const x = Math.min(e.clientX, window.innerWidth - 290);
-  const y = Math.min(e.clientY + 12, window.innerHeight - 160);
-  popup.style.left = x + 'px'; popup.style.top = y + 'px';
-  setTimeout(() => document.getElementById('le-url').focus(), 50);
-}
-function saveLinkEdit() {
-  if (!curLink) return;
-  curLink.textContent = document.getElementById('le-text').value;
-  curLink.href = document.getElementById('le-url').value;
-  closeLinkEditor();
-}
-function closeLinkEditor() {
-  document.getElementById('link-editor').classList.remove('visible');
-  curLink = null;
-}
+// ─── LINK EDIT ───
+let curLink=null;
+function enableLinkEditing(){document.querySelectorAll('a.admin-link').forEach(a=>a.addEventListener('click',handleLink));}
+function disableLinkEditing(){document.querySelectorAll('a.admin-link').forEach(a=>a.removeEventListener('click',handleLink));}
+function handleLink(e){if(!isAdmin)return;e.preventDefault();e.stopPropagation();curLink=this;document.getElementById('le-text').value=this.textContent.trim();document.getElementById('le-url').value=this.getAttribute('href')||'';const p=document.getElementById('link-editor');p.classList.add('visible');p.style.left=Math.min(e.clientX,window.innerWidth-290)+'px';p.style.top=Math.min(e.clientY+12,window.innerHeight-160)+'px';setTimeout(()=>document.getElementById('le-url').focus(),50);}
+function saveLinkEdit(){if(!curLink)return;curLink.textContent=document.getElementById('le-text').value;curLink.href=document.getElementById('le-url').value;closeLinkEditor();}
+function closeLinkEditor(){document.getElementById('link-editor').classList.remove('visible');curLink=null;}
 
 // ─── ADD CARD ───
-function openAddCardModal() { document.getElementById('add-card-modal').classList.add('visible'); document.getElementById('nc-title').focus(); }
-function closeAddCardModal() { document.getElementById('add-card-modal').classList.remove('visible'); }
-function createNewCard() {
-  const title = document.getElementById('nc-title').value.trim() || 'New Card';
-  const subtitle = document.getElementById('nc-subtitle').value.trim();
-  const date = document.getElementById('nc-date').value.trim();
-  const type = document.getElementById('nc-type').value;
-  const location = document.getElementById('nc-location').value.trim();
-  const btnText = document.getElementById('nc-btn-text').value.trim();
-  const btnUrl = document.getElementById('nc-btn-url').value.trim() || '#';
-  const bulletsRaw = document.getElementById('nc-bullets').value.trim();
-  const footer = document.getElementById('nc-footer').value.trim() || 'ॐ Jai Guru Dev ॐ';
-  const bullets = bulletsRaw ? bulletsRaw.split('\n').filter(b => b.trim()) : [];
-  const live = type === 'live';
-  const id = 'card-new-' + Date.now();
-  const card = document.createElement('div');
-  card.className = live ? 'iphone-frame live-card' : 'iphone-frame';
-  card.id = id; card.setAttribute('draggable', 'true');
-  card.innerHTML = `
-    <div class="drag-handle">⠿ drag</div>
-    <button class="delete-card-btn" onclick="deleteCard(this)">✕</button>
-    ${live ? '<div class="live-badge">● LIVE</div>' : ''}
-    <header><div class="card-title-group">
-      <h1 data-editable="true" contenteditable="true">${title}</h1>
-      ${subtitle ? `<h2 data-editable="true" contenteditable="true">${subtitle}</h2>` : ''}
-      <p class="subtitle" data-editable="true" contenteditable="true">with Vishal Merani</p>
-    </div></header>
-    ${date ? `<section><h4 data-editable="true" contenteditable="true">${date}</h4></section>` : ''}
-    ${bullets.length ? `<section><ul class="features">${bullets.map(b=>`<li data-editable="true" contenteditable="true">${b}</li>`).join('')}</ul></section>` : ''}
-    ${btnText ? `<section><a href="${btnUrl}" class="button admin-link" target="_blank" data-editable="true" contenteditable="true">${btnText}</a></section>` : ''}
-    ${location ? `<section><span class="location-text" data-editable="true" contenteditable="true">${location}</span></section>` : ''}
-    <footer><div class="footer">${footer}</div></footer>`;
-  const social = document.getElementById('card-social');
-  document.getElementById('cards-container').insertBefore(card, social);
-  card.addEventListener('dragstart', onDS);
-  card.addEventListener('dragover', onDO);
-  card.addEventListener('drop', onDrop);
-  card.addEventListener('dragend', onDE);
-  card.addEventListener('dragleave', onDL);
-  card.querySelectorAll('a.admin-link').forEach(a => a.addEventListener('click', handleLink));
-  setInterval(() => createSnowflake(card), Math.random() * 3000 + 2000);
-  closeAddCardModal();
-  setTimeout(() => card.scrollIntoView({ behavior: 'smooth', block: 'center' }), 100);
-  showToast('Card created ✓');
+function openAddCardModal(){document.getElementById('add-card-modal').classList.add('visible');document.getElementById('nc-title').focus();}
+function closeAddCardModal(){document.getElementById('add-card-modal').classList.remove('visible');}
+function createNewCard(){
+  const title=document.getElementById('nc-title').value.trim()||'New Card';
+  const subtitle=document.getElementById('nc-subtitle').value.trim();
+  const date=document.getElementById('nc-date').value.trim();
+  const type=document.getElementById('nc-type').value;
+  const location=document.getElementById('nc-location').value.trim();
+  const btnText=document.getElementById('nc-btn-text').value.trim();
+  const btnUrl=document.getElementById('nc-btn-url').value.trim()||'#';
+  const bulletsRaw=document.getElementById('nc-bullets').value.trim();
+  const footer=document.getElementById('nc-footer').value.trim()||'ॐ Jai Guru Dev ॐ';
+  const bullets=bulletsRaw?bulletsRaw.split('\n').filter(b=>b.trim()):[];
+  const live=type==='live';
+  const card=document.createElement('div');
+  card.className=live?'iphone-frame live-card':'iphone-frame';
+  card.id='card-new-'+Date.now();card.setAttribute('draggable','true');
+  card.innerHTML=`<div class="drag-handle">⠿ drag</div><button class="delete-card-btn" onclick="deleteCard(this)">✕</button>${live?'<div class="live-badge">● LIVE</div>':''}<div class="card-inner-pad"><header><div class="card-title-group"><h1 data-editable="true" contenteditable="true">${title}</h1>${subtitle?`<h2 data-editable="true" contenteditable="true">${subtitle}</h2>`:''}<p class="subtitle" data-editable="true" contenteditable="true">with Vishal Merani</p></div></header>${date?`<section><h4 data-editable="true" contenteditable="true">${date}</h4></section>`:''}${bullets.length?`<section><ul class="features">${bullets.map(b=>`<li data-editable="true" contenteditable="true">${b}</li>`).join('')}</ul></section>`:''}${btnText?`<section><a href="${btnUrl}" class="button admin-link" target="_blank" data-editable="true" contenteditable="true">${btnText}</a></section>`:''}${location?`<section><span class="location-text" data-editable="true" contenteditable="true">${location}</span></section>`:''}<footer><div class="footer">${footer}</div></footer></div>`;
+  document.getElementById('cards-container').insertBefore(card,document.getElementById('card-social'));
+  card.addEventListener('dragstart',onDS);card.addEventListener('dragover',onDO);card.addEventListener('drop',onDrop);card.addEventListener('dragend',onDE);card.addEventListener('dragleave',onDL);
+  card.querySelectorAll('a.admin-link').forEach(a=>a.addEventListener('click',handleLink));
+  setInterval(()=>createSnowflake(card),Math.random()*3000+2000);
+  closeAddCardModal();setTimeout(()=>card.scrollIntoView({behavior:'smooth',block:'center'}),100);showToast('Card created ✓');
 }
 
 // ─── DELETE ───
-function deleteCard(btn) {
-  if (!isAdmin) return;
-  const card = btn.closest('.iphone-frame, .celebration-mega-card, .dhyan-card');
-  if (card && confirm('Delete this card?')) {
-    card.style.transition = 'opacity 0.3s, transform 0.3s';
-    card.style.opacity = '0'; card.style.transform = 'scale(0.95)';
-    setTimeout(() => card.remove(), 320);
-  }
-}
+function deleteCard(btn){if(!isAdmin)return;const card=btn.closest('.iphone-frame,.celebration-mega-card,.dhyan-card,.profile-card');if(card&&confirm('Delete this card?')){card.style.transition='opacity .3s,transform .3s';card.style.opacity='0';card.style.transform='scale(.95)';setTimeout(()=>card.remove(),320);}}
 
-// ─── SAVE / RESTORE ───
-function saveLayout() {
-  try {
-    const order = getCards().map(c => c.id);
-    localStorage.setItem('vm_order', JSON.stringify(order));
-    showToast('Layout saved ✓');
-  } catch(e) { showToast('Storage unavailable'); }
-}
-function loadLayout() {
-  try {
-    const saved = JSON.parse(localStorage.getItem('vm_order') || 'null');
-    if (!saved) { showToast('No saved layout'); return; }
-    const con = document.getElementById('cards-container');
-    saved.forEach(id => { const c = document.getElementById(id); if (c) con.appendChild(c); });
-    showToast('Layout restored ✓');
-  } catch(e) { showToast('Could not restore'); }
-}
-function showToast(msg) {
-  const t = document.createElement('div');
-  t.className = 'toast'; t.textContent = msg;
-  document.body.appendChild(t);
-  setTimeout(() => { t.style.opacity = '0'; setTimeout(() => t.remove(), 500); }, 2200);
-}
+// ─── SAVE/RESTORE ───
+function saveLayout(){try{localStorage.setItem('vm_order',JSON.stringify(getCards().map(c=>c.id)));showToast('Layout saved ✓');}catch(e){showToast('Storage unavailable');}}
+function loadLayout(){try{const saved=JSON.parse(localStorage.getItem('vm_order')||'null');if(!saved){showToast('No saved layout');return;}const con=document.getElementById('cards-container');saved.forEach(id=>{const c=document.getElementById(id);if(c)con.appendChild(c);});showToast('Layout restored ✓');}catch(e){showToast('Could not restore');}}
+function showToast(msg){const t=document.createElement('div');t.className='toast';t.textContent=msg;document.body.appendChild(t);setTimeout(()=>{t.style.opacity='0';setTimeout(()=>t.remove(),500);},2200);}
 
 // ─── CLOSE ON OUTSIDE CLICK ───
-document.getElementById('admin-login-overlay').addEventListener('click', function(e) { if (e.target === this) closeLogin(); });
-document.getElementById('add-card-modal').addEventListener('click', function(e) { if (e.target === this) closeAddCardModal(); });
-document.addEventListener('click', e => {
-  const popup = document.getElementById('link-editor');
-  if (popup.classList.contains('visible') && !popup.contains(e.target) && !e.target.classList.contains('admin-link')) closeLinkEditor();
-});
+document.getElementById('admin-login-overlay').addEventListener('click',function(e){if(e.target===this)closeLogin();});
+document.getElementById('add-card-modal').addEventListener('click',function(e){if(e.target===this)closeAddCardModal();});
+document.addEventListener('click',e=>{const p=document.getElementById('link-editor');if(p.classList.contains('visible')&&!p.contains(e.target)&&!e.target.classList.contains('admin-link'))closeLinkEditor();});
 </script>
-
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-QL72FZ9YZ2"></script>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-QL72FZ9YZ2');</script>
 </body>
