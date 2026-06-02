@@ -38,10 +38,13 @@
   .portrait-wrap { position:relative; overflow:hidden; border-radius:20px; border:1px solid var(--line); background:#111; }
   canvas#portrait { display:block; width:100%; height:auto; image-rendering:pixelated; image-rendering:crisp-edges; background:#222; }
   .portrait-wrap::after { content:""; position:absolute; inset:0; pointer-events:none; background:linear-gradient(rgba(255,255,255,.035) 1px, transparent 1px); background-size:100% 5px; mix-blend-mode:soft-light; }
-  #pacman { position:absolute; width:42px; height:42px; left:-14%; top:8%; opacity:0; z-index:5; pointer-events:none; filter:drop-shadow(0 0 14px rgba(249,214,109,.7)); transition:opacity .2s ease; }
-  #pacman::before { content:""; position:absolute; inset:0; border-radius:50%; background:conic-gradient(from 36deg, transparent 0 72deg, var(--accent) 72deg 360deg); }
-  #pacman.chomp::before { animation:chomp .22s infinite alternate; }
-  @keyframes chomp { from { clip-path:polygon(50% 50%,100% 14%,100% 86%,50% 50%,0 0,0 100%,100% 100%,100% 0); } to { clip-path:circle(50%); } }
+  #pacman { position:absolute; width:15px; height:15px; left:-14%; top:8%; opacity:0; z-index:5; pointer-events:none; filter:drop-shadow(0 0 8px rgba(255,255,255,.75)); transition:opacity .2s ease; transform-origin:center; }
+  #pacman .cat-head { fill:#fff7df; stroke:rgba(35,24,18,.35); stroke-width:1.8; }
+  #pacman .cat-ear { fill:#fff7df; stroke:rgba(35,24,18,.35); stroke-width:1.8; stroke-linejoin:round; }
+  #pacman .cat-eye { fill:#00d4ff; }
+  #pacman .cat-mouth { stroke:#6b3f36; stroke-width:1.4; stroke-linecap:round; fill:none; }
+  #pacman.chomp { animation:catNibble .18s infinite alternate ease-in-out; }
+  @keyframes catNibble { from { translate:0 0; rotate:-2deg; } to { translate:0 -1px; rotate:2deg; } }
   #sparkles { position:absolute; inset:0; pointer-events:none; z-index:4; }
   #sparkles i { position:absolute; width:7px; height:7px; border-radius:50%; background:var(--accent); box-shadow:0 0 16px var(--accent); animation:pop .85s ease-out forwards; }
   @keyframes pop { to { transform:translateY(-24px) scale(0); opacity:0; } }
@@ -88,7 +91,13 @@
         <div class="portrait-wrap">
           <canvas id="portrait" aria-label="Canvas-rendered portrait of me and my meowrani"></canvas>
           <div id="sparkles"></div>
-          <div id="pacman" aria-hidden="true"></div>
+          <svg id="pacman" viewBox="0 0 32 32" aria-hidden="true">
+            <path class="cat-ear" d="M8 12 5 4l8 5M24 12l3-8-8 5"/>
+            <circle class="cat-head" cx="16" cy="17" r="10"/>
+            <circle class="cat-eye" cx="12" cy="16" r="1.5"/>
+            <circle class="cat-eye" cx="20" cy="16" r="1.5"/>
+            <path class="cat-mouth" d="M16 19v2m0 0c-1.5 2-4 2-5.5.5M16 21c1.5 2 4 2 5.5.5"/>
+          </svg>
         </div>
 
       </section>
@@ -407,7 +416,7 @@ const pixelsHex =
 const canvas = document.getElementById("portrait");
 canvas.width = W;
 canvas.height = H;
-const ctx = canvas.getContext("2d", { alpha: false });
+const ctx = canvas.getContext("2d");
 const image = ctx.createImageData(W, H);
 const data = image.data;
 
@@ -461,44 +470,95 @@ function startEating() {
   pacman.style.opacity = 1;
   pacman.classList.add('chomp');
 
-  const rows = 44;
-  const stepsPerRow = 38;
-  const biteR = 4; // tiny bites so it feels like one dot at a time
+  // TRUE DOT-BY-DOT + 6-LINE TRAIL MODE:
+  // The tiny cat erases only one visible dot per frame.
+  // After 6 horizontal dot-lines, the older line appears again.
+  // So the portrait stays ~96%+ visible all the time.
+  const dot = 2;
+  const cols = Math.ceil(W / dot);
+  const rows = Math.ceil(H / dot);
+  const TRAIL_LINES = 6;
+
   let step = 0;
-  const total = rows * stepsPerRow;
+  let lastRow = -1;
+  let lastSparkle = 0;
+  const total = cols * rows;
 
-  eatTimer = setInterval(() => {
-    const row = Math.floor(step / stepsPerRow);
-    const col = step % stepsPerRow;
+  function restoreDot(x, y) {
+    ctx.putImageData(
+      originalImageData,
+      0,
+      0,
+      x,
+      y,
+      Math.min(dot, W - x),
+      Math.min(dot, H - y)
+    );
+  }
+
+  function restoreLine(rowToRestore) {
+    if (rowToRestore < 0 || rowToRestore >= rows) return;
+    const y = rowToRestore * dot;
+    ctx.putImageData(
+      originalImageData,
+      0,
+      0,
+      0,
+      y,
+      W,
+      Math.min(dot, H - y)
+    );
+  }
+
+  function eatOneDot() {
+    if (!eating) return;
+
+    const row = Math.floor(step / cols);
+    const col = step % cols;
     const forward = row % 2 === 0;
-    const x = forward
-      ? Math.round((col / (stepsPerRow - 1)) * (W + biteR * 2) - biteR)
-      : Math.round(((stepsPerRow - 1 - col) / (stepsPerRow - 1)) * (W + biteR * 2) - biteR);
-    const y = Math.round(((row + 0.5) / rows) * H);
+    const dotCol = forward ? col : cols - 1 - col;
 
-    ctx.save();
-    ctx.globalCompositeOperation = 'destination-out';
-    ctx.beginPath();
-    ctx.arc(x, y, biteR, 0, Math.PI * 2);
-    ctx.fill();
-    ctx.restore();
+    // When the cat enters a new horizontal line, restore the line
+    // that is older than 6 lines. This keeps the image visible.
+    if (row !== lastRow) {
+      restoreLine(row - TRAIL_LINES);
+      lastRow = row;
+    }
 
-    const leftPct = (x / W) * 100;
-    const topPct = (y / H) * 100;
-    pacman.style.left = `calc(${leftPct}% - 20px)`;
-    pacman.style.top = `calc(${topPct}% - 20px)`;
+    const x = dotCol * dot;
+    const y = row * dot;
+
+    // Erase only ONE tiny dot. No gulping.
+    ctx.clearRect(x, y, Math.min(dot, W - x), Math.min(dot, H - y));
+
+    const leftPct = ((x + dot / 2) / W) * 100;
+    const topPct = ((y + dot / 2) / H) * 100;
+
+    pacman.style.left = `calc(${leftPct}% - 7.5px)`;
+    pacman.style.top = `calc(${topPct}% - 7.5px)`;
     pacman.style.transform = forward ? 'scaleX(1)' : 'scaleX(-1)';
-    if (step % 7 === 0) sparkle(Math.max(4, Math.min(96, leftPct)), Math.max(4, Math.min(96, topPct)));
+
+    if (step - lastSparkle > 180) {
+      sparkle(Math.max(4, Math.min(96, leftPct)), Math.max(4, Math.min(96, topPct)));
+      lastSparkle = step;
+    }
 
     step++;
+
     if (step >= total) {
-      clearInterval(eatTimer);
+      // Restore the final few trail lines, then loop again.
+      for (let r = rows - TRAIL_LINES; r < rows; r++) restoreLine(r);
       eating = false;
       pacman.classList.remove('chomp');
       pacman.style.opacity = 0;
-      setTimeout(startEating, 1800);
+      setTimeout(startEating, 1200);
+      return;
     }
-  }, 24);
+
+    requestAnimationFrame(eatOneDot);
+  }
+
+  requestAnimationFrame(eatOneDot);
 }
 
 // Pac-Man starts by itself. No buttons, no clicks.
