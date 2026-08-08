@@ -43,31 +43,21 @@
   }
 @media (max-width: 600px) {
   .vm-corner-orb {
-    top: 65px;
-    right: 4px;
+    position: relative;
+    top: auto;
+    right: auto;
     padding: 6px 9px;
     font-size: 0.7rem;
     gap: 6px;
-    top: auto;
-    right: auto;
-    margin: 10px 8px 15px auto;
+    margin: 10px 8px 25px auto;
     display: flex;
     width: fit-content;
-    
   }
 
   .vm-corner-orb .vm-g {
-  font-size: 2rem;
-  font-weight: 800;
-  display: inline-block;
-  color: #4fd8e8;
-  text-shadow:
-    0 0 6px #4fd8e8,
-    0 0 14px rgba(79,216,232,0.8),
-    0 0 28px rgba(79,216,232,0.5);
-  animation: vm-g-move 2s ease-in-out infinite;
+    font-size: 1.5rem;
+  }
 }
-
 @keyframes vm-g-move {
   0%, 100% {
     transform: translateY(0) rotate(0deg);
