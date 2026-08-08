@@ -43,21 +43,35 @@
   }
 @media (max-width: 600px) {
   .vm-corner-orb {
-    position: relative;
-    top: auto;
-    right: auto;
+    top: 65px;
+    right: 4px;
     padding: 6px 9px;
     font-size: 0.7rem;
     gap: 6px;
-    margin: 10px 8px 25px auto;
+    top: auto;
+    right: auto;
+    margin: 10px 8px 15px auto;
     display: flex;
     width: fit-content;
+    
   }
 
   .vm-corner-orb .vm-g {
     font-size: 1.5rem;
   }
 }
+  .vm-corner-orb .vm-g {
+  font-size: 2rem;
+  font-weight: 800;
+  display: inline-block;
+  color: #4fd8e8;
+  text-shadow:
+    0 0 6px #4fd8e8,
+    0 0 14px rgba(79,216,232,0.8),
+    0 0 28px rgba(79,216,232,0.5);
+  animation: vm-g-move 2s ease-in-out infinite;
+}
+
 @keyframes vm-g-move {
   0%, 100% {
     transform: translateY(0) rotate(0deg);
@@ -339,8 +353,8 @@
 
 <div class="iphone-viewport">
   <header class="header">
-    <h1> </h1>
-    <p></p>
+    <h1>.</h1>
+    <p>.</p>
     <h1>Masterclasses and Master's Classes </h1>
     <p>Live training sessions with Vishal Merani</p>
     <p>Queries? - vm@vishalmerani.com</p>
