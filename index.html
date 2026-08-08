@@ -44,10 +44,30 @@
   @media (max-width: 400px) {
     .vm-corner-orb { top: 20px; right: 4px; padding: 7px 11px; font-size: 0.65rem; }
   }
+  .vm-corner-orb .vm-g {
+  font-size: 2rem;
+  font-weight: 800;
+  display: inline-block;
+  color: #4fd8e8;
+  text-shadow:
+    0 0 6px #4fd8e8,
+    0 0 14px rgba(79,216,232,0.8),
+    0 0 28px rgba(79,216,232,0.5);
+  animation: vm-g-move 2s ease-in-out infinite;
+}
+
+@keyframes vm-g-move {
+  0%, 100% {
+    transform: translateY(0) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-8px) rotate(5deg);
+  }
+}
 </style>
 <a class="vm-corner-orb" href="mailto:vm@vishalmerani.com?subject=Gurudev%20Appointment%20Request" target="_blank" rel="noopener noreferrer">
   <br>
-  <span class="vm-orb-dot"></span> G Appointment Request Note </a> <br> <p></p>
+<p></p>  <span class="vm-g">G</span> Appointment Request Note </a> <br> <p></p>
 <body class="day"> 
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
